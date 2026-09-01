@@ -1,0 +1,16 @@
+{
+  "name": "DL2 Companion",
+  "short_name": "DL2 Companion",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101214",
+  "theme_color": "#111315",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

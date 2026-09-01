@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111315">
+<meta name="description" content="Dying Light 2 Companion – Hemmstoffe, Safe-Codes und Charakterfortschritt.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/app.css">
+<title>DL2 Companion</title>
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="eyebrow">VILLEDOR FIELD TOOL</div>
+    <h1>DL2 <span>COMPANION</span></h1>
+  </div>
+  <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
+</header>
+
+<main>
+<section id="view-dashboard" class="view active">
+  <div class="hero">
+    <div class="hazard">GRE // PERSONAL STATUS</div>
+    <div class="statgrid">
+      <button class="statcard" data-go="character"><small>GESUNDHEIT</small><strong id="dashHealth">1</strong><span>Stufe</span></button>
+      <button class="statcard" data-go="character"><small>AUSDAUER</small><strong id="dashStamina">1</strong><span>Stufe</span></button>
+    </div>
+    <div class="progressbox">
+      <div class="progresshead"><span>HEMMSTOFFE GRUNDSPIEL</span><b id="dashFound">0 / 126</b></div>
+      <div class="bar"><i id="dashBar"></i></div>
+      <div class="muted" id="dashPercent">0 % dokumentiert</div>
+    </div>
+  </div>
+
+  <button class="quick-safe" data-go="safes">
+    <span class="qs-icon">#</span><span><b>SAFE-CODE FINDEN</b><small>Gebiet oder Fundort eingeben</small></span><span>›</span>
+  </button>
+
+  <h2>FIELD MODULES</h2>
+  <div class="area-summary"><div class="area-summary-top"><div><div class="eyebrow">MEIN SPIELSTAND</div><b id="overallPct">0 % GESAMTFORTSCHRITT</b></div><button class="tinybtn" data-go="areas">GEBIETE</button></div><div class="progress"><i id="overallBar"></i></div><div class="current-area"><span>AKTUELLER BEZIRK</span><strong id="currentAreaName">Houndfield</strong><small id="currentAreaMissing">Noch keine Daten</small></div></div><div class="modulegrid">
+    <button class="module" data-go="areas"><b>GEBIETE</b><small>Was fehlt mir hier?</small></button><button class="module" data-go="inhibitors"><b>HEMMSTOFFE</b><small>126 Fundstücke · Tracker</small></button>
+    <button class="module" data-go="safes"><b>SAFE-CODES</b><small>20 bekannte Codes inkl. DLC</small></button>
+    <button class="module" data-go="character"><b>CHARAKTER</b><small>Gesundheit & Ausdauer</small></button>
+    <button class="module" data-go="builds"><b>BUILDS</b><small>5 Ziel-Loadouts</small></button>
+    <button class="module" data-go="faq"><b>FAQ / WISSEN</b><small>NG+, Tools & Mechaniken</small></button>
+    <button class="module" data-go="backup"><b>DATEN</b><small>Backup & Wiederherstellung</small></button>
+  </div>
+  <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe sind getrennt vom Grundspiel. Der detaillierte NG+-Fundorttracker folgt in einer späteren Datenstufe.</span></div>
+</section>
+
+<section id="view-areas" class="view"><div class="sectionhead"><div><div class="eyebrow">DISTRICT CLEARANCE</div><h2>GEBIETSFORTSCHRITT</h2></div></div><p class="introcopy">Bezirk wählen und direkt sehen, was noch offen ist. Hemmstoffe und Safe-Codes werden automatisch aus den vorhandenen Daten übernommen.</p><select id="areaSelect" class="search"></select><div id="areaHero" class="area-hero"></div><div id="missingHere" class="missingbox"></div><div id="areaChecklist" class="area-checklist"></div></section><section id="view-inhibitors" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">GRE DATABASE</div><h2>HEMMSTOFFE</h2></div><b id="inhTotal">0 / 126</b></div>
+  <div class="bar big"><i id="inhBar"></i></div>
+  <input class="search" id="inhSearch" placeholder="Fundort oder Gebiet suchen …">
+  <div class="filters" id="regionFilters">
+    <button class="active" data-region="all">Alle</button><button data-region="Old Villedor">Old Villedor</button><button data-region="Central Loop">Central Loop</button>
+  </div>
+  <div id="districtList"></div>
+</section>
+
+<section id="view-safes" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">FIELD ACCESS CODES</div><h2>SAFE-CODES</h2></div><b id="safeCount"></b></div>
+  <input class="search" id="safeSearch" placeholder="z. B. Houndfield, VNC, Hemmstoff, 101 …">
+  <label class="toggleline"><input type="checkbox" id="onlyInhibitor"><span>Nur Safes mit Hemmstoff anzeigen</span></label>
+  <div id="safeList" class="safelist"></div>
+</section>
+
+<section id="view-character" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">AIDEN STATUS</div><h2>CHARAKTER</h2></div></div>
+  <div class="charcards">
+    <div class="controlcard"><label>Gesundheit <b id="healthLabel">1</b></label><div class="maxvalue"><small>MAXIMALWERT</small><strong id="healthValue">160</strong></div><input id="healthRange" type="range" min="1" max="26" value="1"><div class="rangefoot"><span>Stufe 1</span><span>Stufe 26</span></div></div>
+    <div class="controlcard"><label>Ausdauer <b id="staminaLabel">1</b></label><div class="maxvalue"><small>MAXIMALWERT</small><strong id="staminaValue">160</strong></div><input id="staminaRange" type="range" min="1" max="26" value="1"><div class="rangefoot"><span>Stufe 1</span><span>Stufe 26</span></div></div>
+  </div>
+  <div class="calc">
+    <div><small>VERTEILTE HEMMSTOFFE</small><b id="spentInh">6</b></div>
+    <div><small>WEITERE BIS 26/26</small><b id="neededInh">150</b></div>
+    <div><small>UPGRADE-EFFEKT</small><b>+20</b></div>
+  </div>
+  <div class="notice"><b>Wichtig</b><span>Je Upgrade werden 3 Hemmstoffe verbraucht. Beide Attribute erreichen Stufe 26. Das Grundspiel allein liefert nicht genug für 26/26; mit den zusätzlichen NG+-Hemmstoffen ist es möglich.</span></div>
+  <div class="leveltable" id="levelTable"></div>
+</section>
+
+<section id="view-builds" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">GEAR TARGETS</div><h2>BUILD-EMPFEHLUNGEN</h2></div></div>
+  <p class="introcopy">Keine starre Item-Liste: Die Empfehlungen zeigen, auf welche Werte du bei regulär erspielter Ausrüstung hinarbeiten solltest.</p>
+  <div id="buildList" class="buildlist"></div>
+</section>
+
+<section id="view-faq" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">FIELD MANUAL</div><h2>FAQ / WISSEN</h2></div></div>
+  <input class="search" id="faqSearch" placeholder="NG+, Gleitschirm, Enterhaken, GRE …">
+  <div id="faqList" class="faqlist"></div>
+</section>
+
+<section id="view-backup" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">LOCAL STORAGE</div><h2>DATEN</h2></div></div>
+  <div class="backupcard">
+    <h3>Fortschritt sichern</h3><p>Alle Häkchen und Charakterstufen liegen nur lokal auf diesem Gerät.</p>
+    <button class="primary" id="exportBtn">BACKUP EXPORTIEREN</button>
+    <label class="primary outline">BACKUP IMPORTIEREN<input id="importFile" type="file" accept=".json,application/json" hidden></label>
+    <button class="danger" id="resetBtn">ALLE LOKALEN DATEN LÖSCHEN</button>
+  </div>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion Alpha <b>v0.3.0</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
+</section>
+</main>
+
+<nav class="bottomnav">
+  <button class="active" data-go="dashboard"><span>⌂</span>Home</button>
+  <button data-go="inhibitors"><span>▣</span>Hemmstoffe</button>
+  <button data-go="safes"><span>#</span>Safes</button>
+  <button data-go="character"><span>+</span>Status</button>
+</nav>
+
+<div class="modal" id="changelogModal" aria-hidden="true"><div class="modalbox"><div class="modalhead"><div><div class="eyebrow">VERSION HISTORY</div><h2>CHANGELOG</h2></div><button id="closeChangelog">×</button></div><div id="changelogList"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
