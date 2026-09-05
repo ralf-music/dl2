@@ -1,5 +1,16 @@
 [
   {
+    "version": "0.5.0",
+    "date": "06.09.2026",
+    "changes": [
+      "GRE-Anomalien-Tracker mit allen 12 Revenants ergänzt",
+      "Jede GRE-Anomalie zeigt die Belohnung von 2 Hemmstoffen",
+      "Abgehakte GRE-Anomalien synchronisieren den zugehörigen Hemmstoff-Fund",
+      "12 versunkene Airdrops ohne Military Tech separat ergänzt",
+      "Airdrops sind nun klar in Military Tech und versunkene Loot-Kisten getrennt"
+    ]
+  },
+  {
     "version": "0.4.0",
     "date": "06.09.2026",
     "changes": [

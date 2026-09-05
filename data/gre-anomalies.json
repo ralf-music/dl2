@@ -1,0 +1,98 @@
+[
+  {
+    "id": "C-A-22",
+    "district": "Houndfield",
+    "inhibitorId": "inh-004",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-05",
+    "district": "Trinity",
+    "inhibitorId": "inh-009",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-01",
+    "district": "Quarry End",
+    "inhibitorId": "inh-021",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-79",
+    "district": "Downtown",
+    "inhibitorId": "inh-025",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-83",
+    "district": "The Wharf",
+    "inhibitorId": "inh-048",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-78",
+    "district": "Garrison",
+    "inhibitorId": "inh-032",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-55",
+    "district": "Garrison",
+    "inhibitorId": "inh-033",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-34",
+    "district": "Lower Dam Ayre",
+    "inhibitorId": "inh-061",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-91",
+    "district": "Saint Paul Island",
+    "inhibitorId": "inh-055",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-23",
+    "district": "Lower Dam Ayre",
+    "inhibitorId": "inh-062",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-56",
+    "district": "Newfound Lost Lands",
+    "inhibitorId": "inh-069",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv",
+    "note": "Revenant besiegen und anschließend die GRE-Kiste im Trailer öffnen."
+  },
+  {
+    "id": "C-A-67",
+    "district": "Westlich von Garrison",
+    "inhibitorId": "inh-034",
+    "note": "Unbenanntes Gebiet westlich von Garrison, über den Fluss.",
+    "reward": "2 Hemmstoffe",
+    "time": "Nur nachts aktiv"
+  }
+]
