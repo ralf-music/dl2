@@ -40,7 +40,7 @@
 
   <h2>FIELD MODULES</h2>
   <div class="area-summary"><div class="area-summary-top"><div><div class="eyebrow">MEIN SPIELSTAND</div><b id="overallPct">0 % GESAMTFORTSCHRITT</b></div><button class="tinybtn" data-go="areas">GEBIETE</button></div><div class="progress"><i id="overallBar"></i></div><div class="current-area"><span>AKTUELLER BEZIRK</span><strong id="currentAreaName">Houndfield</strong><small id="currentAreaMissing">Noch keine Daten</small></div></div><div class="modulegrid">
-    <button class="module" data-go="areas"><b>GEBIETE</b><small>Was fehlt mir hier?</small></button><button class="module" data-go="inhibitors"><b>HEMMSTOFFE</b><small>126 Fundstücke · Tracker</small></button>
+    <button class="module" data-go="airdrops"><b>MILITARY TECH</b><small><span id="airDash">0 / 14</span> Airdrops</small></button><button class="module" data-go="areas"><b>GEBIETE</b><small>Was fehlt mir hier?</small></button><button class="module" data-go="inhibitors"><b>HEMMSTOFFE</b><small>126 Fundstücke · Tracker</small></button>
     <button class="module" data-go="safes"><b>SAFE-CODES</b><small>20 bekannte Codes inkl. DLC</small></button>
     <button class="module" data-go="character"><b>CHARAKTER</b><small>Gesundheit & Ausdauer</small></button>
     <button class="module" data-go="builds"><b>BUILDS</b><small>5 Ziel-Loadouts</small></button>
@@ -50,7 +50,7 @@
   <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe sind getrennt vom Grundspiel. Der detaillierte NG+-Fundorttracker folgt in einer späteren Datenstufe.</span></div>
 </section>
 
-<section id="view-areas" class="view"><div class="sectionhead"><div><div class="eyebrow">DISTRICT CLEARANCE</div><h2>GEBIETSFORTSCHRITT</h2></div></div><p class="introcopy">Bezirk wählen und direkt sehen, was noch offen ist. Hemmstoffe und Safe-Codes werden automatisch aus den vorhandenen Daten übernommen.</p><select id="areaSelect" class="search"></select><div id="areaHero" class="area-hero"></div><div id="missingHere" class="missingbox"></div><div id="areaChecklist" class="area-checklist"></div></section><section id="view-inhibitors" class="view">
+<section id="view-airdrops" class="view"><div class="sectionhead"><div><div class="eyebrow">NIGHTRUNNER UPGRADES</div><h2>MILITARY TECH</h2></div><div class="aircount"><b id="airCount">0/14</b><small>GESAMMELT</small></div></div><p class="introcopy">Die 14 oberirdischen Military Airdrops enthalten jeweils Military Tech. Die 12 versunkenen Airdrops gehören nicht zu diesem Tracker.</p><div class="airhero"><div><span>NOCH OFFEN</span><strong id="airOpen">14</strong></div><div><span>MILITARY TECH</span><strong id="airTech">0</strong></div><div><span>HEMMSTOFF-KISTEN</span><strong id="airInhib">0/5</strong></div></div><div class="segmented" id="airFilters"><button class="active" data-airfilter="all">ALLE</button><button data-airfilter="open">OFFEN</button><button data-airfilter="done">ERLEDIGT</button></div><div id="airdropList"></div></section><section id="view-areas" class="view"><div class="sectionhead"><div><div class="eyebrow">DISTRICT CLEARANCE</div><h2>GEBIETSFORTSCHRITT</h2></div></div><p class="introcopy">Bezirk wählen und direkt sehen, was noch offen ist. Hemmstoffe und Safe-Codes werden automatisch aus den vorhandenen Daten übernommen.</p><select id="areaSelect" class="search"></select><div id="areaHero" class="area-hero"></div><div id="missingHere" class="missingbox"></div><div id="areaChecklist" class="area-checklist"></div></section><section id="view-inhibitors" class="view">
   <div class="sectionhead"><div><div class="eyebrow">GRE DATABASE</div><h2>HEMMSTOFFE</h2></div><b id="inhTotal">0 / 126</b></div>
   <div class="bar big"><i id="inhBar"></i></div>
   <input class="search" id="inhSearch" placeholder="Fundort oder Gebiet suchen …">
@@ -102,7 +102,7 @@
     <label class="primary outline">BACKUP IMPORTIEREN<input id="importFile" type="file" accept=".json,application/json" hidden></label>
     <button class="danger" id="resetBtn">ALLE LOKALEN DATEN LÖSCHEN</button>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion Alpha <b>v0.3.0</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion Alpha <b>v0.4.0</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
 </section>
 </main>
 

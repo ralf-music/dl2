@@ -1,5 +1,16 @@
 [
   {
+    "version": "0.4.0",
+    "date": "06.09.2026",
+    "changes": [
+      "Military-Tech-Tracker mit allen 14 oberirdischen Airdrops ergänzt",
+      "Airdrops nach Bezirk sortiert und einzeln abhackbar",
+      "Hemmstoff-Airdrops besonders gekennzeichnet",
+      "Filter für alle/offene/erledigte Airdrops ergänzt",
+      "Military-Tech-Fortschritt auf dem Dashboard ergänzt"
+    ]
+  },
+  {
     "version": "0.3.0",
     "date": "01.09.2026",
     "changes": [

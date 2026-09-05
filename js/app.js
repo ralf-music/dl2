@@ -1,20 +1,20 @@
 
-const VERSION="0.3.0";
+const VERSION="0.4.0";
 const KEY="dl2-companion-state-v1";
-let state={health:1,stamina:1,found:{},areaDone:{},currentArea:"Houndfield"}, inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, region="all";
+let state={health:1,stamina:1,found:{},areaDone:{},currentArea:"Houndfield",airDone:{}}, inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], airFilter="all", region="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function loadState(){try{state={...state,...JSON.parse(localStorage.getItem(KEY)||"{}")}; state.found ||= {}}catch{}}
 function saveState(){localStorage.setItem(KEY,JSON.stringify(state)); updateDashboard()}
 function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1800)}
 async function init(){
  loadState();
- [districts,inhibitors,safes,faq,builds,changelog,activities]=await Promise.all(["data/districts.json","data/inhibitors.json","data/safes.json","data/faq.json","data/builds.json","data/changelog.json","data/activities.json"].map(x=>fetch(x).then(r=>r.json())));
- bind(); renderDistricts(); renderSafes(); renderCharacter(); renderFAQ(); renderBuilds(); renderChangelog(); renderAreas(); updateDashboard(); setupPWA();
+ [districts,inhibitors,safes,faq,builds,changelog,activities,airdrops]=await Promise.all(["data/districts.json","data/inhibitors.json","data/safes.json","data/faq.json","data/builds.json","data/changelog.json","data/activities.json","data/airdrops.json"].map(x=>fetch(x).then(r=>r.json())));
+ bind(); renderDistricts(); renderSafes(); renderCharacter(); renderFAQ(); renderBuilds(); renderChangelog(); renderAreas(); renderAirdrops(); updateDashboard(); setupPWA();
 }
 function go(name){$$(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+name)); $$(".bottomnav button").forEach(b=>b.classList.toggle("active",b.dataset.go===name)); scrollTo(0,0)}
 function bind(){
  $$("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
- $("#inhSearch").oninput=renderDistricts; $("#safeSearch").oninput=renderSafes; $("#onlyInhibitor").onchange=renderSafes; $("#faqSearch").oninput=renderFAQ; $("#areaSelect").onchange=e=>{state.currentArea=e.target.value;save();renderAreas();updateDashboard()};
+ $("#inhSearch").oninput=renderDistricts; $("#safeSearch").oninput=renderSafes; $("#onlyInhibitor").onchange=renderSafes; $("#faqSearch").oninput=renderFAQ; $$("[data-airfilter]").forEach(b=>b.onclick=()=>{airFilter=b.dataset.airfilter;$$("[data-airfilter]").forEach(x=>x.classList.toggle("active",x===b));renderAirdrops()}); $("#areaSelect").onchange=e=>{state.currentArea=e.target.value;save();renderAreas();updateDashboard()};
  $("#versionBtn").onclick=()=>{$("#changelogModal").classList.add("open");$("#changelogModal").setAttribute("aria-hidden","false")};
  $("#closeChangelog").onclick=closeChangelog; $("#changelogModal").onclick=e=>{if(e.target.id==="changelogModal")closeChangelog()};
  $$("#regionFilters button").forEach(b=>b.onclick=()=>{region=b.dataset.region;$$("#regionFilters button").forEach(x=>x.classList.toggle("active",x===b));renderDistricts()});
@@ -60,6 +60,7 @@ function renderSafes(){
  rows.forEach(s=>{const e=document.createElement("article");e.className="safeitem";e.innerHTML=`<div class="safehead"><div><div class="districttag">${s.district.toUpperCase()}</div><h3>${s.place}</h3></div><div class="code">${s.code}</div></div><div class="loot ${s.tag==="inhibitor"?"hot":""}">${s.tag==="inhibitor"?"HEMMSTOFF · ":""}${s.loot}</div><div class="safehint">${s.hint||""}</div>`;w.appendChild(e)})
 }
 
+function renderAirdrops(){if(!airdrops.length)return;const done=airdrops.filter(x=>state.airDone[x.id]).length,inh=airdrops.filter(x=>x.inhibitor&&state.airDone[x.id]).length;$("#airCount").textContent=done+"/14";$("#airOpen").textContent=14-done;$("#airTech").textContent=done;$("#airInhib").textContent=inh+"/5";if($("#airDash"))$("#airDash").textContent=done+" / 14";const a=airdrops.filter(x=>airFilter==="all"||(airFilter==="open"&&!state.airDone[x.id])||(airFilter==="done"&&state.airDone[x.id])),g={};a.forEach(x=>(g[x.district]??=[]).push(x));$("#airdropList").innerHTML=Object.entries(g).map(([d,l])=>`<div class="airdistrict"><h3>${d.toUpperCase()}</h3>${l.map(x=>`<label class="aircard ${state.airDone[x.id]?"done":""}"><input type="checkbox" data-air="${x.id}" ${state.airDone[x.id]?"checked":""}><div class="airinfo"><b>${x.id}</b><p>${x.note}</p><span class="airtag">MILITARY TECH</span>${x.inhibitor?'<span class="airtag">HEMMSTOFF</span>':""}</div></label>`).join("")}</div>`).join("");$$("[data-air]").forEach(c=>c.onchange=()=>{state.airDone[c.dataset.air]=c.checked;save();renderAirdrops();updateDashboard()})}
 function areaItems(d){const out=[];inhibitors.filter(x=>x.district===d).forEach(x=>out.push({id:"inh:"+x.id,type:"Hemmstoffe",name:x.name+" ("+(x.count||1)+")",inh:x}));safes.filter(x=>x.district===d||x.district.startsWith(d+" /")||x.district.endsWith("/ "+d)).forEach(x=>out.push({id:"safe:"+x.id,type:"Safe-Codes",name:x.place+" · "+x.code}));return out}
 function itemDone(x){return x.type==="Hemmstoffe"?!!state.found[x.inh.id]:!!state.areaDone[x.id]}
 function districtProgress(d){const a=areaItems(d),done=a.filter(itemDone).length;return {done,total:a.length,pct:a.length?Math.round(done/a.length*100):0}}
