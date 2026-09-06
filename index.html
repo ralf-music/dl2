@@ -14,7 +14,7 @@
 <header class="topbar">
   <div>
     <div class="eyebrow">VILLEDOR FIELD TOOL</div>
-    <h1>DL2 <span>COMPANION</span></h1>
+    <h1>DYING LIGHT 2 <span>COMPANION</span></h1>
   </div>
   <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
 </header>
@@ -40,7 +40,7 @@
 
   <h2>FIELD MODULES</h2>
   <div class="area-summary"><div class="area-summary-top"><div><div class="eyebrow">MEIN SPIELSTAND</div><b id="overallPct">0 % GESAMTFORTSCHRITT</b></div><button class="tinybtn" data-go="areas">GEBIETE</button></div><div class="progress"><i id="overallBar"></i></div><div class="current-area"><span>AKTUELLER BEZIRK</span><strong id="currentAreaName">Houndfield</strong><small id="currentAreaMissing">Noch keine Daten</small></div></div><div class="modulegrid">
-    <button class="module" data-go="gre"><b>GRE-ANOMALIEN</b><small><span id="greDash">0 / 12</span> erledigt</small></button>
+    <button class="module" data-go="quarantine"><b>GRE-QUARANTÄNE</b><small><span id="qDash">0 / 6</span> Gebäude</small></button><button class="module" data-go="ducks"><b>ENTEN & EASTER EGGS</b><small><span id="duckDash">0 / 12</span> gesammelt</small></button><button class="module" data-go="gre"><b>GRE-ANOMALIEN</b><small><span id="greDash">0 / 12</span> erledigt</small></button>
 <button class="module" data-go="airdrops"><b>MILITARY TECH</b><small><span id="airDash">0 / 14</span> Airdrops</small></button><button class="module" data-go="areas"><b>GEBIETE</b><small>Was fehlt mir hier?</small></button><button class="module" data-go="inhibitors"><b>HEMMSTOFFE</b><small>126 Fundstücke · Tracker</small></button>
     <button class="module" data-go="safes"><b>SAFE-CODES</b><small>20 bekannte Codes inkl. DLC</small></button>
     <button class="module" data-go="character"><b>CHARAKTER</b><small>Gesundheit & Ausdauer</small></button>
@@ -51,7 +51,7 @@
   <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe sind getrennt vom Grundspiel. Der detaillierte NG+-Fundorttracker folgt in einer späteren Datenstufe.</span></div>
 </section>
 
-<section id="view-gre" class="view">
+<section id="view-quarantine" class="view"><div class="sectionhead"><div><div class="eyebrow">DARK ZONES</div><h2>GRE-QUARANTÄNE</h2></div><div class="aircount"><b id="qCount">0/6</b><small>ABGESCHLOSSEN</small></div></div><p class="introcopy">6 GRE-Quarantänestationen · jeweils 4 Hemmstoffe in 3 GRE-Kisten (1 + 1 + 2).</p><div class="airhero"><div><span>GEBÄUDE</span><strong id="qBuildings">0/6</strong></div><div><span>HEMMSTOFFE</span><strong id="qInhib">0/24</strong></div><div><span>NOCH OFFEN</span><strong id="qOpen">24</strong></div></div><div id="quarantineList"></div></section><section id="view-ducks" class="view"><div class="sectionhead"><div><div class="eyebrow">GEHEIMNISSE</div><h2>ENTEN & EASTER EGGS</h2></div><div class="aircount"><b id="duckCount">0/12</b><small>GESAMMELT</small></div></div><div class="duck-summary"><div><b>5 SCHWARZE ENTEN</b><span>DOOM-Easter-Egg</span></div><div><b>7 ROTE ENTEN</b><span>Fahrrad-Herausforderung</span></div></div><div id="duckList"></div></section><section id="view-gre" class="view">
 <div class="sectionhead"><div><div class="eyebrow">REVENANT HUNT</div><h2>GRE-ANOMALIEN</h2></div><div class="aircount"><b id="greCount">0/12</b><small>ERLEDIGT</small></div></div>
 <p class="introcopy">GRE-Anomalien erscheinen nachts. Nach dem Revenant die GRE-Kiste im Trailer öffnen: jede Anomalie belohnt dich mit 2 Hemmstoffen.</p>
 <div class="airhero"><div><span>NOCH OFFEN</span><strong id="greOpen">12</strong></div><div><span>HEMMSTOFFE</span><strong id="greInhib">0/24</strong></div><div><span>TROPHÄE</span><strong id="greTrophy">0%</strong></div></div>
@@ -115,7 +115,7 @@
     <label class="primary outline">BACKUP IMPORTIEREN<input id="importFile" type="file" accept=".json,application/json" hidden></label>
     <button class="danger" id="resetBtn">ALLE LOKALEN DATEN LÖSCHEN</button>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion Alpha <b>v0.5.1</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion Alpha <b>v0.6.0</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
 </section>
 </main>
 
@@ -129,5 +129,5 @@
 <div class="modal" id="changelogModal" aria-hidden="true"><div class="modalbox"><div class="modalhead"><div><div class="eyebrow">VERSION HISTORY</div><h2>CHANGELOG</h2></div><button id="closeChangelog">×</button></div><div id="changelogList"></div></div></div>
 <div class="toast" id="toast"></div>
 <script src="js/app.js"></script>
-</body>
+<button id="globalVersion" class="global-version" type="button">v0.6.0</button></body>
 </html>

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "black-1",
+    "type": "black",
+    "label": "Schwarze Ente – Houndfield",
+    "district": "Houndfield",
+    "purpose": "DOOM-Easter-Egg",
+    "youtube": "Dying Light 2 schwarze Ente Houndfield Fundort"
+  },
+  {
+    "id": "black-2",
+    "type": "black",
+    "label": "Schwarze Ente – The Wharf",
+    "district": "The Wharf",
+    "purpose": "DOOM-Easter-Egg",
+    "youtube": "Dying Light 2 schwarze Ente The Wharf Fundort"
+  },
+  {
+    "id": "black-3",
+    "type": "black",
+    "label": "Schwarze Ente – Observatorium",
+    "district": "Observatorium",
+    "purpose": "DOOM-Easter-Egg",
+    "youtube": "Dying Light 2 schwarze Ente Observatorium Fundort"
+  },
+  {
+    "id": "black-4",
+    "type": "black",
+    "label": "Schwarze Ente – Lower Dam Ayre",
+    "district": "Lower Dam Ayre",
+    "purpose": "DOOM-Easter-Egg",
+    "youtube": "Dying Light 2 schwarze Ente Lower Dam Ayre Fundort"
+  },
+  {
+    "id": "black-5",
+    "type": "black",
+    "label": "Schwarze Ente – VNC-Turm",
+    "district": "VNC-Turm",
+    "purpose": "DOOM-Easter-Egg",
+    "youtube": "Dying Light 2 schwarze Ente VNC-Turm Fundort"
+  },
+  {
+    "id": "red-1",
+    "type": "red",
+    "label": "Rote Ente – Verlassenes Haus",
+    "district": "Villedor",
+    "purpose": "Fahrrad-Herausforderung",
+    "youtube": "Dying Light 2 rote Ente Verlassenes Haus Fundort"
+  },
+  {
+    "id": "red-2",
+    "type": "red",
+    "label": "Rote Ente – Laster",
+    "district": "Villedor",
+    "purpose": "Fahrrad-Herausforderung",
+    "youtube": "Dying Light 2 rote Ente Laster Fundort"
+  },
+  {
+    "id": "red-3",
+    "type": "red",
+    "label": "Rote Ente – City-Container",
+    "district": "Villedor",
+    "purpose": "Fahrrad-Herausforderung",
+    "youtube": "Dying Light 2 rote Ente City-Container Fundort"
+  },
+  {
+    "id": "red-4",
+    "type": "red",
+    "label": "Rote Ente – Apartment",
+    "district": "Villedor",
+    "purpose": "Fahrrad-Herausforderung",
+    "youtube": "Dying Light 2 rote Ente Apartment Fundort"
+  },
+  {
+    "id": "red-5",
+    "type": "red",
+    "label": "Rote Ente – Container",
+    "district": "Villedor",
+    "purpose": "Fahrrad-Herausforderung",
+    "youtube": "Dying Light 2 rote Ente Container Fundort"
+  },
+  {
+    "id": "red-6",
+    "type": "red",
+    "label": "Rote Ente – Imbiss",
+    "district": "Villedor",
+    "purpose": "Fahrrad-Herausforderung",
+    "youtube": "Dying Light 2 rote Ente Imbiss Fundort"
+  },
+  {
+    "id": "red-7",
+    "type": "red",
+    "label": "Rote Ente – Nightrunner-Versteck",
+    "district": "Villedor",
+    "purpose": "Fahrrad-Herausforderung",
+    "youtube": "Dying Light 2 rote Ente Nightrunner-Versteck Fundort"
+  }
+]

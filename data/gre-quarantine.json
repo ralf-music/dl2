@@ -1,0 +1,74 @@
+[
+  {
+    "id": "q1",
+    "name": "Zentrum für THV-Studie der Stufe IV",
+    "district": "Houndfield",
+    "rank": 4,
+    "crates": [
+      1,
+      1,
+      2
+    ],
+    "youtube": "Dying Light 2 Zentrum für THV-Studie der Stufe IV Fundort"
+  },
+  {
+    "id": "q2",
+    "name": "THV Genomzentrum",
+    "district": "Horseshoe",
+    "rank": 1,
+    "crates": [
+      1,
+      1,
+      2
+    ],
+    "youtube": "Dying Light 2 THV Genomzentrum Fundort"
+  },
+  {
+    "id": "q3",
+    "name": "GRE-Impfstofflabor",
+    "district": "Downtown",
+    "rank": 2,
+    "crates": [
+      1,
+      1,
+      2
+    ],
+    "youtube": "Dying Light 2 GRE-Impfstofflabor Fundort"
+  },
+  {
+    "id": "q4",
+    "name": "GRE Experimentelle Forschung",
+    "district": "The Wharf",
+    "rank": 3,
+    "crates": [
+      1,
+      1,
+      2
+    ],
+    "youtube": "Dying Light 2 GRE Experimentelle Forschung Fundort"
+  },
+  {
+    "id": "q5",
+    "name": "THV-GenMod-Entwicklungszentrum",
+    "district": "Insel Saint Paul",
+    "rank": 4,
+    "crates": [
+      1,
+      1,
+      2
+    ],
+    "youtube": "Dying Light 2 THV-GenMod-Entwicklungszentrum Fundort"
+  },
+  {
+    "id": "q6",
+    "name": "THV Advanced Care",
+    "district": "Lower Dam Ayre",
+    "rank": 5,
+    "crates": [
+      1,
+      1,
+      2
+    ],
+    "youtube": "Dying Light 2 THV Advanced Care Fundort"
+  }
+]
