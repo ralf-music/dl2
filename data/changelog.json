@@ -1,5 +1,15 @@
 [
   {
+    "version": "0.5.1",
+    "date": "06.09.2026",
+    "changes": [
+      "Backup-Import aktualisiert jetzt alle Companion-Module",
+      "Zentrale renderAll()-Aktualisierung für Start, Import und Reset ergänzt",
+      "Reset setzt jetzt auch Airdrops, GRE-Anomalien und versunkene Airdrops korrekt zurück",
+      "Alte Backups werden beim Import auf die aktuelle Datenstruktur ergänzt"
+    ]
+  },
+  {
     "version": "0.5.0",
     "date": "06.09.2026",
     "changes": [
@@ -41,21 +51,6 @@
       "Safe-Datenbank auf 20 bekannte Codes inkl. Bloody Ties abgeglichen",
       "Versionsnummer ist antippbar und zeigt die letzten fünf Versionen",
       "Charakteranzeige unterscheidet Hemmstoffwert und dokumentiertes Spielmaximum"
-    ]
-  },
-  {
-    "version": "0.1.1",
-    "date": "01.09.2026",
-    "changes": [
-      "Maximalwert-Anzeige für Gesundheit und Ausdauer ergänzt"
-    ]
-  },
-  {
-    "version": "0.1.0",
-    "date": "01.09.2026",
-    "changes": [
-      "Erste Alpha mit Dashboard, Hemmstoffen, Safe-Codes, Charakter und Backup",
-      "PWA-/Offline-Grundlage erstellt"
     ]
   }
 ]
