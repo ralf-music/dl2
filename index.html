@@ -16,7 +16,10 @@
     <div class="eyebrow">VILLEDOR FIELD TOOL</div>
     <h1>DYING LIGHT 2 <span>COMPANION</span></h1>
   </div>
-  <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
+  <div class="top-actions">
+    <button id="globalVersion" class="header-version" type="button">v0.6.1</button>
+    <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
+  </div>
 </header>
 
 <main>
@@ -115,7 +118,7 @@
     <label class="primary outline">BACKUP IMPORTIEREN<input id="importFile" type="file" accept=".json,application/json" hidden></label>
     <button class="danger" id="resetBtn">ALLE LOKALEN DATEN LÖSCHEN</button>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion Alpha <b>v0.6.0</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.6.1</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
 </section>
 </main>
 
@@ -129,5 +132,5 @@
 <div class="modal" id="changelogModal" aria-hidden="true"><div class="modalbox"><div class="modalhead"><div><div class="eyebrow">VERSION HISTORY</div><h2>CHANGELOG</h2></div><button id="closeChangelog">×</button></div><div id="changelogList"></div></div></div>
 <div class="toast" id="toast"></div>
 <script src="js/app.js"></script>
-<button id="globalVersion" class="global-version" type="button">v0.6.0</button></body>
+</body>
 </html>

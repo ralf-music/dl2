@@ -1,5 +1,5 @@
 
-const VERSION="0.6.0";
+const VERSION="0.6.1";
 const KEY="dl2-companion-state-v1";
 const freshState=()=>({health:1,stamina:1,found:{},areaDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -66,7 +66,7 @@ function renderAll(){
   renderDistricts();
   renderCharacter();
   renderSafes();
-  renderFaq();
+  renderFAQ();
   renderBuilds();
   renderChangelog();
   renderAreas();

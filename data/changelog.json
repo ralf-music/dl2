@@ -1,5 +1,15 @@
 [
   {
+    "version": "0.6.1",
+    "date": "06.09.2026",
+    "changes": [
+      "GRE-Quarantänestationen werden wieder korrekt gerendert",
+      "Fehler in zentraler renderAll()-Funktion behoben",
+      "Versionsnummer aus der unteren Navigation in den globalen Header verschoben",
+      "Veraltete Alpha-Bezeichnung im Datenbereich entfernt"
+    ]
+  },
+  {
     "version": "0.6.0",
     "date": "06.09.2026",
     "changes": [
@@ -41,17 +51,6 @@
       "Hemmstoff-Airdrops besonders gekennzeichnet",
       "Filter für alle/offene/erledigte Airdrops ergänzt",
       "Military-Tech-Fortschritt auf dem Dashboard ergänzt"
-    ]
-  },
-  {
-    "version": "0.3.0",
-    "date": "01.09.2026",
-    "changes": [
-      "Gebietsfortschritt ergänzt",
-      "„Was fehlt mir hier?“ pro Bezirk ergänzt",
-      "Dashboard zeigt Gesamtfortschritt und aktuellen Bezirk",
-      "Hemmstoffe und Safe-Codes werden im Bezirks-Tracker zusammengeführt",
-      "Fortschritt wird lokal gespeichert und über Backup mitgesichert"
     ]
   }
 ]
