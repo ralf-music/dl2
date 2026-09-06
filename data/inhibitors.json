@@ -141,7 +141,7 @@
     "id": "inh-018",
     "district": "horseshoe",
     "count": 2,
-    "name": "Gebäude aus The Raid / Water Tower",
+    "name": "Gebäude aus „Der Überfall“ / „Wasserturm“",
     "description": "Obergeschoss.",
     "tags": []
   },
@@ -149,7 +149,7 @@
     "id": "inh-019",
     "district": "horseshoe",
     "count": 2,
-    "name": "Horseshoe Water Tower",
+    "name": "Wasserturm Horseshoe",
     "description": "Auf halber Höhe des Wasserturms.",
     "tags": []
   },
@@ -313,7 +313,7 @@
     "id": "inh-039",
     "district": "garrison",
     "count": 3,
-    "name": "VNC Tower – Broadcast",
+    "name": "VNC-Turm – „Übertragung“",
     "description": "Oben im Treppenhaus während Hauptquest 16.",
     "tags": []
   },
@@ -321,7 +321,7 @@
     "id": "inh-040",
     "district": "garrison",
     "count": 3,
-    "name": "Lawans Apartment – The Shoe",
+    "name": "Lawans Apartment – „Der Schuh“",
     "description": "Während Hauptquest 17.",
     "tags": []
   },
@@ -361,7 +361,7 @@
     "id": "inh-045",
     "district": "new-dawn-park",
     "count": 2,
-    "name": "Gebäude aus Orders",
+    "name": "Gebäude aus „Befehle“",
     "description": "Während Hauptquest 12.",
     "tags": []
   },
@@ -425,7 +425,7 @@
     "id": "inh-053",
     "district": "saint-paul",
     "count": 1,
-    "name": "Metro: Cathedral",
+    "name": "U-Bahn: Kathedrale",
     "description": "Nach Aktivierung im Raum mit Bett und Versteck.",
     "tags": []
   },
@@ -467,8 +467,8 @@
     "id": "inh-058",
     "district": "saint-paul",
     "count": 2,
-    "name": "Saint Paul Cathedral",
-    "description": "Zwischen den Türmen; an Questpfad Cathedral gebunden.",
+    "name": "Kathedrale Saint Paul",
+    "description": "Zwischen den Türmen; an Questpfad „Kathedrale“ gebunden.",
     "tags": []
   },
   {

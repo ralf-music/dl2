@@ -1,18 +1,41 @@
-# DL2 Companion Alpha v0.3.0
+# DL2 Companion v0.7.1
 
-Mobile-first PWA für Dying Light 2.
+Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
-## v0.3.0
-- Gebietsfortschritt und „Was fehlt mir hier?“
-- Gesamtfortschritt auf dem Dashboard
-- Bezirksauswahl und lokaler Fortschritt
+## Aktueller Funktionsumfang
+- Dashboard mit Gesamtfortschritt und aktuellem Bezirk
+- 126 Hemmstoffe des Grundspiels
+- 20 Safe-Codes inklusive Bloody Ties
+- Charakterwerte für Gesundheit und Ausdauer
+- Gebietsfortschritt / „Was fehlt mir hier?“
+- 14 Militär-Airdrops mit Militärtechnologie
+- 12 versunkene Airdrops
+- 12 GRE-Anomalien
+- 6 GRE-Quarantänezonen mit einzelnen GRE-Kisten
+- 5 schwarze und 7 rote Enten / Easter Eggs
+- Build-Empfehlungen
+- FAQ / Wissen
+- YouTube-Fundortsuche bei unterstützten Trackern
+- Lokales JSON-Backup mit Export und Import
+- Geräte-Sync über einmaligen Code (30 Minuten gültig)
+- PWA / Offline-Grundfunktion und localStorage
 
-## v0.2.0
-- FAQ/Wissensbereich
-- Build-Empfehlungen: Nachtläufer, Parkourer, Brawler, Tank, Ranger
-- 20 bekannte Safe-Codes inkl. Bloody Ties abgeglichen
-- Versionsnummer mit Changelog der letzten fünf Versionen
-- Bestehender Hemmstoff-Tracker, Charakterbereich, Backup/Import und Offline-PWA
+## Speicherprinzip
+Änderungen werden automatisch lokal gespeichert. Ein separater Speichern-Button ist nicht nötig. Das lokale JSON-Backup bleibt unabhängig vom Geräte-Sync erhalten. Export, Import und Geräte-Sync verwenden denselben vollständigen Spielstand.
 
-## Hinweis Charakterwerte
-Hemmstoff-Upgrades erhöhen Gesundheit/Ausdauer um jeweils 20. Der reine lineare Hemmstoffwert ausgehend von der im Spiel beobachteten Stufe 5 = 240 ergibt auf Stufe 26 660. Quellen dokumentieren zugleich 700 als Spielmaximum auf Stufe 26; deshalb wird dieser Unterschied nicht künstlich mit einer falschen linearen Formel überschrieben.
+## Sprache
+Missions-, Orts-, Aktivitäts- und Ausrüstungsbezeichnungen orientieren sich an der **deutschen Spielversion**. Begriffe werden nicht zwanghaft übersetzt, wenn das deutsche Spiel selbst die englische Bezeichnung verwendet.
+
+## v0.7.1
+- Autosave-Fehler bei Militär-Airdrops, GRE-Anomalien, versunkenen Airdrops und Gebietsfortschritt behoben
+- Auswahl des aktuellen Bezirks wird wieder zuverlässig gespeichert
+- README vollständig aktualisiert
+- Deutsche Ingame-Bezeichnungen überarbeitet
+- Ausrüstungsklassen auf Raufbold, Sanitäter, Panzer und Jäger korrigiert
+- FAQ deutlich erweitert
+- Lokales Backup und Geräte-Sync bleiben parallel erhalten
+
+## Technik
+HTML / CSS / JavaScript · localStorage · Service Worker / PWA · Cloudflare Worker + KV für temporären Geräte-Sync
+
+Die App ist ein privates Fan-/Hilfsprojekt und kein offizielles Produkt von Techland.

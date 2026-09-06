@@ -13,22 +13,66 @@
   },
   {
     "q": "Wann bekomme ich den Gleitschirm?",
-    "a": "Automatisch in Hauptquest 11 „A Place To Call Home“, kurz nach dem Erreichen des Central Loop. Lawan führt dich in die Benutzung ein."
+    "a": "Automatisch in Hauptquest 11 „Ein Zuhause“, kurz nach dem Erreichen des Zentralring. Lawan führt dich in die Benutzung ein."
   },
   {
     "q": "Wann bekomme ich den Enterhaken?",
-    "a": "Automatisch in Hauptquest 16 „Broadcast“ beim Aufstieg im VNC Tower. Er ist storygebunden und nicht verpassbar."
+    "a": "Automatisch in Hauptquest 16 „Übertragung“ beim Aufstieg im VNC-Turm. Er ist storygebunden und nicht verpassbar."
   },
   {
-    "q": "Wann bekomme ich den GRE-Detector?",
-    "a": "Der GRE-Detector wird im Zusammenhang mit Hauptquest 16 „Broadcast“ freigeschaltet. Aktivierte Funktürme können danach Hemmstoffe in ihrem Abdeckungsbereich auf der Karte sichtbar machen."
+    "q": "Wann bekomme ich den GRE-Detektor?",
+    "a": "Der GRE-Detektor wird im Zusammenhang mit Hauptquest 16 „Übertragung“ freigeschaltet. Aktivierte Funktürme können danach Hemmstoffe in ihrem Abdeckungsbereich auf der Karte sichtbar machen."
   },
   {
-    "q": "Wie finde ich Hemmstoff-Kisten ohne GRE-Detector?",
+    "q": "Wie finde ich Hemmstoff-Kisten ohne GRE-Detektor?",
     "a": "Der GRE-Zugangsschlüssel reagiert bereits vorher auf nahe Hemmstoff-Container. Innerhalb von ungefähr 50 Metern bekommst du akustische Signale und eine Distanzanzeige; in unmittelbarer Nähe hilft der Überlebenssinn bei der Suche."
   },
   {
     "q": "Was sind Legendenstufen?",
     "a": "Legendenstufen sind ein Endgame-Fortschrittssystem nach dem regulären Charakterfortschritt. Sie belohnen weiteres Spielen mit zusätzlichen langfristigen Verbesserungen und sind vom normalen Gesundheit-/Ausdauer-Upgrade über Hemmstoffe getrennt."
+  },
+  {
+    "q": "Kraft oder Ausdauer: Was sollte ich mit Hemmstoffen verbessern?",
+    "a": "Für den normalen Spielverlauf ist es meist sinnvoll, zunächst Ausdauer zu priorisieren. Sie hilft beim Klettern, Parkour, Gleitschirmfliegen und im Kampf. Gesundheit lässt sich dagegen durch verschiedene Heilungsmöglichkeiten besser kompensieren. Als praktische Orientierung kann Gesundheit auf etwa Stufe 8–10 lange ausreichen, solange du Kämpfe damit gut überstehst. Wirst du zu schnell ausgeschaltet, ziehst du Gesundheit entsprechend früher nach."
+  },
+  {
+    "q": "Woher bekomme ich Militärtechnologie?",
+    "a": "Militärtechnologie findest du in den 14 Militär-Airdrops über der Erde. Jeder dieser Airdrops liefert Militärtechnologie. Die 12 versunkenen Airdrops enthalten dagegen keine Militärtechnologie. Nutze dafür den Militär-Airdrop-Tracker im DL2 Companion."
+  },
+  {
+    "q": "Wofür brauche ich Militärtechnologie?",
+    "a": "Militärtechnologie wird zum Verbessern deiner Nightrunner-Werkzeuge benötigt, unter anderem für Gleitschirm, Wurfhaken und UV-Taschenlampe. Deshalb lohnt es sich, die Militär-Airdrops früh mitzunehmen, sobald du sie sicher erreichen kannst."
+  },
+  {
+    "q": "Kann ich Waffen reparieren und sind sie unbegrenzt reparierbar?",
+    "a": "Ja. Das heutige Dying Light 2 besitzt ein reguläres Waffenreparatursystem. Reparierbare Waffen kannst du beim Handwerksmeister gegen Herstellungsressourcen und Geld reparieren. Gute Waffen musst du daher nicht mehr nur für besondere Situationen im Versteck aufheben. Solange die Waffe vom Reparatursystem unterstützt wird und du die Kosten bezahlen kannst, kannst du sie wiederholt reparieren."
+  },
+  {
+    "q": "Was bedeuten die Ausrüstungsklassen?",
+    "a": "Die deutsche Spielversion unterscheidet Raufbold, Sanitäter, Panzer und Jäger. Raufbold unterstützt vor allem einhändige Waffen, Sanitäter Parkourkampf und Heilung, Panzer zweihändige Waffen und Widerstandsfähigkeit und Jäger Fernkampf sowie eine eher verdeckte Spielweise. Entscheidend bleiben aber die tatsächlichen Boni des einzelnen Ausrüstungsteils – der Klassenname allein macht einen Gegenstand nicht automatisch besser."
+  },
+  {
+    "q": "Wie bekomme ich Feuerwaffen?",
+    "a": "Feuerwaffen wurden nachträglich ins Spiel integriert. Folge der Quest „Die verschollene Waffenkammer“ und triff Jai, den Wächter. Darüber wird das Feuerwaffen-System eingeführt und du erhältst Zugang zu weiteren entsprechenden Inhalten und Belohnungen."
+  },
+  {
+    "q": "Peacekeeper oder Überlebende: Wem sollte ich Einrichtungen zuweisen?",
+    "a": "Wassertürme und Stromwerke kannst du den Peacekeepern oder den Überlebenden zuweisen. Dadurch schaltest du unterschiedliche Stadt-Boni frei. Wer gezielt die Peacekeeper-Armbrust möchte, sollte die dafür nötigen Peacekeeper-Zuweisungen im Blick behalten. Für Trophäenjäger ist die Verteilung ebenfalls wichtig: Bestimmte Trophäen können im aktuellen Durchlauf verpasst werden, wenn Einrichtungen ungünstig zwischen beiden Fraktionen verteilt werden. Stadtausrichtung und Storyentscheidungen sind dabei nicht exakt dasselbe System."
+  },
+  {
+    "q": "Muss ich Militärkonvois, verlassene Läden und ähnliche Orte alle abarbeiten?",
+    "a": "Nein. Im normalen Hauptspiel sind verschiedene Beuteorte und Aktivitäten wiederholbar bzw. werden erneut mit Beute oder Gegnern bestückt. Dazu gehören beispielsweise Konvois und bestimmte dunkle Beuteorte. Versuche deshalb nicht, am Anfang jedes wiederholbare Kartensymbol für vermeintliche 100 % dauerhaft abzuhaken. Konzentriere dich für den dauerhaften Fortschritt auf tatsächlich abschließbare Aktivitäten und Sammelobjekte."
+  },
+  {
+    "q": "Wie bereite ich mich auf häufige Nacht-Ausflüge vor?",
+    "a": "Schalte unterwegs möglichst viele sichere Orte mit UV-Licht frei. Bei einer Jagd – besonders wenn Schattenjäger hinter dir her sind – ist ein naher UV-geschützter Rückzugsort enorm hilfreich. Je dichter dein Netz aus sicheren Orten ist, desto weniger musst du nachts im Notfall quer durch einen halben Bezirk fliehen."
+  },
+  {
+    "q": "Sollte ich U-Bahn-/Metrostationen früh freischalten?",
+    "a": "Ja. Räume U-Bahn-/Metrostationen möglichst früh frei, am besten nachts, wenn sich viele Infizierte außerhalb der dunklen Innenbereiche aufhalten. Aktivierte Stationen dienen als Schnellreisepunkte. Ein früh aufgebautes Schnellreisenetz spart später viel Zeit, wenn du gezielt Hemmstoffe, Airdrops, Safes oder andere Aktivitäten suchst."
+  },
+  {
+    "q": "Können Dialogentscheidungen dauerhafte Folgen haben?",
+    "a": "Ja. Wichtige Dialogentscheidungen können Questverläufe verändern und teilweise sogar darüber entscheiden, ob Charaktere leben oder sterben. Auch Neben- und Zusatzquests können durch bestimmte Entscheidungen oder eine zu weit fortgeschrittene Hauptstory nicht mehr verfügbar sein. Der DL2 Companion hält diesen Hinweis bewusst spoilerfrei: Bei offensichtlich wichtigen Entscheidungen solltest du Antworten nicht gedankenlos wegklicken."
   }
 ]

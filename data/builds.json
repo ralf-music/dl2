@@ -3,7 +3,7 @@
     "id": "night",
     "name": "NACHTLÄUFER",
     "subtitle": "Nacht & Dark Zones",
-    "class": "Ranger / situationsabhängig",
+    "class": "Jäger / situationsabhängig",
     "goal": "Lange außerhalb von UV-Licht bleiben, unentdeckt plündern und Kämpfe vermeiden.",
     "priorities": [
       "Erkennungszeit durch Gegner verlängern",
@@ -22,7 +22,7 @@
     "id": "parkour",
     "name": "PARKOURER",
     "subtitle": "Erkundung & Bewegung",
-    "class": "Medic",
+    "class": "Sanitäter",
     "goal": "Möglichst lange klettern, laufen und Parkour-Aktionen einsetzen.",
     "priorities": [
       "Parkour-Ausdauerverbrauch reduzieren",
@@ -35,13 +35,13 @@
       "Enterhaken",
       "Ausdauer-Booster"
     ],
-    "note": "Medic-Gear passt am saubersten zu Parkour und Heilung."
+    "note": "Sanitäter-Gear passt am saubersten zu Parkour und Heilung."
   },
   {
     "id": "brawler",
     "name": "BRAWLER",
     "subtitle": "Einhand-Nahkampf",
-    "class": "Brawler",
+    "class": "Raufbold",
     "goal": "Hoher Schaden mit Einhandwaffen bei kontrollierbarem Ausdauerverbrauch.",
     "priorities": [
       "Schaden mit Einhandwaffen",
@@ -54,13 +54,13 @@
       "Schwerter",
       "Einhandäxte"
     ],
-    "note": "Für einen klassischen aggressiven Einhand-Build ist Brawler die naheliegendste Gear-Klasse."
+    "note": "Für einen klassischen aggressiven Einhand-Build ist Raufbold die naheliegendste Gear-Klasse."
   },
   {
     "id": "tank",
     "name": "TANK",
     "subtitle": "Schwere Kämpfe",
-    "class": "Tank",
+    "class": "Panzer",
     "goal": "Treffer aushalten und mit Zweihandwaffen hohen Einzelschaden verursachen.",
     "priorities": [
       "Schaden mit Zweihandwaffen",
@@ -79,7 +79,7 @@
     "id": "ranger",
     "name": "RANGER",
     "subtitle": "Fernkampf & Schleichen",
-    "class": "Ranger",
+    "class": "Jäger",
     "goal": "Gegner auf Distanz oder möglichst unbemerkt ausschalten.",
     "priorities": [
       "Fernkampfschaden",
@@ -92,6 +92,6 @@
       "Armbrust, falls im Spielstand verfügbar",
       "Wurfmesser"
     ],
-    "note": "Ranger ist die klarste Grundlage für Stealth und Fernkampf."
+    "note": "Jäger ist die klarste Grundlage für Stealth und Fernkampf."
   }
 ]

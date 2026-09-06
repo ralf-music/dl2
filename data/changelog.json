@@ -1,5 +1,16 @@
 [
   {
+    "version": "0.7.1",
+    "date": "06.09.2026",
+    "changes": [
+      "Autosave bei Airdrops, GRE-Anomalien, versunkenen Airdrops und Gebietsfortschritt repariert",
+      "Aktueller Bezirk wird wieder zuverlässig gespeichert",
+      "README vollständig aktualisiert",
+      "Deutsche Ingame-Bezeichnungen und Ausrüstungsklassen überarbeitet",
+      "FAQ um wichtige Einsteiger-, Fortschritts- und Entscheidungs-Hinweise erweitert"
+    ]
+  },
+  {
     "version": "0.7.0",
     "date": "06.09.2026",
     "changes": [
@@ -40,17 +51,6 @@
       "Zentrale renderAll()-Aktualisierung für Start, Import und Reset ergänzt",
       "Reset setzt jetzt auch Airdrops, GRE-Anomalien und versunkene Airdrops korrekt zurück",
       "Alte Backups werden beim Import auf die aktuelle Datenstruktur ergänzt"
-    ]
-  },
-  {
-    "version": "0.5.0",
-    "date": "06.09.2026",
-    "changes": [
-      "GRE-Anomalien-Tracker mit allen 12 Revenants ergänzt",
-      "Jede GRE-Anomalie zeigt die Belohnung von 2 Hemmstoffen",
-      "Abgehakte GRE-Anomalien synchronisieren den zugehörigen Hemmstoff-Fund",
-      "12 versunkene Airdrops ohne Military Tech separat ergänzt",
-      "Airdrops sind nun klar in Military Tech und versunkene Loot-Kisten getrennt"
     ]
   }
 ]
