@@ -17,7 +17,7 @@
     <h1>DYING LIGHT 2 <span>COMPANION</span></h1>
   </div>
   <div class="top-actions">
-    <button id="globalVersion" class="header-version" type="button">v0.6.1</button>
+    <button id="globalVersion" class="header-version" type="button">v0.7.0</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -113,12 +113,30 @@
 <section id="view-backup" class="view">
   <div class="sectionhead"><div><div class="eyebrow">LOCAL STORAGE</div><h2>DATEN</h2></div></div>
   <div class="backupcard">
-    <h3>Fortschritt sichern</h3><p>Alle Häkchen und Charakterstufen liegen nur lokal auf diesem Gerät.</p>
+    <h3>Lokales Backup</h3><p>Export und Import bleiben als unabhängige Sicherung erhalten. Gesichert wird der komplette aktuelle Companion-Fortschritt.</p>
     <button class="primary" id="exportBtn">BACKUP EXPORTIEREN</button>
     <label class="primary outline">BACKUP IMPORTIEREN<input id="importFile" type="file" accept=".json,application/json" hidden></label>
     <button class="danger" id="resetBtn">ALLE LOKALEN DATEN LÖSCHEN</button>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.6.1</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
+  <div class="backupcard synccard">
+    <div class="eyebrow">CLOUD TRANSFER</div>
+    <h3>Geräte-Sync</h3>
+    <p>Übertrage deinen aktuellen Stand einmalig auf ein anderes Gerät. Der Code ist 30 Minuten gültig und wird nach erfolgreichem Abruf gelöscht.</p>
+    <button class="primary" id="syncCreateBtn">SYNC-CODE ERSTELLEN</button>
+    <div id="syncCodeBox" class="sync-code-box" hidden>
+      <small>DEIN SYNC-CODE</small>
+      <strong id="syncCode">----</strong>
+      <span id="syncExpiry">30 Minuten gültig</span>
+      <button class="primary outline compact" id="syncCopyBtn">CODE KOPIEREN</button>
+    </div>
+    <div class="sync-redeem">
+      <label for="syncInput">Code von anderem Gerät</label>
+      <input id="syncInput" class="search sync-input" maxlength="9" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABCD-1234">
+      <button class="primary outline" id="syncRedeemBtn">SYNC-CODE EINLÖSEN</button>
+    </div>
+    <div id="syncStatus" class="sync-status" aria-live="polite"></div>
+  </div>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.7.0</b><br><span>Datenstand: 01.09.2026 · Changelog öffnen</span></button>
 </section>
 </main>
 

@@ -1,5 +1,16 @@
 [
   {
+    "version": "0.7.0",
+    "date": "06.09.2026",
+    "changes": [
+      "Geräte-Sync per einmaligem 8-stelligem Code ergänzt",
+      "Sync-Codes sind 30 Minuten gültig und werden nach erfolgreichem Abruf gelöscht",
+      "Lokales JSON-Backup bleibt vollständig erhalten",
+      "Backup, Import und Cloud-Sync verwenden jetzt dieselbe zentrale Datenstruktur",
+      "Vor dem Einlösen eines Sync-Codes wird das Überschreiben des lokalen Stands bestätigt"
+    ]
+  },
+  {
     "version": "0.6.1",
     "date": "06.09.2026",
     "changes": [
@@ -40,17 +51,6 @@
       "Abgehakte GRE-Anomalien synchronisieren den zugehörigen Hemmstoff-Fund",
       "12 versunkene Airdrops ohne Military Tech separat ergänzt",
       "Airdrops sind nun klar in Military Tech und versunkene Loot-Kisten getrennt"
-    ]
-  },
-  {
-    "version": "0.4.0",
-    "date": "06.09.2026",
-    "changes": [
-      "Military-Tech-Tracker mit allen 14 oberirdischen Airdrops ergänzt",
-      "Airdrops nach Bezirk sortiert und einzeln abhackbar",
-      "Hemmstoff-Airdrops besonders gekennzeichnet",
-      "Filter für alle/offene/erledigte Airdrops ergänzt",
-      "Military-Tech-Fortschritt auf dem Dashboard ergänzt"
     ]
   }
 ]

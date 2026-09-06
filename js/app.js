@@ -1,6 +1,7 @@
 
-const VERSION="0.6.1";
+const VERSION="0.7.0";
 const KEY="dl2-companion-state-v1";
+const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const freshState=()=>({health:1,stamina:1,found:{},areaDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function normalizeState(s={}){return {...freshState(),...s,found:s.found||{},areaDone:s.areaDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{}}} function loadState(){try{state=normalizeState(JSON.parse(localStorage.getItem(KEY)||"{}"))}catch{state=freshState()}}
@@ -23,6 +24,8 @@ $$("[data-sunkenfilter]").forEach(b=>b.onclick=()=>{sunkenFilter=b.dataset.sunke
  $("#healthRange").oninput=e=>{state.health=+e.target.value;saveState();renderCharacter()};
  $("#staminaRange").oninput=e=>{state.stamina=+e.target.value;saveState();renderCharacter()};
  $("#exportBtn").onclick=exportData; $("#importFile").onchange=importData;
+ $("#syncCreateBtn").onclick=createSyncCode; $("#syncRedeemBtn").onclick=redeemSyncCode; $("#syncCopyBtn").onclick=copySyncCode;
+ $("#syncInput").oninput=e=>{let v=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,8);e.target.value=v.length>4?v.slice(0,4)+"-"+v.slice(4):v};
  $("#resetBtn").onclick=()=>{if(confirm("Wirklich alle lokalen DL2-Companion-Daten löschen?")){localStorage.removeItem(KEY);state=freshState();saveState();renderAll();toast("Lokale Daten gelöscht")}};
 }
 function foundCount(){return inhibitors.reduce((a,x)=>a+(state.found[x.id]?x.count:0),0)}
@@ -112,12 +115,52 @@ function renderCharacter(){
  html+=`<div class="levelrow"><span colspan="3">* kumulativer Bonus durch Hemmstoff-Upgrades; angezeigte Spielwerte können zusätzlich durch Spielerrang beeinflusst werden.</span><span></span><span></span></div>`;
  $("#levelTable").innerHTML=html;
 }
+function backupPayload(){
+ return {app:"DL2 Companion",version:VERSION,exported:new Date().toISOString(),state};
+}
 function exportData(){
- const blob=new Blob([JSON.stringify({app:"DL2 Companion",version:VERSION,exported:new Date().toISOString(),state},null,2)],{type:"application/json"});
+ const blob=new Blob([JSON.stringify(backupPayload(),null,2)],{type:"application/json"});
  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`dl2-companion-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);toast("Backup erstellt")
 }
+function applyImportedState(raw){
+ const incoming=raw?.state ?? raw;
+ if(!incoming || typeof incoming!=="object")throw new Error("invalid");
+ state=normalizeState(incoming);saveState();renderAll();
+}
 function importData(e){
- const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.state)throw 0;state=d.state;saveState();renderDistricts();renderCharacter();toast("Backup importiert")}catch{toast("Ungültiges Backup")}};r.readAsText(f);e.target.value=""
+ const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);applyImportedState(d);toast("Backup importiert")}catch{toast("Ungültiges Backup")}};r.readAsText(f);e.target.value=""
+}
+function setSyncStatus(text,type=""){
+ const el=$("#syncStatus"); if(!el)return; el.textContent=text; el.className="sync-status"+(type?" "+type:"");
+}
+async function createSyncCode(){
+ const btn=$("#syncCreateBtn");btn.disabled=true;setSyncStatus("Sync-Code wird erstellt …");
+ try{
+  const res=await fetch(SYNC_API+"/create",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(backupPayload())});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok||!data.ok)throw new Error(data.error||"Sync-Code konnte nicht erstellt werden.");
+  $("#syncCode").textContent=data.code;$("#syncExpiry").textContent=`${data.expiresInMinutes||30} Minuten gültig`;
+  $("#syncCodeBox").hidden=false;setSyncStatus("Code erstellt. Auf dem anderen Gerät unter Daten einlösen.","ok");
+ }catch(err){setSyncStatus(err.message||"Cloud-Sync nicht erreichbar.","error")}
+ finally{btn.disabled=false}
+}
+async function copySyncCode(){
+ const code=$("#syncCode").textContent.trim();if(!code||code==="----")return;
+ try{await navigator.clipboard.writeText(code);setSyncStatus("Sync-Code kopiert.","ok")}
+ catch{setSyncStatus("Kopieren nicht möglich. Code bitte manuell übernehmen.","error")}
+}
+async function redeemSyncCode(){
+ const input=$("#syncInput"),code=input.value.trim().toUpperCase();
+ if(!/^[A-Z0-9]{4}-[A-Z0-9]{4}$/.test(code)){setSyncStatus("Bitte einen gültigen Code im Format ABCD-1234 eingeben.","error");return}
+ if(!confirm("Lokalen DL2-Companion-Stand durch den Sync-Stand ersetzen? Ein gültiger Code wird nach erfolgreichem Abruf verbraucht."))return;
+ const btn=$("#syncRedeemBtn");btn.disabled=true;setSyncStatus("Sync-Code wird eingelöst …");
+ try{
+  const res=await fetch(SYNC_API+"/redeem",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({code})});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok||!data.ok)throw new Error(data.error||"Sync-Code konnte nicht eingelöst werden.");
+  applyImportedState(data.state);input.value="";setSyncStatus("Spielstand erfolgreich übernommen. Der Sync-Code ist jetzt ungültig.","ok");toast("Sync übernommen");
+ }catch(err){setSyncStatus(err.message||"Cloud-Sync nicht erreichbar.","error")}
+ finally{btn.disabled=false}
 }
 let deferredPrompt;
 function setupPWA(){
