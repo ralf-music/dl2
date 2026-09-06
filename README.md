@@ -1,4 +1,4 @@
-# DL2 Companion v0.7.1
+# DL2 Companion v0.7.3
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
@@ -25,6 +25,16 @@ Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortsch
 
 ## Sprache
 Missions-, Orts-, Aktivitäts- und Ausrüstungsbezeichnungen orientieren sich an der **deutschen Spielversion**. Begriffe werden nicht zwanghaft übersetzt, wenn das deutsche Spiel selbst die englische Bezeichnung verwendet.
+
+## v0.7.3
+- YouTube-Fundortsuche für Hemmstoffe, Safe-Codes, Militär-Airdrops und GRE-Anomalien ergänzt
+- Suchbegriffe werden dynamisch aus den vorhandenen Fundortdaten erzeugt
+- Metro-FAQ um den Hemmstoff nach der Aktivierung ergänzt
+
+## v0.7.2
+- Startseite zeigt jetzt den gesamten Companion-Fortschritt
+- Dauerhaft trackbare Inhalte werden gemeinsam berechnet
+- Wiederholbare Aktivitäten zählen bewusst nicht zum Fortschritt
 
 ## v0.7.1
 - Autosave-Fehler bei Militär-Airdrops, GRE-Anomalien, versunkenen Airdrops und Gebietsfortschritt behoben

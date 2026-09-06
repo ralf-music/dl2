@@ -1,5 +1,26 @@
 [
   {
+    "version": "0.7.3",
+    "date": "07.09.2026",
+    "changes": [
+      "YouTube-Fundortsuche bei Hemmstoffen ergänzt",
+      "YouTube-Fundortsuche bei Safe-Codes ergänzt",
+      "YouTube-Fundortsuche bei Militär-Airdrops ergänzt",
+      "YouTube-Fundortsuche bei GRE-Anomalien ergänzt",
+      "Metro-FAQ um sicheren Bereich und Hemmstoff nach Aktivierung ergänzt"
+    ]
+  },
+  {
+    "version": "0.7.2",
+    "date": "07.09.2026",
+    "changes": [
+      "Startseiten-Fortschritt auf Companion-Fortschritt umgestellt",
+      "Alle derzeit dauerhaft trackbaren Inhalte fließen gemeinsam in die Berechnung ein",
+      "Erledigte und insgesamt trackbare Einträge werden zusätzlich angezeigt",
+      "Wiederholbare Aktivitäten bleiben bewusst außerhalb der Fortschrittsberechnung"
+    ]
+  },
+  {
     "version": "0.7.1",
     "date": "06.09.2026",
     "changes": [
@@ -29,28 +50,6 @@
       "Fehler in zentraler renderAll()-Funktion behoben",
       "Versionsnummer aus der unteren Navigation in den globalen Header verschoben",
       "Veraltete Alpha-Bezeichnung im Datenbereich entfernt"
-    ]
-  },
-  {
-    "version": "0.6.0",
-    "date": "06.09.2026",
-    "changes": [
-      "GRE-Quarantänestationen ergänzt",
-      "Enten/Easter-Egg-Tracker ergänzt",
-      "YouTube-Suche für neue Fundort-Tracker eingeführt",
-      "Startseite: DYING LIGHT 2 COMPANION",
-      "Alpha-Bezeichnung entfernt",
-      "Versionsnummer global sichtbar gemacht"
-    ]
-  },
-  {
-    "version": "0.5.1",
-    "date": "06.09.2026",
-    "changes": [
-      "Backup-Import aktualisiert jetzt alle Companion-Module",
-      "Zentrale renderAll()-Aktualisierung für Start, Import und Reset ergänzt",
-      "Reset setzt jetzt auch Airdrops, GRE-Anomalien und versunkene Airdrops korrekt zurück",
-      "Alte Backups werden beim Import auf die aktuelle Datenstruktur ergänzt"
     ]
   }
 ]
