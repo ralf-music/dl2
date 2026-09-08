@@ -27,48 +27,48 @@
     "id": "downtown",
     "name": "Downtown",
     "count": 14,
-    "region": "Central Loop"
+    "region": "Zentralring"
   },
   {
     "id": "garrison",
     "name": "Garrison",
     "count": 20,
-    "region": "Central Loop"
+    "region": "Zentralring"
   },
   {
     "id": "new-dawn-park",
     "name": "New Dawn Park",
     "count": 4,
-    "region": "Central Loop"
+    "region": "Zentralring"
   },
   {
     "id": "the-wharf",
     "name": "The Wharf",
     "count": 8,
-    "region": "Central Loop"
+    "region": "Zentralring"
   },
   {
     "id": "muddy-grounds",
     "name": "Muddy Grounds",
     "count": 2,
-    "region": "Central Loop"
+    "region": "Zentralring"
   },
   {
     "id": "saint-paul",
     "name": "Saint Paul Island",
     "count": 12,
-    "region": "Central Loop"
+    "region": "Zentralring"
   },
   {
     "id": "lower-dam-ayre",
     "name": "Lower Dam Ayre",
     "count": 15,
-    "region": "Central Loop"
+    "region": "Zentralring"
   },
   {
     "id": "newfound-lost-lands",
     "name": "Newfound Lost Lands",
     "count": 8,
-    "region": "Central Loop"
+    "region": "Zentralring"
   }
 ]

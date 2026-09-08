@@ -3,17 +3,19 @@
     "id": "inh-001",
     "district": "houndfield",
     "count": 3,
-    "name": "Markers of Plague",
+    "name": "Marker der Pest",
     "description": "Automatisch während der Hauptquest.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Markers of Plague"
   },
   {
     "id": "inh-002",
     "district": "houndfield",
     "count": 4,
-    "name": "Center for Stage IV THV Study",
+    "name": "Zentrum für THV-Studie der Stufe IV",
     "description": "GRE-Quarantänegebäude; drei Kisten.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Center for Stage IV THV Study"
   },
   {
     "id": "inh-003",
@@ -53,17 +55,19 @@
     "id": "inh-007",
     "district": "houndfield",
     "count": 1,
-    "name": "Bei Houndfield Electrical Station",
+    "name": "Beim Houndfield-Stromwerk",
     "description": "Unter Wasser.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Houndfield Electrical Station"
   },
   {
     "id": "inh-008",
     "district": "houndfield",
     "count": 1,
-    "name": "Military Airdrop THB-04B",
-    "description": "Auf dem Dach des Saint Joseph Hospital.",
-    "tags": []
+    "name": "Militär-Airdrop THB-04B",
+    "description": "Auf dem Dach des Saint-Joseph-Krankenhaus.",
+    "tags": [],
+    "searchAlias": "Military Airdrop THB-04B"
   },
   {
     "id": "inh-009",
@@ -77,9 +81,10 @@
     "id": "inh-010",
     "district": "trinity",
     "count": 1,
-    "name": "The First Biomarker",
+    "name": "Der erste Biomarker",
     "description": "Belohnung der Nebenquest.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "The First Biomarker"
   },
   {
     "id": "inh-011",
@@ -101,41 +106,45 @@
     "id": "inh-013",
     "district": "trinity",
     "count": 3,
-    "name": "Apartment zwischen Forsaken Store und Dark Hollow",
+    "name": "Apartment zwischen Verlassenem Laden und Dunkler Höhle",
     "description": "Drei Hemmstoffe.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Apartment Forsaken Store Dark Hollow"
   },
   {
     "id": "inh-014",
     "district": "trinity",
     "count": 1,
-    "name": "Dark Hollow / All in the Family",
-    "description": "Im Dark Hollow.",
-    "tags": []
+    "name": "Dunkle Höhle / Alles in der Familie",
+    "description": "In der Dunklen Höhle.",
+    "tags": [],
+    "searchAlias": "Dark Hollow All in the Family"
   },
   {
     "id": "inh-015",
     "district": "trinity",
     "count": 3,
     "name": "Albertos Versteck",
-    "description": "Story-/Fraktionsabhängig; während Revolution als Survivors zugänglich.",
+    "description": "Story-/fraktionsabhängig; während „Revolution“ auf dem Überlebenden-Pfad zugänglich.",
     "tags": []
   },
   {
     "id": "inh-016",
     "district": "horseshoe",
     "count": 4,
-    "name": "THV Genomics Center",
+    "name": "THV Genomzentrum",
     "description": "GRE-Quarantänegebäude; drei Kisten.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "THV Genomics Center"
   },
   {
     "id": "inh-017",
     "district": "horseshoe",
     "count": 2,
-    "name": "Gebäude aus The Only Way Out",
+    "name": "Gebäude aus „Der einzige Ausweg“",
     "description": "Während/bei Hauptquest 4 erreichbar.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "The Only Way Out"
   },
   {
     "id": "inh-018",
@@ -157,9 +166,10 @@
     "id": "inh-020",
     "district": "quarry-end",
     "count": 3,
-    "name": "Getting Stronger",
+    "name": "Stärker werden",
     "description": "Automatisch während der Hauptstory.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Getting Stronger"
   },
   {
     "id": "inh-021",
@@ -181,9 +191,10 @@
     "id": "inh-023",
     "district": "downtown",
     "count": 2,
-    "name": "Downtown Electrical Station",
+    "name": "Downtown-Stromwerk",
     "description": "Im Raum der Stromaktivierung.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Downtown Electrical Station"
   },
   {
     "id": "inh-024",
@@ -205,9 +216,10 @@
     "id": "inh-026",
     "district": "downtown",
     "count": 4,
-    "name": "GRE Vaccine Lab",
+    "name": "GRE-Impflabor",
     "description": "GRE-Quarantänegebäude; drei Kisten.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "GRE Vaccine Lab"
   },
   {
     "id": "inh-027",
@@ -231,9 +243,10 @@
     "id": "inh-029",
     "district": "downtown",
     "count": 1,
-    "name": "Military Airdrop THB-1L0",
+    "name": "Militär-Airdrop THB-1L0",
     "description": "Auf dem Dach des Banditenlagers.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Military Airdrop THB-1L0"
   },
   {
     "id": "inh-030",
@@ -247,9 +260,10 @@
     "id": "inh-031",
     "district": "garrison",
     "count": 1,
-    "name": "Metro: VNC Tower",
+    "name": "U-Bahn: VNC-Turm",
     "description": "Nach Aktivierung im Raum mit Bett und Versteck.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Metro VNC Tower"
   },
   {
     "id": "inh-032",
@@ -287,19 +301,21 @@
     "id": "inh-036",
     "district": "garrison",
     "count": 1,
-    "name": "Dark Hollow mit Chemikalien",
+    "name": "Dunkle Höhle mit Chemikalien",
     "description": "Im Inneren.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Dark Hollow"
   },
   {
     "id": "inh-037",
     "district": "garrison",
     "count": 1,
-    "name": "Garrison Electrical Station – Safe",
+    "name": "Garnisonsstromwerk – Safe",
     "description": "Nebenraum mit C-Kabel. Safe-Code 3-1-4.",
     "tags": [
       "safe"
-    ]
+    ],
+    "searchAlias": "Garrison Electrical Station Safe"
   },
   {
     "id": "inh-038",
@@ -329,33 +345,37 @@
     "id": "inh-041",
     "district": "garrison",
     "count": 1,
-    "name": "Büro unter Nightrunner-Versteck am VNC Tower",
+    "name": "Büro unter Nightrunner-Versteck am VNC-Turm",
     "description": "Vom Dach/Träger nach unten fallen lassen.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "VNC Tower Nightrunner Hideout"
   },
   {
     "id": "inh-042",
     "district": "garrison",
     "count": 1,
-    "name": "Military Airdrop THB-UT0",
-    "description": "Vom VNC-Tower-Dach per Gleitschirm erreichbar.",
-    "tags": []
+    "name": "Militär-Airdrop THB-UT0",
+    "description": "Vom VNC-Turm-Dach per Gleitschirm erreichbar.",
+    "tags": [],
+    "searchAlias": "Military Airdrop THB-UT0"
   },
   {
     "id": "inh-043",
     "district": "garrison",
     "count": 1,
-    "name": "Military Airdrop THB-NW4",
-    "description": "Vom VNC-Tower-Dach per Gleitschirm erreichbar.",
-    "tags": []
+    "name": "Militär-Airdrop THB-NW4",
+    "description": "Vom VNC-Turm-Dach per Gleitschirm erreichbar.",
+    "tags": [],
+    "searchAlias": "Military Airdrop THB-NW4"
   },
   {
     "id": "inh-044",
     "district": "new-dawn-park",
     "count": 1,
-    "name": "Metro: Newalls Crossing",
+    "name": "U-Bahn: Newalls Crossing",
     "description": "Nach Aktivierung im Raum mit Bett und Versteck.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Metro Newalls Crossing"
   },
   {
     "id": "inh-045",
@@ -377,9 +397,10 @@
     "id": "inh-047",
     "district": "the-wharf",
     "count": 1,
-    "name": "Metro: Waterside",
+    "name": "U-Bahn: Waterside",
     "description": "Nach Aktivierung im Raum mit Bett und Versteck.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Metro Waterside"
   },
   {
     "id": "inh-048",
@@ -393,25 +414,28 @@
     "id": "inh-049",
     "district": "the-wharf",
     "count": 4,
-    "name": "GRE Experimental Research",
+    "name": "Experimentelle GRE-Forschung",
     "description": "GRE-Quarantänegebäude; drei Kisten.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "GRE Experimental Research"
   },
   {
     "id": "inh-050",
     "district": "the-wharf",
     "count": 1,
-    "name": "North Loop Radio Tower",
+    "name": "Funkturm Nordschleife",
     "description": "Auf halber Höhe; Story-Fortschritt beachten.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "North Loop Radio Tower"
   },
   {
     "id": "inh-051",
     "district": "muddy-grounds",
     "count": 1,
-    "name": "Metro: King William Bridge",
+    "name": "U-Bahn: King William Bridge",
     "description": "Nach Aktivierung im Raum mit Bett und Versteck.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Metro King William Bridge"
   },
   {
     "id": "inh-052",
@@ -433,9 +457,10 @@
     "id": "inh-054",
     "district": "saint-paul",
     "count": 1,
-    "name": "Saint Paul Electrical Station",
+    "name": "Saint-Paul-Stromwerk",
     "description": "Unter Wasser hinter Tür B.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Saint Paul Electrical Station"
   },
   {
     "id": "inh-055",
@@ -457,11 +482,12 @@
     "id": "inh-057",
     "district": "saint-paul",
     "count": 1,
-    "name": "Church of Saint Thomas the Apostle",
+    "name": "Kirche des Apostels Thomas",
     "description": "Safe im Glockenturm. Code 4-4-4.",
     "tags": [
       "safe"
-    ]
+    ],
+    "searchAlias": "Church of Saint Thomas the Apostle"
   },
   {
     "id": "inh-058",
@@ -475,19 +501,21 @@
     "id": "inh-059",
     "district": "saint-paul",
     "count": 1,
-    "name": "Dark Hollow – Safe",
+    "name": "Dunkle Höhle – Safe",
     "description": "Safe-Code 9-8-7; wird nicht normal auf der Karte angezeigt.",
     "tags": [
       "safe"
-    ]
+    ],
+    "searchAlias": "Dark Hollow Safe"
   },
   {
     "id": "inh-060",
     "district": "lower-dam-ayre",
     "count": 1,
-    "name": "Metro: Lower Dam Ayre",
+    "name": "U-Bahn: Südring",
     "description": "Nach Aktivierung im Raum mit Bett und Versteck.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "Metro Lower Dam Ayre South Loop"
   },
   {
     "id": "inh-061",
@@ -533,9 +561,10 @@
     "id": "inh-066",
     "district": "lower-dam-ayre",
     "count": 1,
-    "name": "Military Airdrop THB-4UL",
-    "description": "Dach der Church of Saint John of God.",
-    "tags": []
+    "name": "Militär-Airdrop THB-4UL",
+    "description": "Auf dem Dach der Kirche des Johannes von Gott.",
+    "tags": [],
+    "searchAlias": "Military Airdrop THB-4UL"
   },
   {
     "id": "inh-067",

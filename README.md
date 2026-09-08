@@ -1,6 +1,13 @@
-# DL2 Companion v0.7.3
+# DL2 Companion v0.7.5
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
+
+## v0.7.5
+- Backup- und Sync-Erklärtexte überarbeitet
+- FAQ: Buchsymbol/Lagerfeuer ergänzt
+- FAQ: Nightrunner-Werkzeugstufen ergänzt
+- FAQ: spoilerarmer Hinweis auf verpassbare Inhalte und PK-Armbrust ergänzt
+- Deutsche Orts- und Aktivitätsbezeichnungen erneut geprüft und modulübergreifend vereinheitlicht
 
 ## Aktueller Funktionsumfang
 - Dashboard mit Gesamtfortschritt und aktuellem Bezirk
@@ -25,6 +32,13 @@ Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortsch
 
 ## Sprache
 Missions-, Orts-, Aktivitäts- und Ausrüstungsbezeichnungen orientieren sich an der **deutschen Spielversion**. Begriffe werden nicht zwanghaft übersetzt, wenn das deutsche Spiel selbst die englische Bezeichnung verwendet.
+
+## v0.7.4
+- Hemmstoff-Bezeichnungen systematisch auf deutsche Spiel-/Guide-Terminologie geprüft
+- Belegte deutsche Quest- und GRE-Namen übernommen
+- Zentralring statt Central Loop in der deutschen Anzeige
+- Englische Such-Aliase für YouTube bleiben intern erhalten
+- Keine erzwungene Übersetzung von Eigennamen, die auch deutschsprachige Quellen englisch führen
 
 ## v0.7.3
 - YouTube-Fundortsuche für Hemmstoffe, Safe-Codes, Militär-Airdrops und GRE-Anomalien ergänzt

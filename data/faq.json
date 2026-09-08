@@ -74,5 +74,17 @@
   {
     "q": "Können Dialogentscheidungen dauerhafte Folgen haben?",
     "a": "Ja. Wichtige Dialogentscheidungen können Questverläufe verändern und teilweise sogar darüber entscheiden, ob Charaktere leben oder sterben. Auch Neben- und Zusatzquests können durch bestimmte Entscheidungen oder eine zu weit fortgeschrittene Hauptstory nicht mehr verfügbar sein. Der DL2 Companion hält diesen Hinweis bewusst spoilerfrei: Bei offensichtlich wichtigen Entscheidungen solltest du Antworten nicht gedankenlos wegklicken."
+  },
+  {
+    "q": "Was bringt das Buchsymbol bzw. Lagerfeuer?",
+    "a": "An diesen Begegnungsorten kannst du dich ans Lagerfeuer setzen und den Geschichten der Bewohner zuhören. Während du dort sitzt, regeneriert sich deine Gesundheit. So kannst du dich bequem wieder vollständig heilen, ohne Medizin oder andere Heilgegenstände zu verbrauchen."
+  },
+  {
+    "q": "Welche Stufen haben die Nightrunner-Werkzeuge?",
+    "a": "Gleitschirm: Basis ermöglicht normales Gleiten. Die erste Verbesserung erhöht seine Leistungsfähigkeit und Kontrolle und erleichtert es, beim Fliegen Höhe zu gewinnen. Die maximale Stufe schaltet zusätzlich den Geschwindigkeits-Boost frei. Wurfhaken: Basis ermöglicht Einhaken und Schwingen. Die erste Verbesserung macht ihn deutlich stärker für die Fortbewegung und das Heranziehen an eingehakte Punkte. Die maximale Stufe erweitert seinen Einsatz im Kampf, sodass du Gegner und bestimmte Objekte mit dem Haken heranziehen kannst. UV-Taschenlampe: Basis hält bzw. betäubt Infizierte mit UV-Licht. Die erste Verbesserung erhöht Reichweite und Nutzungsdauer. Die maximale Stufe verbessert die Wirkung weiter und schaltet den UV-Blitz frei. Konkrete Prozent-, Reichweiten- oder Sekundenwerte nennt der Companion bewusst nicht, da dafür keine ausreichend verlässlichen aktuellen Daten vorliegen."
+  },
+  {
+    "q": "Kann ich wichtige Missionen oder Belohnungen verpassen?",
+    "a": "Ja. Einige Nebenmissionen, besondere Belohnungen und versteckte Inhalte können durch Storyfortschritt oder Entscheidungen später nicht mehr verfügbar sein. Erledige interessante Nebenmissionen deshalb möglichst zeitnah und prüfe vor der Zuweisung von Einrichtungen die Fraktionsbelohnungen. Besonders wichtig: Für die Peacekeeper-Armbrust musst du insgesamt 4 Einrichtungen den Peacekeepern zuweisen. Wer seine Einrichtungen anders verteilt, kann diese Belohnung im aktuellen Durchlauf verpassen. Der Hinweis bleibt bewusst spoilerarm; Easter Eggs und Geheimnisse werden getrennt behandelt."
   }
 ]

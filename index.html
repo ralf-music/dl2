@@ -17,7 +17,7 @@
     <h1>DYING LIGHT 2 <span>COMPANION</span></h1>
   </div>
   <div class="top-actions">
-    <button id="globalVersion" class="header-version" type="button">v0.7.3</button>
+    <button id="globalVersion" class="header-version" type="button">v0.7.5</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -113,7 +113,7 @@
 <section id="view-backup" class="view">
   <div class="sectionhead"><div><div class="eyebrow">LOCAL STORAGE</div><h2>DATEN</h2></div></div>
   <div class="backupcard">
-    <h3>Lokales Backup</h3><p>Export und Import bleiben als unabhängige Sicherung erhalten. Gesichert wird der komplette aktuelle Companion-Fortschritt.</p>
+    <h3>Lokales Backup</h3><p>Sichere deinen aktuellen Companion-Stand als Backup-Datei auf deinem Gerät. Mit „Backup exportieren“ wird dein kompletter Fortschritt gespeichert. Über „Backup importieren“ kannst du diese Datei später wieder einlesen und deinen gespeicherten Stand wiederherstellen.</p>
     <button class="primary" id="exportBtn">BACKUP EXPORTIEREN</button>
     <label class="primary outline">BACKUP IMPORTIEREN<input id="importFile" type="file" accept=".json,application/json" hidden></label>
     <button class="danger" id="resetBtn">ALLE LOKALEN DATEN LÖSCHEN</button>
@@ -121,7 +121,7 @@
   <div class="backupcard synccard">
     <div class="eyebrow">CLOUD TRANSFER</div>
     <h3>Geräte-Sync</h3>
-    <p>Übertrage deinen aktuellen Stand einmalig auf ein anderes Gerät. Der Code ist 30 Minuten gültig und wird nach erfolgreichem Abruf gelöscht.</p>
+    <p>Übertrage deinen aktuellen Stand per Sync-Code auf ein anderes Gerät. Jeder Sync-Code ist einmalig für 30 Minuten verwendbar. Nach erfolgreicher Übertragung wird der Code deaktiviert und kann nicht erneut verwendet werden. Nicht verwendete Codes verfallen automatisch nach 30 Minuten. Für weitere Übertragungen kannst du jederzeit einen neuen Code erstellen.</p>
     <button class="primary" id="syncCreateBtn">SYNC-CODE ERSTELLEN</button>
     <div id="syncCodeBox" class="sync-code-box" hidden>
       <small>DEIN SYNC-CODE</small>
@@ -136,7 +136,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.7.3</b><br><span>Datenstand: 06.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.7.5</b><br><span>Datenstand: 06.09.2026 · Changelog öffnen</span></button>
 </section>
 </main>
 

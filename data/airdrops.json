@@ -8,25 +8,25 @@
   {
     "id": "THB-17U",
     "district": "Horseshoe",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
     "id": "THB-22B",
     "district": "Horseshoe",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
     "id": "THB-M30",
     "district": "Downtown",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
     "id": "THB-R31",
     "district": "Downtown",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
@@ -38,43 +38,43 @@
   {
     "id": "THB-NW4",
     "district": "Garrison",
-    "note": "Vom VNC Tower mit dem Gleitschirm gut erreichbar.",
+    "note": "Vom VNC-Turm mit dem Gleitschirm gut erreichbar.",
     "inhibitor": true
   },
   {
     "id": "THB-G3T",
     "district": "Garrison",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
     "id": "THB-UT0",
     "district": "Garrison",
-    "note": "Vom VNC Tower mit dem Gleitschirm erreichbar.",
+    "note": "Vom VNC-Turm mit dem Gleitschirm erreichbar.",
     "inhibitor": true
   },
   {
     "id": "THB-FH3",
     "district": "New Dawn Park",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
     "id": "THB-1N4",
     "district": "Saint Paul Island",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
     "id": "THB-V3P",
     "district": "Lower Dam Ayre",
-    "note": "Oberirdischer Military Airdrop.",
+    "note": "Oberirdischer Militär-Airdrop.",
     "inhibitor": false
   },
   {
     "id": "THB-4UL",
     "district": "Lower Dam Ayre",
-    "note": "Dach der Church of Saint John of God.",
+    "note": "Dach der Kirche des Johannes von Gott.",
     "inhibitor": true
   },
   {

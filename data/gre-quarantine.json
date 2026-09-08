@@ -37,7 +37,7 @@
   },
   {
     "id": "q4",
-    "name": "GRE Experimentelle Forschung",
+    "name": "Experimentelle GRE-Forschung",
     "district": "The Wharf",
     "rank": 3,
     "crates": [
@@ -45,11 +45,11 @@
       1,
       2
     ],
-    "youtube": "Dying Light 2 GRE Experimentelle Forschung Fundort"
+    "youtube": "Dying Light 2 GRE Experimental Research location"
   },
   {
     "id": "q5",
-    "name": "THV-GenMod-Entwicklungszentrum",
+    "name": "HV-GenMod Development Center",
     "district": "Insel Saint Paul",
     "rank": 4,
     "crates": [
@@ -57,7 +57,7 @@
       1,
       2
     ],
-    "youtube": "Dying Light 2 THV-GenMod-Entwicklungszentrum Fundort"
+    "youtube": "Dying Light 2 HV-GenMod Development Center location"
   },
   {
     "id": "q6",
@@ -69,6 +69,6 @@
       1,
       2
     ],
-    "youtube": "Dying Light 2 THV Advanced Care Fundort"
+    "youtube": "Dying Light 2 THV Advanced Care location"
   }
 ]

@@ -18,7 +18,7 @@
   },
   {
     "district": "Houndfield",
-    "place": "Saint Joseph Hospital – Der erste Biomarker",
+    "place": "Saint-Joseph-Krankenhaus – Der erste Biomarker",
     "code": "9-7-3",
     "loot": "Quest-Inhalt",
     "hint": "Dr. Katsumis Büro; Nebenquest „Der erste Biomarker“.",
@@ -34,10 +34,10 @@
   },
   {
     "district": "Houndfield",
-    "place": "Apartment – Book Club X",
+    "place": "Apartment – Buchklub X",
     "code": "21-12-55",
     "loot": "Beute",
-    "hint": "Nebenquest „Book Club X“.",
+    "hint": "Nebenquest „Buchklub X“.",
     "id": "safe-05"
   },
   {
@@ -91,11 +91,11 @@
   },
   {
     "district": "Garrison",
-    "place": "Stromwerk",
+    "place": "Garnisonsstromwerk",
     "code": "3-1-4",
     "loot": "Hemmstoff",
     "tag": "inhibitor",
-    "hint": "Safe in der Garrison Electrical Station.",
+    "hint": "Safe im Garnisonsstromwerk.",
     "id": "safe-12"
   },
   {
@@ -124,7 +124,7 @@
   },
   {
     "district": "Saint Paul Island",
-    "place": "Church of Saint Thomas",
+    "place": "Kirche des Apostels Thomas",
     "code": "4-4-4",
     "loot": "Hemmstoff",
     "tag": "inhibitor",
@@ -141,11 +141,11 @@
   },
   {
     "district": "Saint Paul Island",
-    "place": "Dark Hollow – Dacheingang",
+    "place": "Dunkle Höhle – Dacheingang",
     "code": "9-8-7",
     "loot": "Hemmstoff",
     "tag": "inhibitor",
-    "hint": "Safe beim Dacheingang des Dark Hollow.",
+    "hint": "Safe beim Dacheingang der Dunklen Höhle.",
     "id": "safe-18"
   },
   {

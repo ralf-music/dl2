@@ -1,5 +1,5 @@
 
-const VERSION="0.7.3";
+const VERSION="0.7.5";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const freshState=()=>({health:1,stamina:1,found:{},areaDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all";
@@ -49,7 +49,7 @@ function renderDistricts(){
    const items=box.querySelector(".items");
    rows.forEach(x=>{
       const row=document.createElement("label");row.className="inhitem"+(state.found[x.id]?" done":"");
-      row.innerHTML=`<input type="checkbox" ${state.found[x.id]?"checked":""}><span><b>${x.name}</b><p>${x.description}</p><a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 ${d.name} ${x.name} ${x.description} Inhibitor location`)}">▶ FUNDORT AUF YOUTUBE</a></span><span class="countbadge">×${x.count}</span>`;
+      row.innerHTML=`<input type="checkbox" ${state.found[x.id]?"checked":""}><span><b>${x.name}</b><p>${x.description}</p><a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 ${d.name} ${x.name} ${x.searchAlias||""} ${x.description} Inhibitor location`)}">▶ FUNDORT AUF YOUTUBE</a></span><span class="countbadge">×${x.count}</span>`;
       row.querySelector("input").onchange=e=>{state.found[x.id]=e.target.checked; if(!e.target.checked)delete state.found[x.id];saveState();renderDistricts()};
       items.appendChild(row)
    });

@@ -1,5 +1,28 @@
 [
   {
+    "version": "0.7.5",
+    "date": "08.09.2026",
+    "changes": [
+      "Lokales Backup verständlich erklärt: Export erstellt eine Sicherungsdatei, Import stellt den gespeicherten Companion-Stand wieder her",
+      "Geräte-Sync neu formuliert: einmalige Nutzung pro Code, 30 Minuten Gültigkeit, Deaktivierung nach Nutzung und jederzeit neue Codes möglich",
+      "FAQ um Buchsymbol/Lagerfeuer und kostenlose Gesundheitsregeneration ergänzt",
+      "FAQ um die Stufen und Funktionen von Gleitschirm, Wurfhaken und UV-Taschenlampe ergänzt",
+      "Spoilerarmen FAQ-Hinweis zu verpassbaren Missionen und Belohnungen inklusive Peacekeeper-Armbrust ergänzt",
+      "Deutschsprachige Bezeichnungen in Hemmstoffen, Safes, Airdrops und GRE-Quarantäne erneut geprüft und vereinheitlicht"
+    ]
+  },
+  {
+    "version": "0.7.4",
+    "date": "07.09.2026",
+    "changes": [
+      "Hemmstoffliste sprachlich gegen deutsche Spiel-/Guide-Bezeichnungen geprüft",
+      "Belegte deutsche Namen für Quests und GRE-Quarantäneorte übernommen",
+      "Central Loop in der deutschen Anzeige auf Zentralring angepasst",
+      "Englische Such-Aliase für übersetzte Hemmstoff-Fundorte ergänzt, damit die YouTube-Suche internationale Guides weiterhin findet",
+      "Englische Eigennamen bleiben erhalten, wenn deutsche Quellen bzw. die Lokalisierung sie ebenfalls verwenden"
+    ]
+  },
+  {
     "version": "0.7.3",
     "date": "07.09.2026",
     "changes": [
@@ -29,27 +52,6 @@
       "README vollständig aktualisiert",
       "Deutsche Ingame-Bezeichnungen und Ausrüstungsklassen überarbeitet",
       "FAQ um wichtige Einsteiger-, Fortschritts- und Entscheidungs-Hinweise erweitert"
-    ]
-  },
-  {
-    "version": "0.7.0",
-    "date": "06.09.2026",
-    "changes": [
-      "Geräte-Sync per einmaligem 8-stelligem Code ergänzt",
-      "Sync-Codes sind 30 Minuten gültig und werden nach erfolgreichem Abruf gelöscht",
-      "Lokales JSON-Backup bleibt vollständig erhalten",
-      "Backup, Import und Cloud-Sync verwenden jetzt dieselbe zentrale Datenstruktur",
-      "Vor dem Einlösen eines Sync-Codes wird das Überschreiben des lokalen Stands bestätigt"
-    ]
-  },
-  {
-    "version": "0.6.1",
-    "date": "06.09.2026",
-    "changes": [
-      "GRE-Quarantänestationen werden wieder korrekt gerendert",
-      "Fehler in zentraler renderAll()-Funktion behoben",
-      "Versionsnummer aus der unteren Navigation in den globalen Header verschoben",
-      "Veraltete Alpha-Bezeichnung im Datenbereich entfernt"
     ]
   }
 ]
