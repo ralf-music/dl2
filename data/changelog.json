@@ -1,5 +1,17 @@
 [
   {
+    "version": "0.8.0",
+    "date": "11.09.2026",
+    "changes": [
+      "Mehrsprachigkeits-Grundsystem mit Deutsch/Englisch-Umschaltung und erweiterbaren Sprachdateien",
+      "Neuer Sammlerstücke-Bereich: 209 Andenken, 68 Bänder und 71 Graffiti (348 Einträge)",
+      "Separater Ingame-Zähler und Companion-Checkbox-Tracker für Sammlerstücke",
+      "71 Graffiti mit Namen und Gebietszuordnung erfasst; YouTube-Fundortsuche integriert",
+      "Inoffizielles Fan-Projekt und Techland-Hinweis sichtbar ergänzt",
+      "App-Icon-Sicherheitszone für Android vergrößert"
+    ]
+  },
+  {
     "version": "0.7.5",
     "date": "08.09.2026",
     "changes": [

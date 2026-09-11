@@ -1,19 +1,26 @@
 
-const VERSION="0.7.5";
+const VERSION="0.8.0";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
-const freshState=()=>({health:1,stamina:1,found:{},areaDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all";
+const freshState=()=>({health:1,stamina:1,language:"de",found:{},areaDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-function normalizeState(s={}){return {...freshState(),...s,found:s.found||{},areaDone:s.areaDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{}}} function loadState(){try{state=normalizeState(JSON.parse(localStorage.getItem(KEY)||"{}"))}catch{state=freshState()}}
+function normalizeState(s={}){return {...freshState(),...s,found:s.found||{},areaDone:s.areaDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:s.collectDone||{},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})}}} function loadState(){try{state=normalizeState(JSON.parse(localStorage.getItem(KEY)||"{}"))}catch{state=freshState()}}
 function saveState(){localStorage.setItem(KEY,JSON.stringify(state)); updateDashboard()}
 function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1800)}
 async function init(){
  loadState();
- [districts,inhibitors,safes,faq,builds,changelog,activities,airdrops,gre,sunken,quarantine,ducks]=await Promise.all(["data/districts.json","data/inhibitors.json","data/safes.json","data/faq.json","data/builds.json","data/changelog.json","data/activities.json","data/airdrops.json","data/gre-anomalies.json","data/sunken-airdrops.json","data/gre-quarantine.json","data/ducks.json"].map(x=>fetch(x).then(r=>r.json())));
- bind(); renderDistricts(); renderSafes(); renderCharacter(); renderFAQ(); renderBuilds(); renderAll(); setupPWA();
+ [districts,inhibitors,safes,faq,builds,changelog,activities,airdrops,gre,sunken,quarantine,ducks,collectibles,langDE,langEN]=await Promise.all(["data/districts.json","data/inhibitors.json","data/safes.json","data/faq.json","data/builds.json","data/changelog.json","data/activities.json","data/airdrops.json","data/gre-anomalies.json","data/sunken-airdrops.json","data/gre-quarantine.json","data/ducks.json","data/collectibles.json","data/lang-de.json","data/lang-en.json"].map(x=>fetch(x).then(r=>r.json())));
+ bind(); applyLanguage(); renderDistricts(); renderSafes(); renderCharacter(); renderFAQ(); renderBuilds(); renderAll(); setupPWA();
 }
 function go(name){$$(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+name)); $$(".bottomnav button").forEach(b=>b.classList.toggle("active",b.dataset.go===name)); scrollTo(0,0)}
 function bind(){
+ $("#languageSelect").value=state.language||"de";
+ $("#languageSelect").onchange=e=>{state.language=e.target.value;saveState();renderAll();applyLanguage()};
+ $("#collectSearch").oninput=renderCollectibles;
+ $("#collectMissing").onchange=renderCollectibles;
+ $$("[data-collecttype]").forEach(b=>b.onclick=()=>{collectType=b.dataset.collecttype;$$("[data-collecttype]").forEach(x=>x.classList.toggle("active",x===b));renderCollectibles()});
+ [["gameMemento","memento",209],["gameTape","tape",68],["gameGraffiti","graffiti",71]].forEach(([id,key,max])=>{$("#"+id).onchange=e=>{state.collectionGameCounts[key]=Math.max(0,Math.min(max,+e.target.value||0));saveState();renderCollectibles()}});
+
  $$("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
  $("#inhSearch").oninput=renderDistricts; $("#safeSearch").oninput=renderSafes; $("#onlyInhibitor").onchange=renderSafes; $("#faqSearch").oninput=renderFAQ; $$("[data-airfilter]").forEach(b=>b.onclick=()=>{airFilter=b.dataset.airfilter;$$("[data-airfilter]").forEach(x=>x.classList.toggle("active",x===b));renderAirdrops()});
 $$("[data-grefilter]").forEach(b=>b.onclick=()=>{greFilter=b.dataset.grefilter;$$("[data-grefilter]").forEach(x=>x.classList.toggle("active",x===b));renderGRE()});
@@ -69,6 +76,45 @@ function renderSafes(){
  rows.forEach(s=>{const e=document.createElement("article");e.className="safeitem";e.innerHTML=`<div class="safehead"><div><div class="districttag">${s.district.toUpperCase()}</div><h3>${s.place}</h3></div><div class="code">${s.code}</div></div><div class="loot ${s.tag==="inhibitor"?"hot":""}">${s.tag==="inhibitor"?"HEMMSTOFF · ":""}${s.loot}</div><div class="safehint">${s.hint||""}</div><a class="yt-find" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 ${s.district} ${s.place} safe code ${s.code} location`)}">▶ FUNDORT AUF YOUTUBE</a>`;w.appendChild(e)})
 }
 
+
+function L(key){const d=state.language==="en"?langEN:langDE;return d[key]||langDE[key]||key}
+function applyLanguage(){
+ document.documentElement.lang=state.language||"de";
+ if($("#languageSelect"))$("#languageSelect").value=state.language||"de";
+ const set=(id,key)=>{const e=$("#"+id);if(e)e.textContent=L(key)};
+ set("fanBadge","fanProject");set("legalFan","fanProject");set("legalText","disclaimer");
+ set("collectTitle","collectibles");set("mementoLabel","mementos");set("tapeLabel","tapes");set("graffitiLabel","graffiti");
+ set("gameMementoLabel","gameCount");set("gameTapeLabel","gameCount");set("gameGraffitiLabel","gameCount");
+ set("collectTrackerNote","trackerNote");set("collectSlotNotice","slotNotice");set("navCollectibles","collectibles");
+ if($("#collectSearch"))$("#collectSearch").placeholder=L("searchCollectibles");
+ if($("#collectMissingLabel"))$("#collectMissingLabel").textContent=state.language==="en"?"Show missing only":"Nur fehlende anzeigen";
+ if($("#collectCollectedLabel"))$("#collectCollectedLabel").textContent=L("collected").toUpperCase();
+ const staticMap=state.language==="en"?{
+  "GESUNDHEIT":"HEALTH","AUSDAUER":"STAMINA","Stufe":"Level","HEMMSTOFFE":"INHIBITORS","SAFE-CODES":"SAFE CODES",
+  "CHARAKTER":"CHARACTER","BUILDS":"BUILDS","FAQ / WISSEN":"FAQ / KNOWLEDGE","DATEN":"DATA","GEBIETE":"DISTRICTS",
+  "MILITARY TECH":"MILITARY TECH","GRE-ANOMALIEN":"GRE ANOMALIES","GRE-QUARANTÄNE":"GRE QUARANTINE",
+  "ENTEN & EASTER EGGS":"DUCKS & EASTER EGGS","SAMMLERSTÜCKE":"COLLECTIBLES","Alle":"All","OFFEN":"OPEN","ERLEDIGT":"DONE"
+ }:{};
+ if(state.language==="en"){
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let n;while(n=walker.nextNode()){const t=n.nodeValue.trim();if(staticMap[t])n.nodeValue=n.nodeValue.replace(t,staticMap[t])}
+ }
+}
+function renderCollectibles(){
+ if(!collectibles.length)return;
+ const q=($("#collectSearch")?.value||"").toLowerCase().trim(), missing=$("#collectMissing")?.checked;
+ const doneAll=collectibles.filter(x=>state.collectDone[x.id]).length;
+ const counts={memento:[0,209],tape:[0,68],graffiti:[0,71]};
+ Object.keys(counts).forEach(k=>counts[k][0]=collectibles.filter(x=>x.type===k&&state.collectDone[x.id]).length);
+ $("#collectTotal").textContent=doneAll+"/348";
+ $("#mementoCount").textContent=counts.memento[0]+"/209";$("#tapeCount").textContent=counts.tape[0]+"/68";$("#graffitiCount").textContent=counts.graffiti[0]+"/71";
+ $("#gameMemento").value=state.collectionGameCounts.memento||0;$("#gameTape").value=state.collectionGameCounts.tape||0;$("#gameGraffiti").value=state.collectionGameCounts.graffiti||0;
+ const rows=collectibles.filter(x=>(collectType==="all"||x.type===collectType)&&(!missing||!state.collectDone[x.id])&&(!q||((state.language==="en"?x.name_en:x.name_de)+" "+x.index+" "+(x.district||"")).toLowerCase().includes(q)));
+ const groups={memento:[],tape:[],graffiti:[]};rows.forEach(x=>groups[x.type].push(x));
+ const labels={memento:L("mementos"),tape:L("tapes"),graffiti:L("graffiti")};
+ $("#collectibleList").innerHTML=Object.entries(groups).filter(([,a])=>a.length).map(([type,a])=>`<div class="airdistrict"><h3>${labels[type].toUpperCase()} · ${a.length}</h3>${a.map(x=>{const name=state.language==="en"?x.name_en:x.name_de;const yq=`Dying Light 2 ${x.name_en} ${x.district||""} collectible location`;return `<label class="collect-card ${state.collectDone[x.id]?"done":""}"><input type="checkbox" data-collect="${x.id}" ${state.collectDone[x.id]?"checked":""}><div class="collect-info"><b><span class="collect-num">#${String(x.index).padStart(type==="memento"?3:2,"0")}</span>${name}</b><div class="collect-meta">${x.district||"Villedor"}${x.missable?" · MISSABLE":""}</div><a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(yq)}">${L("youtube")}</a></div></label>`}).join("")}</div>`).join("")||'<div class="area-empty">'+(state.language==="en"?"No entries in this filter.":"Keine Einträge in diesem Filter.")+'</div>';
+ $$("[data-collect]").forEach(c=>c.onchange=()=>{state.collectDone[c.dataset.collect]=c.checked;if(!c.checked)delete state.collectDone[c.dataset.collect];saveState();renderCollectibles()});
+}
 function renderAll(){
   renderDistricts();
   renderCharacter();
@@ -82,7 +128,9 @@ function renderAll(){
   renderSunken();
   renderQuarantine();
   renderDucks();
+  renderCollectibles();
   updateDashboard();
+  applyLanguage();
 }
 function ytLink(q){return "https://www.youtube.com/results?search_query="+encodeURIComponent(q)}
 function renderQuarantine(){if(!quarantine.length)return;let total=0,b=0;quarantine.forEach(q=>{let c=0;q.crates.forEach((n,i)=>{if(state.quarantineDone[q.id+"-"+i])c+=n});total+=c;if(c===4)b++});$("#qCount").textContent=b+"/6";$("#qBuildings").textContent=b+"/6";$("#qInhib").textContent=total+"/24";$("#qOpen").textContent=24-total;if($("#qDash"))$("#qDash").textContent=b+" / 6";$("#quarantineList").innerHTML=quarantine.map(q=>`<div class="qcard"><h3>${q.name}</h3><div class="qmeta">${q.district} · Stufe ${q.rank} · 4 Hemmstoffe</div><div class="qcrates">${q.crates.map((n,i)=>`<label><input type="checkbox" data-q="${q.id}-${i}" ${state.quarantineDone[q.id+"-"+i]?"checked":""}> Kiste ${i+1}: ${n}</label>`).join("")}</div><a class="yt-find" target="_blank" rel="noopener" href="${ytLink(q.youtube)}">▶ FUNDORT AUF YOUTUBE</a></div>`).join("");$$("[data-q]").forEach(c=>c.onchange=()=>{state.quarantineDone[c.dataset.q]=c.checked;saveState();renderQuarantine()})}
@@ -101,8 +149,9 @@ function overallProgress(){
  const greTotal=gre.length, greDone=gre.filter(x=>state.greDone[x.id]).length;
  const quarantineTotal=quarantine.reduce((s,q)=>s+q.crates.length,0), quarantineDone=quarantine.reduce((s,q)=>s+q.crates.filter((_,i)=>state.quarantineDone[q.id+"-"+i]).length,0);
  const duckTotal=ducks.length, duckDone=ducks.filter(x=>state.duckDone[x.id]).length;
- const total=inhibitorTotal+safeTotal+airTotal+sunkenTotal+greTotal+quarantineTotal+duckTotal;
- const done=inhibitorDone+safeDone+airDone+sunkenDone+greDone+quarantineDone+duckDone;
+ const collectTotal=collectibles.length, collectDone=collectibles.filter(x=>state.collectDone[x.id]).length;
+ const total=inhibitorTotal+safeTotal+airTotal+sunkenTotal+greTotal+quarantineTotal+duckTotal+collectTotal;
+ const done=inhibitorDone+safeDone+airDone+sunkenDone+greDone+quarantineDone+duckDone+collectDone;
  return {done,total,pct:total?Math.round(done/total*100):0};
 }
 function renderAreas(){if(!districts.length)return;const sel=$("#areaSelect");sel.innerHTML=districts.map(d=>`<option ${d.name===state.currentArea?"selected":""}>${d.name}</option>`).join("");const d=state.currentArea,p=districtProgress(d),items=areaItems(d);$("#areaHero").innerHTML=`<div class="eyebrow">AKTUELLER BEZIRK</div><h3>${d}</h3><div class="bigpct">${p.pct} %</div><div class="progress"><i style="width:${p.pct}%"></i></div><small>${p.done} von ${p.total} Einträgen erledigt</small>`;const open=items.filter(x=>!itemDone(x)),g={};open.forEach(x=>(g[x.type]??=[]).push(x));$("#missingHere").innerHTML=`<h3>WAS FEHLT MIR HIER?</h3><p>${open.length?Object.entries(g).map(([k,v])=>`${k}: <b>${v.length}</b>`).join(" · "):"<b>Bezirk abgeschlossen.</b>"}</p>`;const all={};items.forEach(x=>(all[x.type]??=[]).push(x));$("#areaChecklist").innerHTML=Object.entries(all).map(([type,list])=>`<div class="area-group"><div class="area-group-head"><b>${type.toUpperCase()}</b><small>${list.filter(itemDone).length}/${list.length}</small></div>${list.map(x=>`<label class="area-task ${itemDone(x)?"done":""}"><input type="checkbox" data-area-id="${encodeURIComponent(x.id)}" ${itemDone(x)?"checked":""}><span>${x.name}</span></label>`).join("")}</div>`).join("")||'<div class="area-empty">Keine Einträge.</div>';$$("[data-area-id]").forEach(c=>c.onchange=()=>{const id=decodeURIComponent(c.dataset.areaId),x=items.find(i=>i.id===id);if(x.type==="Hemmstoffe")state.found[x.inh.id]=c.checked;else state.areaDone[id]=c.checked;saveState();renderAreas();renderDistricts();updateDashboard()})}

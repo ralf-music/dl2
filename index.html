@@ -15,10 +15,17 @@
 <header class="topbar">
   <div>
     <div class="eyebrow">VILLEDOR FIELD TOOL</div>
-    <h1>DYING LIGHT 2 <span>COMPANION</span></h1>
+    <h1>DYING LIGHT <em class="red-two">2</em> <span>COMPANION</span></h1><div class="fan-badge" id="fanBadge">INOFFIZIELLES FAN-PROJEKT</div>
   </div>
   <div class="top-actions">
-    <button id="globalVersion" class="header-version" type="button">v0.7.5</button>
+    <label class="language-switch" aria-label="Sprache">
+      <span>🌐</span>
+      <select id="languageSelect">
+        <option value="de">DE</option>
+        <option value="en">EN</option>
+      </select>
+    </label>
+    <button id="globalVersion" class="header-version" type="button">v0.8.0</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -51,6 +58,7 @@
     <button class="module" data-go="builds"><b>BUILDS</b><small>5 Ziel-Loadouts</small></button>
     <button class="module" data-go="faq"><b>FAQ / WISSEN</b><small>NG+, Tools & Mechaniken</small></button>
     <button class="module" data-go="backup"><b>DATEN</b><small>Backup & Wiederherstellung</small></button>
+    <button class="module" data-go="collectibles"><b>SAMMLERSTÜCKE</b><small>209 Andenken · 68 Bänder · 71 Graffiti</small></button>
   </div>
   <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe sind getrennt vom Grundspiel. Der detaillierte NG+-Fundorttracker folgt in einer späteren Datenstufe.</span></div>
 </section>
@@ -82,6 +90,27 @@
   <input class="search" id="safeSearch" placeholder="z. B. Houndfield, VNC, Hemmstoff, 101 …">
   <label class="toggleline"><input type="checkbox" id="onlyInhibitor"><span>Nur Safes mit Hemmstoff anzeigen</span></label>
   <div id="safeList" class="safelist"></div>
+</section>
+
+
+<section id="view-collectibles" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">VILLEDOR ARCHIVE</div><h2 id="collectTitle">SAMMLERSTÜCKE</h2></div><div class="aircount"><b id="collectTotal">0/348</b><small id="collectCollectedLabel">GESAMMELT</small></div></div>
+  <div class="collect-hero">
+    <div><span id="mementoLabel">ANDENKEN</span><strong id="mementoCount">0/209</strong><label><small id="gameMementoLabel">IM SPIEL</small><input id="gameMemento" type="number" min="0" max="209" value="0"></label></div>
+    <div><span id="tapeLabel">BÄNDER</span><strong id="tapeCount">0/68</strong><label><small id="gameTapeLabel">IM SPIEL</small><input id="gameTape" type="number" min="0" max="68" value="0"></label></div>
+    <div><span id="graffitiLabel">GRAFFITI</span><strong id="graffitiCount">0/71</strong><label><small id="gameGraffitiLabel">IM SPIEL</small><input id="gameGraffiti" type="number" min="0" max="71" value="0"></label></div>
+  </div>
+  <p class="introcopy" id="collectTrackerNote">Die aktuellen Spielstände können oben manuell eingetragen werden. Einzelne Fundstücke werden separat abgehakt.</p>
+  <div class="segmented" id="collectTypeFilters">
+    <button class="active" data-collecttype="all">ALLE</button>
+    <button data-collecttype="memento">ANDENKEN</button>
+    <button data-collecttype="tape">BÄNDER</button>
+    <button data-collecttype="graffiti">GRAFFITI</button>
+  </div>
+  <input class="search" id="collectSearch" placeholder="Name, Nummer oder Bezirk suchen …">
+  <label class="toggleline"><input type="checkbox" id="collectMissing"><span id="collectMissingLabel">Nur fehlende anzeigen</span></label>
+  <div class="notice"><b>2026</b><span id="collectSlotNotice">Bei Andenken und Bändern ist die 2026-Gesamtzahl bereits vollständig abgebildet. Exakte lokalisierte Namen und Fundorte werden datenweise ergänzt; die Slots bleiben stabil.</span></div>
+  <div id="collectibleList"></div>
 </section>
 
 <section id="view-character" class="view">
@@ -137,15 +166,16 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.7.5</b><br><span>Datenstand: 06.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.8.0</b><br><span>Datenstand: 11.09.2026 · Changelog öffnen</span></button>
 </section>
+<footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber.</span></footer>
 </main>
 
 <nav class="bottomnav">
   <button class="active" data-go="dashboard"><span>⌂</span>Home</button>
   <button data-go="inhibitors"><span>▣</span>Hemmstoffe</button>
   <button data-go="safes"><span>#</span>Safes</button>
-  <button data-go="character"><span>+</span>Status</button>
+  <button data-go="collectibles"><span>▤</span><span id="navCollectibles">Sammler</span></button>
 </nav>
 
 <div class="modal" id="changelogModal" aria-hidden="true"><div class="modalbox"><div class="modalhead"><div><div class="eyebrow">VERSION HISTORY</div><h2>CHANGELOG</h2></div><button id="closeChangelog">×</button></div><div id="changelogList"></div></div></div>

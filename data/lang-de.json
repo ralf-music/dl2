@@ -1,0 +1,21 @@
+{
+  "language": "Sprache",
+  "german": "Deutsch",
+  "english": "English",
+  "collectibles": "Sammlerstücke",
+  "mementos": "Andenken",
+  "tapes": "Bänder",
+  "graffiti": "Graffiti",
+  "all": "Alle",
+  "missing": "Nur fehlende",
+  "searchCollectibles": "Name, Nummer oder Bezirk suchen …",
+  "collected": "Gesammelt",
+  "open": "Offen",
+  "fanProject": "INOFFIZIELLES FAN-PROJEKT",
+  "disclaimer": "Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber.",
+  "youtube": "▶ FUNDORT AUF YOUTUBE",
+  "trackerNote": "Die aktuellen Spielstände können oben manuell eingetragen werden. Einzelne Fundstücke werden separat abgehakt.",
+  "gameCount": "IM SPIEL",
+  "tracked": "IM COMPANION",
+  "slotNotice": "Bei Andenken und Bändern ist die 2026-Gesamtzahl bereits vollständig abgebildet. Exakte lokalisierte Namen und Fundorte werden datenweise ergänzt; die Slots bleiben stabil."
+}

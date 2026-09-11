@@ -1,0 +1,21 @@
+{
+  "language": "Language",
+  "german": "German",
+  "english": "English",
+  "collectibles": "Collectibles",
+  "mementos": "Mementos",
+  "tapes": "Tapes",
+  "graffiti": "Graffiti",
+  "all": "All",
+  "missing": "Missing only",
+  "searchCollectibles": "Search name, number or district …",
+  "collected": "Collected",
+  "open": "Open",
+  "fanProject": "UNOFFICIAL FAN PROJECT",
+  "disclaimer": "Not affiliated with, supported by, or officially authorized by Techland. Dying Light and related trademarks belong to their respective owners.",
+  "youtube": "▶ FIND ON YOUTUBE",
+  "trackerNote": "Your current in-game totals can be entered above manually. Individual collectibles are tracked separately.",
+  "gameCount": "IN GAME",
+  "tracked": "IN COMPANION",
+  "slotNotice": "The full 2026 totals for mementos and tapes are already represented. Exact localized names and locations can be added data-by-data without changing the stable slot IDs."
+}

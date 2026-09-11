@@ -1,5 +1,5 @@
 {
-  "name": "DL2 Companion",
+  "name": "DL2 Companion – Inoffizielles Fan-Projekt",
   "short_name": "DL2 Companion",
   "start_url": "./",
   "display": "standalone",
@@ -30,5 +30,6 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "lang": "de"
 }
