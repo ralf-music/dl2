@@ -12,10 +12,15 @@
   "collected": "Collected",
   "open": "Open",
   "fanProject": "UNOFFICIAL FAN PROJECT",
-  "disclaimer": "Not affiliated with, supported by, or officially authorized by Techland. Dying Light and related trademarks belong to their respective owners.",
+  "disclaimer": "Not affiliated with, supported by, or officially authorized by Techland. Dying Light and related trademarks belong to their respective owners. DL2 Companion is designed to help you keep track of your progress in Dying Light 2, find missing content, and move closer to your goal of completing as much as possible toward 100%.",
   "youtube": "▶ FIND ON YOUTUBE",
   "trackerNote": "Your current in-game totals can be entered above manually. Individual collectibles are tracked separately.",
   "gameCount": "IN GAME",
   "tracked": "IN COMPANION",
-  "slotNotice": "The full 2026 totals for mementos and tapes are already represented. Exact localized names and locations can be added data-by-data without changing the stable slot IDs."
+  "slotNotice": "The full 2026 totals for mementos and tapes are already represented. Exact localized names and locations can be added data-by-data without changing the stable slot IDs.",
+  "villedorAssistant": "VILLEDOR FIELD TOOL",
+  "companionModules": "COMPANION MODULES",
+  "navCollectibles": "Collection",
+  "backupWarningTitle": "SAFETY NOTICE",
+  "backupWarning": "DL2 Companion stores your Companion progress locally on this device. Although updates are designed to preserve existing data, data loss can never be ruled out with 100% certainty. We therefore recommend regularly using “Export data” to create and keep a local backup of your Companion progress."
 }

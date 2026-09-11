@@ -12,10 +12,15 @@
   "collected": "Gesammelt",
   "open": "Offen",
   "fanProject": "INOFFIZIELLES FAN-PROJEKT",
-  "disclaimer": "Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber.",
+  "disclaimer": "Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.",
   "youtube": "▶ FUNDORT AUF YOUTUBE",
   "trackerNote": "Die aktuellen Spielstände können oben manuell eingetragen werden. Einzelne Fundstücke werden separat abgehakt.",
   "gameCount": "IM SPIEL",
   "tracked": "IM COMPANION",
-  "slotNotice": "Bei Andenken und Bändern ist die 2026-Gesamtzahl bereits vollständig abgebildet. Exakte lokalisierte Namen und Fundorte werden datenweise ergänzt; die Slots bleiben stabil."
+  "slotNotice": "Bei Andenken und Bändern ist die 2026-Gesamtzahl bereits vollständig abgebildet. Exakte lokalisierte Namen und Fundorte werden datenweise ergänzt; die Slots bleiben stabil.",
+  "villedorAssistant": "VILLEDOR ASSISTENT",
+  "companionModules": "COMPANION MODULE",
+  "navCollectibles": "Sammlung",
+  "backupWarningTitle": "SICHERHEITSHINWEIS",
+  "backupWarning": "Der DL2 Companion speichert deinen Companion-Fortschritt lokal auf diesem Gerät. Obwohl Updates so entwickelt werden, dass vorhandene Daten erhalten bleiben, kann ein Datenverlust technisch nie zu 100 % ausgeschlossen werden. Wir empfehlen deshalb, regelmäßig über „Daten exportieren“ eine Sicherung deines Companion-Fortschritts zu erstellen und lokal aufzubewahren."
 }

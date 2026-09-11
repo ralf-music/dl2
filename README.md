@@ -1,4 +1,4 @@
-# DL2 Companion v0.8.0
+# DL2 Companion v0.8.2
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
@@ -75,3 +75,13 @@ Die App ist ein privates Fan-/Hilfsprojekt und kein offizielles Produkt von Tech
 - 71 Graffiti mit Namen und Bezirken.
 - Sichtbarer Fan-Projekt-/Techland-Hinweis.
 - Android-Icon-Sicherheitszone vergrößert.
+
+## v0.8.1
+- Sammlerstücke kompakter als 3-spaltiges Kachelraster; Details erst beim Antippen.
+- Safe-Code-Schnellsuche auf der Startseite entfernt.
+- Hemmstoff-Modul zeigt dynamisch „x / 126 gesammelt“.
+- Safe-Codes mit Checkbox, Fortschritt und „Nur fehlende“-Filter.
+- Gebietsfortschritt auf mehrere Tracker-Kategorien erweitert.
+
+## v0.8.2
+- Sprach-/Branding-Feinschliff, Backup-Hinweis, Sofort-Sprachwechsel, kompaktere Navigation und 8 Changelog-Versionen.

@@ -1,5 +1,30 @@
 [
   {
+    "version": "0.8.2",
+    "date": "11.09.2026",
+    "changes": [
+      "Datenbereich um Sicherheitshinweis und Empfehlung für regelmäßige lokale Exporte ergänzt",
+      "Deutsche Startseiten-Bezeichnungen auf „Villedor Assistent“ und „Companion Module“ umgestellt",
+      "Englische Modulüberschrift auf „Companion Modules“ vereinheitlicht",
+      "Sprachauswahl zeigt Deutschland- und UK-Flagge mit Sprachbezeichnung",
+      "Sprachwechsel rendert die Oberfläche sofort neu und benötigt keinen manuellen Refresh mehr",
+      "Untere Navigation: „Sammler“ auf „Sammlung“ gekürzt",
+      "Fan-Projekt-Hinweis um Ziel und Zweck des DL2 Companion ergänzt",
+      "Changelog-Anzeige von fünf auf acht Versionen erweitert"
+    ]
+  },
+  {
+    "version": "0.8.1",
+    "date": "11.09.2026",
+    "changes": [
+      "Sammlerstücke auf kompaktes Kachelraster mit Detailansicht umgestellt",
+      "Safe-Code-Schnellsuche von der Startseite entfernt",
+      "Hemmstoff-Kachel zeigt nun dynamisch gesammelt / 126",
+      "Safe-Codes erhalten eigenen Erledigt-Tracker, Fortschritt und Filter „Nur fehlende“",
+      "Gebietsfortschritt bündelt jetzt alle sinnvoll zuordenbaren Tracker statt nur Hemmstoffe und Safe-Codes"
+    ]
+  },
+  {
     "version": "0.8.0",
     "date": "11.09.2026",
     "changes": [
