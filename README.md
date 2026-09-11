@@ -9,6 +9,10 @@ Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortsch
 - FAQ: spoilerarmer Hinweis auf verpassbare Inhalte und PK-Armbrust ergänzt
 - Deutsche Orts- und Aktivitätsbezeichnungen erneut geprüft und modulübergreifend vereinheitlicht
 
+- Deutsche Ingame-Bezeichnungen weiter korrigiert
+- Hemmstoff-Bezirke bleiben beim Abhaken geöffnet
+- Neues Companion-App-Icon inklusive maskierbarer PWA-Icons integriert
+
 ## Aktueller Funktionsumfang
 - Dashboard mit Gesamtfortschritt und aktuellem Bezirk
 - 126 Hemmstoffe des Grundspiels

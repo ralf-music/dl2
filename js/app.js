@@ -38,12 +38,16 @@ function updateDashboard(){const op=overallProgress();if($("#overallPct")){$("#o
 function renderDistricts(){
  if(!inhibitors.length)return;
  const q=$("#inhSearch").value.toLowerCase().trim();
- const wrap=$("#districtList"); wrap.innerHTML="";
+ const wrap=$("#districtList");
+ const openDistricts=new Set([...wrap.querySelectorAll(".district.open")].map(x=>x.dataset.district).filter(Boolean));
+ wrap.innerHTML="";
  districts.filter(d=>region==="all"||d.region===region).forEach(d=>{
    const rows=inhibitors.filter(x=>x.district===d.id && (!q || (x.name+" "+x.description+" "+d.name).toLowerCase().includes(q)));
    if(!rows.length)return;
    const done=inhibitors.filter(x=>x.district===d.id&&state.found[x.id]).reduce((a,x)=>a+x.count,0);
-   const box=document.createElement("div"); box.className="district"+(q?" open":"");
+   const box=document.createElement("div");
+   box.dataset.district=d.id;
+   box.className="district"+((q||openDistricts.has(d.id))?" open":"");
    box.innerHTML=`<button><span class="dname"><b>${d.name}</b><small>${d.region}</small></span><span class="dcount">${done} / ${d.count}</span></button><div class="items"></div>`;
    box.querySelector("button").onclick=()=>box.classList.toggle("open");
    const items=box.querySelector(".items");

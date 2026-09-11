@@ -12,7 +12,7 @@
     "id": "inh-002",
     "district": "houndfield",
     "count": 4,
-    "name": "Zentrum für THV-Studie der Stufe IV",
+    "name": "Zentrum für die THV-Studie der Stufe IV",
     "description": "GRE-Quarantänegebäude; drei Kisten.",
     "tags": [],
     "searchAlias": "Center for Stage IV THV Study"
@@ -537,9 +537,10 @@
     "id": "inh-063",
     "district": "lower-dam-ayre",
     "count": 4,
-    "name": "THV Advanced Care",
+    "name": "Erweiterte THV-Versorgung",
     "description": "GRE-Quarantänegebäude; drei Kisten.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "THV Advanced Care"
   },
   {
     "id": "inh-064",
