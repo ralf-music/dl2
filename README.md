@@ -1,4 +1,4 @@
-# DL2 Companion v0.8.2
+# DL2 Companion v0.8.3
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
@@ -85,3 +85,6 @@ Die App ist ein privates Fan-/Hilfsprojekt und kein offizielles Produkt von Tech
 
 ## v0.8.2
 - Sprach-/Branding-Feinschliff, Backup-Hinweis, Sofort-Sprachwechsel, kompaktere Navigation und 8 Changelog-Versionen.
+
+## v0.8.3
+- Header-Layout korrigiert, Sprachwahl vereinfacht und Navigation auf „Sammlung“ korrigiert.

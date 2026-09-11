@@ -88,3 +88,16 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 @media(min-width:520px){.collect-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 
 .backup-warning{display:flex;flex-direction:column;gap:6px;margin:12px 0;padding:12px;border:1px solid #6b4a24;background:#ff7a0009;border-radius:8px;font-size:10px;line-height:1.45;color:#aeb4b7}.backup-warning b{color:var(--orange);letter-spacing:.08em}
+
+/* v0.8.3 header/navigation fixes */
+.dl-title-line{display:flex;align-items:baseline;gap:.14em;white-space:nowrap}
+.companion-line{display:block}
+.fan-badge{white-space:nowrap}
+.language-switch{white-space:nowrap}
+.header-actions,.top-actions{align-items:flex-start}
+.version,.versionbtn{align-self:flex-end}
+
+/* keep version visually separated from the language selector */
+@media(max-width:700px){
+  .version,.versionbtn{margin-top:18px}
+}

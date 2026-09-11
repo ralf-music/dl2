@@ -1,5 +1,16 @@
 [
   {
+    "version": "0.8.3",
+    "date": "11.09.2026",
+    "changes": [
+      "Untere Navigation zeigt dauerhaft „Sammlung“ statt „Sammlerstücke“",
+      "Blaues Welt-Symbol aus der Sprachauswahl entfernt; Anzeige bleibt bei Flagge und Sprachbezeichnung",
+      "Versionsnummer im Kopfbereich optisch von der Sprachauswahl versetzt",
+      "„DYING LIGHT 2“ wird im Kopfbereich in einer gemeinsamen Zeile gehalten",
+      "„INOFFIZIELLES FAN-PROJEKT“ wird in einer Zeile gehalten"
+    ]
+  },
+  {
     "version": "0.8.2",
     "date": "11.09.2026",
     "changes": [

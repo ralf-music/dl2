@@ -1,5 +1,5 @@
 
-const VERSION="0.8.2";
+const VERSION="0.8.3";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const freshState=()=>({health:1,stamina:1,language:"de",found:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
@@ -101,7 +101,7 @@ function applyLanguage(){
  const bw=$("#backupWarning");if(bw)bw.innerHTML=`<b>${L("backupWarningTitle")}</b><span>${L("backupWarning")}</span>`;
  set("collectTitle","collectibles");set("mementoLabel","mementos");set("tapeLabel","tapes");set("graffitiLabel","graffiti");
  set("gameMementoLabel","gameCount");set("gameTapeLabel","gameCount");set("gameGraffitiLabel","gameCount");
- set("collectTrackerNote","trackerNote");set("collectSlotNotice","slotNotice");set("navCollectibles","collectibles");
+ set("collectTrackerNote","trackerNote");set("collectSlotNotice","slotNotice");
  if($("#collectSearch"))$("#collectSearch").placeholder=L("searchCollectibles");
  if($("#collectMissingLabel"))$("#collectMissingLabel").textContent=state.language==="en"?"Show missing only":"Nur fehlende anzeigen";
  if($("#collectCollectedLabel"))$("#collectCollectedLabel").textContent=L("collected").toUpperCase();
