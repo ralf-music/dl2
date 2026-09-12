@@ -21,7 +21,7 @@
     "id": "inh-003",
     "district": "houndfield",
     "count": 1,
-    "name": "Metro: Hayward Square",
+    "name": "U-Bahn: Hayward Square",
     "description": "Nach Aktivierung im Raum mit Bett und Versteck.",
     "tags": []
   },
@@ -200,7 +200,7 @@
     "id": "inh-024",
     "district": "downtown",
     "count": 2,
-    "name": "Metro: Downtown Court",
+    "name": "U-Bahn: Downtown Court",
     "description": "Neben dem Schlafraum.",
     "tags": []
   },

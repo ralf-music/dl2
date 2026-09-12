@@ -1,5 +1,5 @@
 
-const VERSION="0.8.6";
+const VERSION="0.8.7";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";

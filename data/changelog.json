@@ -1,5 +1,17 @@
 [
   {
+    "version": "0.8.7",
+    "date": "12.09.2026",
+    "changes": [
+      "Filterbeschriftung Central Loop auf Zentralring korrigiert",
+      "Deutsche Metro-/U-Bahn-Bezeichnungen projektweit vereinheitlicht; Fundorte verwenden U-Bahn: [Name]",
+      "Alle 68 Band-Platzhalter durch reale Sammlerstücknamen und Gebietszuordnungen ersetzt",
+      "Englische Bandnamen vollständig hinterlegt; belegte deutsche Ingame-Bezeichnungen ergänzt, ungeklärte Namen bewusst nicht frei übersetzt",
+      "Die 70 ursprünglichen Graffiti erhalten deutsche Bezeichnungen; englische Namen bleiben für die englische Companion-Sprache erhalten",
+      "Das später ergänzte 71. Graffiti bleibt auf Deutsch vorerst beim belegten englischen Namen, statt eine Übersetzung zu erfinden"
+    ]
+  },
+  {
     "version": "0.8.6",
     "date": "12.09.2026",
     "changes": [

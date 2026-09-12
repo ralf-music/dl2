@@ -101,3 +101,8 @@ Die App ist ein privates Fan-/Hilfsprojekt und kein offizielles Produkt von Tech
 
 ## v0.8.6
 - Einheitlicher SVG-Icon-Satz für die Bottom-Navigation: Haus, Spritze, Safe mit Tastenfeld und aufgeklapptes Buch.
+
+
+## v0.8.7
+- Zentralring-Filter korrigiert; U-Bahn-Bezeichnungen vereinheitlicht.
+- Sammlung: reale Namen für alle 68 Bänder; deutsche Graffiti-Namen für die ursprünglichen 70 ergänzt.
