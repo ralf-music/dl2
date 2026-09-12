@@ -1,5 +1,18 @@
 [
   {
+    "version": "0.8.4",
+    "date": "12.09.2026",
+    "changes": [
+      "Pilgerrang-Regler (Rang 1–9) im Charakterbereich ergänzt",
+      "Gesundheit und Ausdauer werden jetzt mit Pilgerrang-Bonus berechnet",
+      "Rang 2–6 geben jeweils +20 Gesundheit und +20 Ausdauer; ab Rang 6 maximal +100",
+      "Aufklappbare Erklärung zu Pilgerrang, Fortschritt und Vorteilen ergänzt",
+      "Charakter-Grundberechnung auf 80 + 20 je Attributstufe + Rangbonus korrigiert",
+      "Untere Navigation: Symbol- und Textgröße sauber getrennt",
+      "Sprachauswahl kompakter; Versionsbutton in eigene Zeile darunter gesetzt"
+    ]
+  },
+  {
     "version": "0.8.3",
     "date": "11.09.2026",
     "changes": [

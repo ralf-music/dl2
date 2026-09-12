@@ -88,3 +88,8 @@ Die App ist ein privates Fan-/Hilfsprojekt und kein offizielles Produkt von Tech
 
 ## v0.8.3
 - Header-Layout korrigiert, Sprachwahl vereinfacht und Navigation auf „Sammlung“ korrigiert.
+
+
+## v0.8.4
+- Pilgerrang 1–9 im Charakterrechner, korrigierte Gesundheits-/Ausdauerberechnung und Pilgerrang-Erklärung.
+- Header- und Bottom-Navigation-Feinschliff.

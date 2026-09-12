@@ -24,7 +24,7 @@
         <option value="de">🇩🇪 Deutsch</option><option value="en">🇬🇧 English</option>
       </select>
     </label>
-    <button id="globalVersion" class="header-version" type="button">v0.8.3</button>
+    <button id="globalVersion" class="header-version" type="button">v0.8.4</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -120,9 +120,19 @@
 <section id="view-character" class="view">
   <div class="sectionhead"><div><div class="eyebrow">AIDEN STATUS</div><h2>CHARAKTER</h2></div></div>
   <div class="charcards">
-    <div class="controlcard"><label>Gesundheit <b id="healthLabel">1</b></label><div class="maxvalue"><small>MAXIMALWERT</small><strong id="healthValue">160</strong></div><input id="healthRange" type="range" min="1" max="26" value="1"><div class="rangefoot"><span>Stufe 1</span><span>Stufe 26</span></div></div>
-    <div class="controlcard"><label>Ausdauer <b id="staminaLabel">1</b></label><div class="maxvalue"><small>MAXIMALWERT</small><strong id="staminaValue">160</strong></div><input id="staminaRange" type="range" min="1" max="26" value="1"><div class="rangefoot"><span>Stufe 1</span><span>Stufe 26</span></div></div>
+    <div class="controlcard"><label>Gesundheit <b id="healthLabel">1</b></label><div class="maxvalue"><small>MAXIMALWERT</small><strong id="healthValue">100</strong></div><input id="healthRange" type="range" min="1" max="26" value="1"><div class="rangefoot"><span>Stufe 1</span><span>Stufe 26</span></div></div>
+    <div class="controlcard"><label>Ausdauer <b id="staminaLabel">1</b></label><div class="maxvalue"><small>MAXIMALWERT</small><strong id="staminaValue">100</strong></div><input id="staminaRange" type="range" min="1" max="26" value="1"><div class="rangefoot"><span>Stufe 1</span><span>Stufe 26</span></div></div>
+    <div class="controlcard pilgrim-card"><label>Pilgerrang <b id="pilgrimLabel">1</b></label><div class="maxvalue"><small>STATUSBONUS</small><strong id="pilgrimBonus">+0</strong></div><input id="pilgrimRange" type="range" min="1" max="9" value="1"><div class="rangefoot"><span>Rang 1</span><span>Rang 9</span></div><small class="rank-note" id="pilgrimBonusNote">Rang 2–6: je +20 Gesundheit und Ausdauer</small></div>
   </div>
+  <details class="pilgrim-info">
+    <summary>Was ist der Pilgerrang?</summary>
+    <div class="pilgrim-info-body">
+      <p>Der <b>Pilgerrang</b> ist dein allgemeiner Charakterrang und reicht von 1 bis 9. Er ist nicht mit dem Rang im Pilgrim Outpost zu verwechseln.</p>
+      <p><b>Wie steigt er?</b> Der Rang wächst mit deinem Fortschritt in den Fertigkeitsbäumen für Kampf und Parkour. Kampf- und Parkour-EP erhältst du durch Kämpfe, Parkour, Quests und Aktivitäten. Mit weiteren Fertigkeitsstufen steigt schließlich auch dein Pilgerrang.</p>
+      <p><b>Was bringt er?</b> Die Ränge 2 bis 6 geben jeweils +20 maximale Gesundheit und +20 maximale Ausdauer. Ab Rang 6 sind damit insgesamt +100 auf beide Werte erreicht. Höhere Ränge verbessern weiterhin die Stufe verfügbarer Beute und Händlerausrüstung.</p>
+      <p class="formula-note"><b>Berechnung:</b> 80 Grundwert + 20 je Gesundheits-/Ausdauer-Stufe + Pilgerrang-Bonus. Der Rechner berücksichtigt diesen Bonus automatisch.</p>
+    </div>
+  </details>
   <div class="calc">
     <div><small>VERTEILTE HEMMSTOFFE</small><b id="spentInh">6</b></div>
     <div><small>WEITERE BIS 26/26</small><b id="neededInh">150</b></div>
@@ -170,7 +180,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.8.3</b><br><span>Datenstand: 11.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.8.4</b><br><span>Datenstand: 12.09.2026 · Changelog öffnen</span></button>
 </section>
 <footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.</span></footer>
 </main>

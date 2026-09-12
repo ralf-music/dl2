@@ -1,8 +1,8 @@
 
-const VERSION="0.8.3";
+const VERSION="0.8.4";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
-const freshState=()=>({health:1,stamina:1,language:"de",found:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
+const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function normalizeState(s={}){
  const n={...freshState(),...s,found:s.found||{},areaDone:s.areaDone||{},safeDone:s.safeDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:s.collectDone||{},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})}};
@@ -34,6 +34,7 @@ $$("[data-sunkenfilter]").forEach(b=>b.onclick=()=>{sunkenFilter=b.dataset.sunke
  $$("#regionFilters button").forEach(b=>b.onclick=()=>{region=b.dataset.region;$$("#regionFilters button").forEach(x=>x.classList.toggle("active",x===b));renderDistricts()});
  $("#healthRange").oninput=e=>{state.health=+e.target.value;saveState();renderCharacter()};
  $("#staminaRange").oninput=e=>{state.stamina=+e.target.value;saveState();renderCharacter()};
+ $("#pilgrimRange").oninput=e=>{state.pilgrimRank=+e.target.value;saveState();renderCharacter()};
  $("#exportBtn").onclick=exportData; $("#importFile").onchange=importData;
  $("#syncCreateBtn").onclick=createSyncCode; $("#syncRedeemBtn").onclick=redeemSyncCode; $("#syncCopyBtn").onclick=copySyncCode;
  $("#syncInput").oninput=e=>{let v=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,8);e.target.value=v.length>4?v.slice(0,4)+"-"+v.slice(4):v};
@@ -250,14 +251,20 @@ function renderChangelog(){
 function closeChangelog(){$("#changelogModal").classList.remove("open");$("#changelogModal").setAttribute("aria-hidden","true")}
 
 function renderCharacter(){
- $("#healthRange").value=state.health;$("#staminaRange").value=state.stamina;$("#healthLabel").textContent=state.health;$("#staminaLabel").textContent=state.stamina;
- const attributeValue=lvl=>160+(lvl-1)*20;
+ const rank=Math.max(1,Math.min(9,+state.pilgrimRank||1));
+ state.pilgrimRank=rank;
+ $("#healthRange").value=state.health;$("#staminaRange").value=state.stamina;$("#pilgrimRange").value=rank;
+ $("#healthLabel").textContent=state.health;$("#staminaLabel").textContent=state.stamina;$("#pilgrimLabel").textContent=rank;
+ const rankBonus=Math.min(Math.max(rank-1,0),5)*20;
+ const attributeValue=lvl=>80+(lvl*20)+rankBonus;
  $("#healthValue").textContent=attributeValue(state.health);$("#staminaValue").textContent=attributeValue(state.stamina);
+ $("#pilgrimBonus").textContent=`+${rankBonus}`;
+ $("#pilgrimBonusNote").textContent=rank<6?`Aktuell +${rankBonus} auf Gesundheit und Ausdauer · nächster Rang: +20`:`Maximaler Statusbonus erreicht: +100 auf Gesundheit und Ausdauer`;
  const spent=(state.health+state.stamina)*3, needed=(52-state.health-state.stamina)*3;
  $("#spentInh").textContent=spent;$("#neededInh").textContent=needed;
- let html=`<div class="levelrow head"><span>Stufe</span><span>Kosten bis hier</span><span>Upgrade-Bonus*</span></div>`;
- for(let i=1;i<=26;i++) html+=`<div class="levelrow"><span>${i}</span><span>${i*3} Hemmstoffe</span><span>+${(i-1)*20}</span></div>`;
- html+=`<div class="levelrow"><span colspan="3">* kumulativer Bonus durch Hemmstoff-Upgrades; angezeigte Spielwerte können zusätzlich durch Spielerrang beeinflusst werden.</span><span></span><span></span></div>`;
+ let html=`<div class="levelrow head"><span>Stufe</span><span>Kosten bis hier</span><span>Basiswert*</span></div>`;
+ for(let i=1;i<=26;i++) html+=`<div class="levelrow"><span>${i}</span><span>${i*3} Hemmstoffe</span><span>${80+i*20}</span></div>`;
+ html+=`<div class="levelrow"><span>* Basiswert ohne Pilgerrang-Bonus. Rang 2–6 geben jeweils +20 Gesundheit und Ausdauer; ab Rang 6 insgesamt +100.</span><span></span><span></span></div>`;
  $("#levelTable").innerHTML=html;
 }
 function backupPayload(){
