@@ -49,7 +49,7 @@
   },
   {
     "id": "q5",
-    "name": "HV-GenMod Development Center",
+    "name": "THV-GenMod-Entwicklungszentrum",
     "district": "Insel Saint Paul",
     "rank": 4,
     "crates": [
@@ -57,7 +57,8 @@
       1,
       2
     ],
-    "youtube": "Dying Light 2 HV-GenMod Development Center location"
+    "youtube": "Dying Light 2 HV-GenMod Development Center location",
+    "searchAlias": "HV-GenMod Development Center"
   },
   {
     "id": "q6",

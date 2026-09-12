@@ -474,9 +474,10 @@
     "id": "inh-056",
     "district": "saint-paul",
     "count": 4,
-    "name": "HV-GenMod Development Center",
+    "name": "THV-GenMod-Entwicklungszentrum",
     "description": "GRE-Quarantänegebäude; drei Kisten.",
-    "tags": []
+    "tags": [],
+    "searchAlias": "HV-GenMod Development Center"
   },
   {
     "id": "inh-057",

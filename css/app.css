@@ -115,3 +115,10 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 .pilgrim-info-body{border-top:1px solid var(--line);padding:12px 15px;color:#c5c9cb;font-size:11px;line-height:1.55}
 .pilgrim-info-body p{margin:0 0 10px}.pilgrim-info-body p:last-child{margin-bottom:0}
 .pilgrim-info-body b{color:var(--text)}.pilgrim-info-body .formula-note{color:var(--muted)}
+
+/* v0.8.5 navigation proportions */
+.bottomnav button{font-size:14px;font-weight:700;line-height:1}
+.bottomnav button span:first-child{font-size:30px;line-height:1;margin-bottom:6px}
+.bottomnav button span:last-child{font-size:14px;line-height:1.1;margin-bottom:0;font-weight:700}
+.header-version{font-size:10px;padding:6px 9px}
+@media(max-width:520px){.header-version{font-size:10px;padding:6px 9px}}

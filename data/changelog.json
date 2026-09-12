@@ -1,5 +1,18 @@
 [
   {
+    "version": "0.8.5",
+    "date": "12.09.2026",
+    "changes": [
+      "Gebiets-Checkliste und Haupttracker für identische Inhalte miteinander verknüpft",
+      "GRE-Anomalien, Hemmstoff-Safes und bekannte Hemmstoff-Militär-Airdrops synchronisieren ihren Status bidirektional",
+      "GRE-Quarantänegebäude mit ihren Hemmstoff-Gesamteinträgen verknüpft",
+      "Bestehende Fortschritte werden beim Laden zusammengeführt, statt überschrieben zu werden",
+      "„THV-GenMod-Entwicklungszentrum“ in der deutschen Ansicht korrigiert",
+      "Bottom-Navigation mit einheitlicher größerer Schrift und größeren Icons korrigiert",
+      "Versions-/Changelog-Button leicht vergrößert"
+    ]
+  },
+  {
     "version": "0.8.4",
     "date": "12.09.2026",
     "changes": [
