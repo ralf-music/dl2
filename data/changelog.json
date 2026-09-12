@@ -1,5 +1,18 @@
 [
   {
+    "version": "0.8.6",
+    "date": "12.09.2026",
+    "changes": [
+      "Bottom-Navigation auf einen einheitlichen SVG-Icon-Stil umgestellt",
+      "Home verwendet jetzt ein Haus-Symbol",
+      "Hemmstoffe verwendet jetzt ein Spritzen-Symbol",
+      "Safes verwendet jetzt ein Safe-Symbol mit Tastenfeld",
+      "Sammlung verwendet jetzt ein aufgeklapptes Buch",
+      "Alle vier Navigations-Icons besitzen dieselbe Zeichenfläche und optisch angeglichene Größe",
+      "Schriftgröße und Gewicht der vier Navigationsbeschriftungen bleiben einheitlich"
+    ]
+  },
+  {
     "version": "0.8.5",
     "date": "12.09.2026",
     "changes": [

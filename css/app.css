@@ -122,3 +122,43 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 .bottomnav button span:last-child{font-size:14px;line-height:1.1;margin-bottom:0;font-weight:700}
 .header-version{font-size:10px;padding:6px 9px}
 @media(max-width:520px){.header-version{font-size:10px;padding:6px 9px}}
+
+/* v0.8.6 unified bottom navigation icons */
+.bottomnav button{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1;
+}
+.bottomnav button .nav-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  margin:0;
+  font-size:inherit;
+  line-height:1;
+}
+.bottomnav button .nav-icon svg{
+  width:28px;
+  height:28px;
+  display:block;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.bottomnav button .nav-label,
+.bottomnav button span.nav-label:last-child{
+  display:block;
+  margin:0;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.1;
+}
