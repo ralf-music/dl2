@@ -24,7 +24,7 @@
         <option value="de">🇩🇪 Deutsch</option><option value="en">🇬🇧 English</option>
       </select>
     </label>
-    <button id="globalVersion" class="header-version" type="button">v0.8.7</button>
+    <button id="globalVersion" class="header-version" type="button">v0.9.0</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -53,6 +53,10 @@
     <button class="module" data-go="faq"><b>FAQ / WISSEN</b><small>NG+, Tools & Mechaniken</small></button>
     <button class="module" data-go="backup"><b>DATEN</b><small>Backup & Wiederherstellung</small></button>
     <button class="module" data-go="collectibles"><b>SAMMLERSTÜCKE</b><small>209 Andenken · 68 Bänder · 71 Graffiti</small></button>
+    <a class="module external-map" id="externalMapLink" href="https://guides4gamers.com/dying-light-2/maps/central-loop/" target="_blank" rel="noopener noreferrer external">
+      <b id="externalMapTitle">INTERAKTIVE KARTE</b>
+      <small id="externalMapText">Villedor auf Guides4Gamers<br><span>Externe Karte · Guides4Gamers ↗</span></small>
+    </a>
   </div>
   <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe sind getrennt vom Grundspiel. Der detaillierte NG+-Fundorttracker folgt in einer späteren Datenstufe.</span></div>
 </section>
@@ -103,8 +107,9 @@
   </div>
   <input class="search" id="collectSearch" placeholder="Name, Nummer oder Bezirk suchen …">
   <label class="toggleline"><input type="checkbox" id="collectMissing"><span id="collectMissingLabel">Nur fehlende anzeigen</span></label>
-  <div class="notice"><b>2026</b><span id="collectSlotNotice">Bei Andenken und Bändern ist die 2026-Gesamtzahl bereits vollständig abgebildet. Exakte lokalisierte Namen und Fundorte werden datenweise ergänzt; die Slots bleiben stabil.</span></div>
+  <div class="notice"><b>2026</b><span id="collectSlotNotice">Die 209 Andenken sind mit Namen erfasst. Nicht sicher bestätigte deutsche Ingame-Bezeichnungen sind mit * markiert.</span></div>
   <div id="collectibleList"></div>
+  <div id="mementoVerifyNote" class="memento-verify-note">* Ingame-Bezeichnung nicht verifiziert</div>
   <div class="collect-modal" id="collectModal" aria-hidden="true">
     <div class="collect-modal-card">
       <button class="collect-close" id="collectClose" type="button">×</button>
@@ -180,7 +185,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.8.7</b><br><span>Datenstand: 12.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.8.9</b><br><span>Datenstand: 12.09.2026 · Changelog öffnen</span></button>
 </section>
 <footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.</span></footer>
 </main>

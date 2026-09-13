@@ -1,5 +1,5 @@
 
-const VERSION="0.8.7";
+const VERSION="0.9.0";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
@@ -136,12 +136,14 @@ function applyLanguage(){
  const set=(id,key)=>{const e=$("#"+id);if(e)e.textContent=L(key)};
  set("fanBadge","fanProject");set("legalFan","fanProject");set("legalText","disclaimer");
  set("villedorAssistant","villedorAssistant");set("companionModules","companionModules");set("navCollectibles","navCollectibles");
+  if($("#externalMapTitle"))$("#externalMapTitle").textContent=state.language==="en"?"INTERACTIVE MAP":"INTERAKTIVE KARTE";
+  if($("#externalMapText"))$("#externalMapText").innerHTML=state.language==="en"?"Villedor on Guides4Gamers<br><span>External map · Guides4Gamers ↗</span>":"Villedor auf Guides4Gamers<br><span>Externe Karte · Guides4Gamers ↗</span>";
  const bw=$("#backupWarning");if(bw)bw.innerHTML=`<b>${L("backupWarningTitle")}</b><span>${L("backupWarning")}</span>`;
  set("collectTitle","collectibles");set("mementoLabel","mementos");set("tapeLabel","tapes");set("graffitiLabel","graffiti");
  set("gameMementoLabel","gameCount");set("gameTapeLabel","gameCount");set("gameGraffitiLabel","gameCount");
  set("collectTrackerNote","trackerNote");set("collectSlotNotice","slotNotice");
  if($("#collectSearch"))$("#collectSearch").placeholder=L("searchCollectibles");
- if($("#collectMissingLabel"))$("#collectMissingLabel").textContent=state.language==="en"?"Show missing only":"Nur fehlende anzeigen";
+ if($("#collectMissingLabel"))$("#collectMissingLabel").textContent=state.language==="en"?"Show missing only":"Nur fehlende anzeigen";  if($("#mementoVerifyNote"))$("#mementoVerifyNote").textContent=state.language==="en"?"* In-game designation not verified":"* Ingame-Bezeichnung nicht verifiziert";
  if($("#collectCollectedLabel"))$("#collectCollectedLabel").textContent=L("collected").toUpperCase();
  const staticMap=state.language==="en"?{
   "GESUNDHEIT":"HEALTH","AUSDAUER":"STAMINA","Stufe":"Level","HEMMSTOFFE":"INHIBITORS","SAFE-CODES":"SAFE CODES",

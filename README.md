@@ -106,3 +106,18 @@ Die App ist ein privates Fan-/Hilfsprojekt und kein offizielles Produkt von Tech
 ## v0.8.7
 - Zentralring-Filter korrigiert; U-Bahn-Bezeichnungen vereinheitlicht.
 - Sammlung: reale Namen für alle 68 Bänder; deutsche Graffiti-Namen für die ursprünglichen 70 ergänzt.
+
+
+## v0.8.8
+- Bugfix: deutsche Graffiti-Namen in collectibles.json tatsächlich übernommen.
+- 70 ursprüngliche Graffiti jetzt mit getrennten DE/EN-Namen.
+
+
+## v0.8.9
+- 209 Andenken mit recherchierten Namen statt Platzhaltern.
+- Unsichere deutsche Ingame-Bezeichnungen tragen ein * und werden dezent erklärt.
+
+
+## v0.9.0
+- Neues externes Karten-Modul für die Guides4Gamers-DL2-Karte.
+- Öffnet separat im Browser; PWA bleibt eigenständig.

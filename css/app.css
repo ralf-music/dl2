@@ -162,3 +162,23 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
   font-weight:700;
   line-height:1.1;
 }
+
+/* v0.8.9: subtle note for unverified German memento names */
+.memento-verify-note{
+  margin:8px 2px 2px;
+  color:#686b6e;
+  font-size:10px;
+  font-weight:400;
+  line-height:1.25;
+}
+
+/* v0.9.0 external interactive map */
+.module.external-map{
+  display:block;
+  box-sizing:border-box;
+  text-decoration:none;
+}
+.module.external-map small span{
+  color:#72777a;
+  font-size:10px;
+}
