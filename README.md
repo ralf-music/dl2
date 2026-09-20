@@ -1,6 +1,17 @@
-# DL2 Companion v0.8.3
+# DL2 Companion v0.10.0
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
+
+
+## v0.10.0
+- Eigener NG+-Bereich mit 30 exklusiven Hemmstoffen und direktem 30er-Fundortguide
+- Dieselben NG+-Hemmstoffe erscheinen zusätzlich im normalen Hemmstoff-Tracker; beide Ansichten teilen denselben Status
+- Hemmstoff-Detailansicht mit Offen / Unklar / Gesammelt
+- Quarantäne-, GRE-Anomalie- und bekannte Hemmstoff-Airdrop-Verknüpfungen repariert und bidirektional synchronisiert
+- Zentralring-Filter repariert
+- Kartenmodul auf die vollständige Guides4Gamers-Kartenübersicht umgestellt
+- Deutsche Bandnamen weiter korrigiert
+- Bestehender localStorage-Key bleibt `dl2-companion-state-v1`; neue Zustände werden ergänzend normalisiert
 
 ## v0.7.5
 - Backup- und Sync-Erklärtexte überarbeitet
@@ -15,7 +26,7 @@ Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortsch
 
 ## Aktueller Funktionsumfang
 - Dashboard mit Gesamtfortschritt und aktuellem Bezirk
-- 126 Hemmstoffe des Grundspiels
+- 126 Hemmstoffe des Grundspiels + separater Tracker für 30 NG+-Hemmstoffe
 - 20 Safe-Codes inklusive Bloody Ties
 - Charakterwerte für Gesundheit und Ausdauer
 - Gebietsfortschritt / „Was fehlt mir hier?“
@@ -26,7 +37,7 @@ Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortsch
 - 5 schwarze und 7 rote Enten / Easter Eggs
 - Build-Empfehlungen
 - FAQ / Wissen
-- YouTube-Fundortsuche bei unterstützten Trackern
+- YouTube-Fundortsuche bei unterstützten Trackern; NG+-Hemmstoffe mit direkten Guide-Zeitmarken
 - Lokales JSON-Backup mit Export und Import
 - Geräte-Sync über einmaligen Code (30 Minuten gültig)
 - PWA / Offline-Grundfunktion und localStorage

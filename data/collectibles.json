@@ -1938,7 +1938,7 @@
     "id": "tape-007",
     "type": "tape",
     "index": 7,
-    "name_de": "Cpt. Posner Status Reports to Col. Williams #1",
+    "name_de": "Cpt. Posner – Statusbericht an Col. Williams #1",
     "name_en": "Cpt. Posner Status Reports to Col. Williams #1",
     "district": "Houndfield",
     "missable": false
@@ -1947,7 +1947,7 @@
     "id": "tape-008",
     "type": "tape",
     "index": 8,
-    "name_de": "Cpt. Posner Status Reports to Col. Williams #2",
+    "name_de": "Cpt. Posner – Statusberichte an Col. Williams #2",
     "name_en": "Cpt. Posner Status Reports to Col. Williams #2",
     "district": "Trinity",
     "missable": false
@@ -1956,7 +1956,7 @@
     "id": "tape-009",
     "type": "tape",
     "index": 9,
-    "name_de": "Cpt. Posner Status Reports to Col. Williams #3",
+    "name_de": "Cpt. Posner – Statusberichte an Col. Williams #3",
     "name_en": "Cpt. Posner Status Reports to Col. Williams #3",
     "district": "Downtown",
     "missable": false
@@ -1965,7 +1965,7 @@
     "id": "tape-010",
     "type": "tape",
     "index": 10,
-    "name_de": "Cpt. Posner Status Reports to Col. Williams #4",
+    "name_de": "Cpt. Posner – Statusberichte an Col. Williams #4",
     "name_en": "Cpt. Posner Status Reports to Col. Williams #4",
     "district": "Lower Dam Ayre",
     "missable": false
@@ -1974,7 +1974,7 @@
     "id": "tape-011",
     "type": "tape",
     "index": 11,
-    "name_de": "Cpt. Posner Status Reports to Col. Williams #5",
+    "name_de": "Cpt. Posner – Statusberichte an Col. Williams #5",
     "name_en": "Cpt. Posner Status Reports to Col. Williams #5",
     "district": "Lower Dam Ayre",
     "missable": false
@@ -1983,7 +1983,7 @@
     "id": "tape-012",
     "type": "tape",
     "index": 12,
-    "name_de": "Cpt. Posner Status Reports to Col. Williams #6",
+    "name_de": "Cpt. Posner – Statusberichte an Col. Williams #6",
     "name_en": "Cpt. Posner Status Reports to Col. Williams #6",
     "district": "Outlands",
     "missable": false
@@ -2154,7 +2154,7 @@
     "id": "tape-031",
     "type": "tape",
     "index": 31,
-    "name_de": "Tourism Office of Villedor - Saint Paul Cathedral",
+    "name_de": "Touristeninformation Villedor - Saint-Paul-Kathedrale",
     "name_en": "Tourism Office of Villedor - Saint Paul Cathedral",
     "district": "Saint Paul Island",
     "missable": false
@@ -2163,7 +2163,7 @@
     "id": "tape-032",
     "type": "tape",
     "index": 32,
-    "name_de": "Tourism Office of Villedor - VNC Tower",
+    "name_de": "Touristeninformation Villedor - VNC Turm",
     "name_en": "Tourism Office of Villedor - VNC Tower",
     "district": "Garrison",
     "missable": false
@@ -2172,7 +2172,7 @@
     "id": "tape-033",
     "type": "tape",
     "index": 33,
-    "name_de": "Tourismusbüro von Villedor - Old Villedor",
+    "name_de": "Touristeninformation Villedor - Old Villedor",
     "name_en": "Tourism Office of Villedor - Old Villedor",
     "district": "Trinity",
     "missable": false
@@ -2181,7 +2181,7 @@
     "id": "tape-034",
     "type": "tape",
     "index": 34,
-    "name_de": "Tourism Office of Villedor - Horseshoe",
+    "name_de": "Touristeninformation Villedor - Horseshoe",
     "name_en": "Tourism Office of Villedor - Horseshoe",
     "district": "Horseshoe",
     "missable": false
@@ -2190,7 +2190,7 @@
     "id": "tape-035",
     "type": "tape",
     "index": 35,
-    "name_de": "Tourism Office of Villedor - Villedor's Castle",
+    "name_de": "Touristeninformation Villedor - Schloss Villedor",
     "name_en": "Tourism Office of Villedor - Villedor's Castle",
     "district": "Muddy Grounds",
     "missable": false
@@ -2235,7 +2235,7 @@
     "id": "tape-040",
     "type": "tape",
     "index": 40,
-    "name_de": "Kleinanzeigen der Stadt - Eierjagd",
+    "name_de": "Anzeigen der Stadt – Eiersuche",
     "name_en": "The City Classifieds - Egg Hunting",
     "district": "Trinity",
     "missable": false
@@ -2253,7 +2253,7 @@
     "id": "tape-042",
     "type": "tape",
     "index": 42,
-    "name_de": "The City Classifieds - The Cable Guy",
+    "name_de": "Kleinanzeigen der Stadt - Der Kabelmann",
     "name_en": "The City Classifieds - The Cable Guy",
     "district": "Downtown",
     "missable": false
@@ -2307,7 +2307,7 @@
     "id": "tape-048",
     "type": "tape",
     "index": 48,
-    "name_de": "Schalte den Strom an",
+    "name_de": "Schaltet den Strom ein",
     "name_en": "Turn on the Power",
     "district": "Trinity",
     "missable": false
@@ -2316,7 +2316,7 @@
     "id": "tape-049",
     "type": "tape",
     "index": 49,
-    "name_de": "Cheatkins for Villedor",
+    "name_de": "Cheatkins für Villedor",
     "name_en": "Cheatkins for Villedor",
     "district": "Horseshoe",
     "missable": false
@@ -2325,7 +2325,7 @@
     "id": "tape-050",
     "type": "tape",
     "index": 50,
-    "name_de": "Prep for the next Fall",
+    "name_de": "Bereit für den nächsten Niedergang",
     "name_en": "Prep for the next Fall",
     "district": "Outlands",
     "missable": false
@@ -2334,7 +2334,7 @@
     "id": "tape-051",
     "type": "tape",
     "index": 51,
-    "name_de": "Sei fruchtbar und vermehre dich",
+    "name_de": "Seid fruchtbar und mehret euch",
     "name_en": "Be Fruitful and Multiply",
     "district": "Downtown",
     "missable": false
@@ -2343,7 +2343,7 @@
     "id": "tape-052",
     "type": "tape",
     "index": 52,
-    "name_de": "SHTF Chef",
+    "name_de": "SHTF-Koch",
     "name_en": "SHTF Chef",
     "district": "Downtown",
     "missable": false
@@ -2352,7 +2352,7 @@
     "id": "tape-053",
     "type": "tape",
     "index": 53,
-    "name_de": "Council of Mankind Session #1",
+    "name_de": "Der Menschheitsrat – Sitzung #1",
     "name_en": "Council of Mankind Session #1",
     "district": "Newfound Lost Lands",
     "missable": false
@@ -2361,7 +2361,7 @@
     "id": "tape-054",
     "type": "tape",
     "index": 54,
-    "name_de": "Council of Mankind Session #2",
+    "name_de": "Der Menschheitsrat – Sitzung #2",
     "name_en": "Council of Mankind Session #2",
     "district": "Garrison",
     "missable": false
@@ -2370,7 +2370,7 @@
     "id": "tape-055",
     "type": "tape",
     "index": 55,
-    "name_de": "Council of Mankind Session #3",
+    "name_de": "Der Menschheitsrat – Sitzung #3",
     "name_en": "Council of Mankind Session #3",
     "district": "Saint Paul Island",
     "missable": false
@@ -2406,7 +2406,7 @@
     "id": "tape-059",
     "type": "tape",
     "index": 59,
-    "name_de": "Lawan's Mix Tape",
+    "name_de": "Lawans Musikmix",
     "name_en": "Lawan's Mix Tape",
     "district": "Garrison",
     "missable": false
@@ -2415,7 +2415,7 @@
     "id": "tape-060",
     "type": "tape",
     "index": 60,
-    "name_de": "Unit 404: Trapped",
+    "name_de": "Einheit 404: In der Falle",
     "name_en": "Unit 404: Trapped",
     "district": "Outlands",
     "missable": false
@@ -2433,7 +2433,7 @@
     "id": "tape-062",
     "type": "tape",
     "index": 62,
-    "name_de": "Unit 404: The leg day is today",
+    "name_de": "Einheit 404: Heute ist Leg Day",
     "name_en": "Unit 404: The leg day is today",
     "district": "Houndfield",
     "missable": false
@@ -2442,7 +2442,7 @@
     "id": "tape-063",
     "type": "tape",
     "index": 63,
-    "name_de": "Einheit 404: Schwächstes Glied",
+    "name_de": "Einheit 404: Das schwächste Glied",
     "name_en": "Unit 404: Weakest link",
     "district": "The Wharf",
     "missable": false

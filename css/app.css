@@ -182,3 +182,40 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
   color:#72777a;
   font-size:10px;
 }
+
+
+/* v0.10.0 · Hemmstoff-Status & Neues Spiel+ */
+.inhitem{width:100%;cursor:pointer;color:var(--text);background:transparent;text-align:left;align-items:start}
+.inhitem:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.inh-state-dot{width:16px;height:16px;border:2px solid #697176;border-radius:50%;margin-top:2px;box-sizing:border-box}
+.inhitem.done .inh-state-dot{border-color:var(--orange);background:var(--orange);box-shadow:inset 0 0 0 3px #171a1d}
+.inhitem.unclear{background:#ff7a0009;border-left:2px dashed #a9652d}
+.inhitem.unclear .inh-state-dot{border-color:#d18a49;background:linear-gradient(135deg,transparent 44%,#d18a49 45%,#d18a49 55%,transparent 56%)}
+.inhitem.unclear b{text-decoration:none;color:#d4d7d8}
+.inh-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:64px}
+.inh-status-label{font-size:7px;font-weight:900;letter-spacing:.08em;color:#7f878b}
+.inhitem.done .inh-status-label{color:var(--orange2)}
+.inhitem.unclear .inh-status-label{color:#d18a49}
+.ngplus-badge{display:inline-block;margin-top:5px;padding:3px 5px;border:1px solid var(--orange);color:var(--orange);font-size:7px;font-weight:900;letter-spacing:.08em}
+.ngplus-district{border-color:#5b4432}
+.inhibitor-detail-copy{color:#c4c8ca;font-size:11px;line-height:1.5;margin:10px 0 14px}
+.inh-status-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 14px}
+.inh-status-actions button{border:1px solid #3a4044;background:#222629;color:#aeb4b7;padding:10px 5px;font-size:9px;font-weight:900;letter-spacing:.06em}
+.inh-status-actions button.active{border-color:var(--orange);background:#ff7a0015;color:var(--orange)}
+.inh-status-actions button[data-inhstatus="unclear"].active{border-style:dashed;color:#d18a49;border-color:#d18a49}
+.ngplus-module{border-color:#5b4432}
+.ngplus-notice{margin-bottom:12px}
+.ngplus-facts{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:11px 0 16px}
+.ngplus-facts>div{border:1px solid var(--line);background:var(--panel);padding:10px}
+.ngplus-facts b{display:block;color:var(--orange);font-size:9px;letter-spacing:.06em;margin-bottom:4px}
+.ngplus-facts span{display:block;color:var(--muted);font-size:9px;line-height:1.35}
+.ngplus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.ngplus-tile{min-height:76px;border:1px solid #353a3e;background:#171a1c;color:var(--text);padding:8px;border-radius:8px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;gap:5px}
+.ngplus-tile .tile-num{font-size:16px;font-weight:900;color:var(--orange)}
+.ngplus-tile .tile-name{font-size:9px;color:#c7cbcd;line-height:1.15}
+.ngplus-tile .tile-state{font-size:8px;color:#7f878b;font-weight:800;letter-spacing:.08em}
+.ngplus-tile.collected{border-color:#ff7a0088;background:#ff7a000d}
+.ngplus-tile.collected .tile-state{color:var(--orange2)}
+.ngplus-tile.unclear{border-style:dashed;border-color:#a9652d;background:#ff7a0008}
+.ngplus-tile.unclear .tile-state{color:#d18a49}
+@media(min-width:650px){.ngplus-grid{grid-template-columns:repeat(5,1fr)}}

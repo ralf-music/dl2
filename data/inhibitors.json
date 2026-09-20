@@ -639,5 +639,395 @@
     "name": "Geflutetes Gebiet #5",
     "description": "Unter Wasser.",
     "tags": []
+  },
+  {
+    "id": "ngp-inh-001",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #01",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #01 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=9s",
+    "searchAlias": "New Game Plus Inhibitor #1"
+  },
+  {
+    "id": "ngp-inh-002",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #02",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #02 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=55s",
+    "searchAlias": "New Game Plus Inhibitor #2"
+  },
+  {
+    "id": "ngp-inh-003",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #03",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #03 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=110s",
+    "searchAlias": "New Game Plus Inhibitor #3"
+  },
+  {
+    "id": "ngp-inh-004",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #04",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #04 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=134s",
+    "searchAlias": "New Game Plus Inhibitor #4"
+  },
+  {
+    "id": "ngp-inh-005",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #05",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #05 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=156s",
+    "searchAlias": "New Game Plus Inhibitor #5"
+  },
+  {
+    "id": "ngp-inh-006",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #06",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #06 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=193s",
+    "searchAlias": "New Game Plus Inhibitor #6"
+  },
+  {
+    "id": "ngp-inh-007",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #07",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #07 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=228s",
+    "searchAlias": "New Game Plus Inhibitor #7"
+  },
+  {
+    "id": "ngp-inh-008",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #08",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #08 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=253s",
+    "searchAlias": "New Game Plus Inhibitor #8"
+  },
+  {
+    "id": "ngp-inh-009",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #09",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #09 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=305s",
+    "searchAlias": "New Game Plus Inhibitor #9"
+  },
+  {
+    "id": "ngp-inh-010",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #10",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #10 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=339s",
+    "searchAlias": "New Game Plus Inhibitor #10"
+  },
+  {
+    "id": "ngp-inh-011",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #11",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #11 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=357s",
+    "searchAlias": "New Game Plus Inhibitor #11"
+  },
+  {
+    "id": "ngp-inh-012",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #12",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #12 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=388s",
+    "searchAlias": "New Game Plus Inhibitor #12"
+  },
+  {
+    "id": "ngp-inh-013",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #13",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #13 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=415s",
+    "searchAlias": "New Game Plus Inhibitor #13"
+  },
+  {
+    "id": "ngp-inh-014",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #14",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #14 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=435s",
+    "searchAlias": "New Game Plus Inhibitor #14"
+  },
+  {
+    "id": "ngp-inh-015",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #15",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #15 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=460s",
+    "searchAlias": "New Game Plus Inhibitor #15"
+  },
+  {
+    "id": "ngp-inh-016",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #16",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #16 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=490s",
+    "searchAlias": "New Game Plus Inhibitor #16"
+  },
+  {
+    "id": "ngp-inh-017",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #17",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #17 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=510s",
+    "searchAlias": "New Game Plus Inhibitor #17"
+  },
+  {
+    "id": "ngp-inh-018",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #18",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #18 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=539s",
+    "searchAlias": "New Game Plus Inhibitor #18"
+  },
+  {
+    "id": "ngp-inh-019",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #19",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #19 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=559s",
+    "searchAlias": "New Game Plus Inhibitor #19"
+  },
+  {
+    "id": "ngp-inh-020",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #20",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #20 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=588s",
+    "searchAlias": "New Game Plus Inhibitor #20"
+  },
+  {
+    "id": "ngp-inh-021",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #21",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #21 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=633s",
+    "searchAlias": "New Game Plus Inhibitor #21"
+  },
+  {
+    "id": "ngp-inh-022",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #22",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #22 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=655s",
+    "searchAlias": "New Game Plus Inhibitor #22"
+  },
+  {
+    "id": "ngp-inh-023",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #23",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #23 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=681s",
+    "searchAlias": "New Game Plus Inhibitor #23"
+  },
+  {
+    "id": "ngp-inh-024",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #24",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #24 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=760s",
+    "searchAlias": "New Game Plus Inhibitor #24"
+  },
+  {
+    "id": "ngp-inh-025",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #25",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #25 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=833s",
+    "searchAlias": "New Game Plus Inhibitor #25"
+  },
+  {
+    "id": "ngp-inh-026",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #26",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #26 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=891s",
+    "searchAlias": "New Game Plus Inhibitor #26"
+  },
+  {
+    "id": "ngp-inh-027",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #27",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #27 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=934s",
+    "searchAlias": "New Game Plus Inhibitor #27"
+  },
+  {
+    "id": "ngp-inh-028",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #28",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #28 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=986s",
+    "searchAlias": "New Game Plus Inhibitor #28"
+  },
+  {
+    "id": "ngp-inh-029",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #29",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #29 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=1053s",
+    "searchAlias": "New Game Plus Inhibitor #29"
+  },
+  {
+    "id": "ngp-inh-030",
+    "district": null,
+    "count": 1,
+    "name": "NG+ Hemmstoff #30",
+    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #30 im vollständigen 30er-NG+-Guide.",
+    "tags": [
+      "ngplus"
+    ],
+    "ngPlus": true,
+    "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=1089s",
+    "searchAlias": "New Game Plus Inhibitor #30"
   }
 ]

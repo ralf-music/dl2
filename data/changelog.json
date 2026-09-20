@@ -1,5 +1,20 @@
 [
   {
+    "version": "0.10.0",
+    "date": "20.09.2026",
+    "changes": [
+      "Neuer Bereich „Neues Spiel+“ mit Tracker für 30 ausschließlich in NG+ verfügbare Hemmstoffe",
+      "Die 30 NG+-Hemmstoffe erscheinen zusätzlich im normalen Hemmstoff-Tracker und verwenden dort denselben gespeicherten Status",
+      "Hemmstoffe besitzen jetzt die drei Zustände Offen, Unklar und Gesammelt in einer Detailansicht",
+      "GRE-Quarantänestationen, GRE-Anomalien und eindeutig zugeordnete Hemmstoff-Airdrops synchronisieren ihren Hemmstoffstatus zuverlässig in beide Richtungen",
+      "Bugfix: THV Genomzentrum in Horseshoe synchronisiert nach allen drei GRE-Kisten den zugehörigen 4er-Hemmstoffeintrag",
+      "Bugfix: Airdrop-Synchronisierung repariert und Zentralring-Filter technisch auf die deutsche Regionsbezeichnung korrigiert",
+      "Interaktive Karte führt nun auf die Guides4Gamers-Übersicht für ganz Villedor statt nur auf Central Loop",
+      "Mehrere deutsche Bandnamen anhand deutscher Ingame-Screenshots und deutschsprachiger Quellen korrigiert",
+      "Bestehender localStorage-Schlüssel bleibt unverändert; der neue Unklar-Status wird ergänzend migriert"
+    ]
+  },
+  {
     "version": "0.9.0",
     "date": "13.09.2026",
     "changes": [

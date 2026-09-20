@@ -24,7 +24,7 @@
         <option value="de">🇩🇪 Deutsch</option><option value="en">🇬🇧 English</option>
       </select>
     </label>
-    <button id="globalVersion" class="header-version" type="button">v0.9.0</button>
+    <button id="globalVersion" class="header-version" type="button">v0.10.0</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -50,15 +50,16 @@
     <button class="module" data-go="safes"><b>SAFE-CODES</b><small>20 bekannte Codes inkl. DLC</small></button>
     <button class="module" data-go="character"><b>CHARAKTER</b><small>Gesundheit & Ausdauer</small></button>
     <button class="module" data-go="builds"><b>BUILDS</b><small>5 Ziel-Loadouts</small></button>
+    <button class="module ngplus-module" data-go="ngplus"><b>NEUES SPIEL+</b><small><span id="ngDash">0 / 30</span> exklusive Hemmstoffe</small></button>
     <button class="module" data-go="faq"><b>FAQ / WISSEN</b><small>NG+, Tools & Mechaniken</small></button>
     <button class="module" data-go="backup"><b>DATEN</b><small>Backup & Wiederherstellung</small></button>
     <button class="module" data-go="collectibles"><b>SAMMLERSTÜCKE</b><small>209 Andenken · 68 Bänder · 71 Graffiti</small></button>
-    <a class="module external-map" id="externalMapLink" href="https://guides4gamers.com/dying-light-2/maps/central-loop/" target="_blank" rel="noopener noreferrer external">
+    <a class="module external-map" id="externalMapLink" href="https://guides4gamers.com/dying-light-2/maps/" target="_blank" rel="noopener noreferrer external">
       <b id="externalMapTitle">INTERAKTIVE KARTE</b>
       <small id="externalMapText">Villedor auf Guides4Gamers<br><span>Externe Karte · Guides4Gamers ↗</span></small>
     </a>
   </div>
-  <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe sind getrennt vom Grundspiel. Der detaillierte NG+-Fundorttracker folgt in einer späteren Datenstufe.</span></div>
+  <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe werden separat getrackt und bleiben gleichzeitig mit dem normalen Hemmstoff-Bereich verknüpft.</span></div>
 </section>
 
 <section id="view-quarantine" class="view"><div class="sectionhead"><div><div class="eyebrow">DARK ZONES</div><h2>GRE-QUARANTÄNE</h2></div><div class="aircount"><b id="qCount">0/6</b><small>ABGESCHLOSSEN</small></div></div><p class="introcopy">6 GRE-Quarantänestationen · jeweils 4 Hemmstoffe in 3 GRE-Kisten (1 + 1 + 2).</p><div class="airhero"><div><span>GEBÄUDE</span><strong id="qBuildings">0/6</strong></div><div><span>HEMMSTOFFE</span><strong id="qInhib">0/24</strong></div><div><span>NOCH OFFEN</span><strong id="qOpen">24</strong></div></div><div id="quarantineList"></div></section><section id="view-ducks" class="view"><div class="sectionhead"><div><div class="eyebrow">GEHEIMNISSE</div><h2>ENTEN & EASTER EGGS</h2></div><div class="aircount"><b id="duckCount">0/12</b><small>GESAMMELT</small></div></div><div class="duck-summary"><div><b>5 SCHWARZE ENTEN</b><span>DOOM-Easter-Egg</span></div><div><b>7 ROTE ENTEN</b><span>Fahrrad-Herausforderung</span></div></div><div id="duckList"></div></section><section id="view-gre" class="view">
@@ -78,9 +79,25 @@
   <div class="bar big"><i id="inhBar"></i></div>
   <input class="search" id="inhSearch" placeholder="Fundort oder Gebiet suchen …">
   <div class="filters" id="regionFilters">
-    <button class="active" data-region="all">Alle</button><button data-region="Old Villedor">Old Villedor</button><button data-region="Central Loop" id="regionCentralLoop">Zentralring</button>
+    <button class="active" data-region="all">Alle</button><button data-region="Old Villedor">Old Villedor</button><button data-region="Zentralring" id="regionCentralLoop">Zentralring</button>
   </div>
   <div id="districtList"></div>
+</section>
+
+<section id="view-ngplus" class="view">
+  <div class="sectionhead"><div><div class="eyebrow">NEW GAME+</div><h2>NEUES SPIEL+</h2></div><div class="aircount"><b id="ngCount">0/30</b><small>HEMMSTOFFE</small></div></div>
+  <p class="introcopy">Neues Spiel+ ergänzt 30 zusätzliche Hemmstoffe. Sie sind ausschließlich in NG+ verfügbar und werden hier sowie im normalen Hemmstoff-Tracker mit demselben Status geführt.</p>
+  <div class="airhero"><div><span>GESAMMELT</span><strong id="ngCollected">0/30</strong></div><div><span>NOCH OFFEN</span><strong id="ngOpen">30</strong></div><div><span>HEMMSTOFFE GESAMT</span><strong>126 + 30</strong></div></div>
+  <div class="notice ngplus-notice"><b>NG+ EXKLUSIV</b><span>Diese 30 Einträge existieren im Grundspiel nicht. Jeder Eintrag öffnet dieselbe Detailansicht mit Offen, Unklar und Gesammelt.</span></div>
+  <div class="ngplus-facts">
+    <div><b>GOLD-BEGEGNUNGEN</b><span>Spezielle Begegnungen im NG+ mit hochwertiger Beute.</span></div>
+    <div><b>LEGENDÄRE WAFFEN</b><span>NG+ führte eine zusätzliche legendäre Seltenheitsstufe ein.</span></div>
+    <div><b>PLATIN-ZIELE</b><span>Parkour-Herausforderungen erhalten zusätzliche Platin-Zielzeiten.</span></div>
+    <div><b>GEGNER-SKALIERUNG</b><span>Gegner skalieren im NG+ mit Aidens Fortschritt.</span></div>
+  </div>
+  <div class="subsection-title"><div><div class="eyebrow">30 FUNDORTE</div><h3>NG+ HEMMSTOFFE</h3></div></div>
+  <p class="introcopy">Die Nummerierung folgt dem vollständigen 30er-Fundortguide. Wo eine eindeutige deutsche Ortszuordnung nicht zuverlässig belegt ist, erfindet der Companion bewusst keinen Bezirk.</p>
+  <div id="ngPlusList" class="ngplus-grid"></div>
 </section>
 
 <section id="view-safes" class="view">
@@ -185,7 +202,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.8.9</b><br><span>Datenstand: 12.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.10.0</b><br><span>Datenstand: 20.09.2026 · Changelog öffnen</span></button>
 </section>
 <footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.</span></footer>
 </main>
@@ -216,6 +233,22 @@
     <span class="nav-label" id="navCollectibles">Sammlung</span>
   </button>
 </nav>
+
+<div class="collect-modal" id="inhibitorModal" aria-hidden="true">
+  <div class="collect-modal-card inhibitor-modal-card">
+    <button class="collect-close" id="inhibitorClose" type="button">×</button>
+    <div class="eyebrow" id="inhibitorDetailType">HEMMSTOFF</div>
+    <h3 id="inhibitorDetailName"></h3>
+    <div class="collect-detail-meta" id="inhibitorDetailMeta"></div>
+    <p class="inhibitor-detail-copy" id="inhibitorDetailDescription"></p>
+    <div class="inh-status-actions" aria-label="Hemmstoffstatus">
+      <button type="button" data-inhstatus="open">OFFEN</button>
+      <button type="button" data-inhstatus="unclear">UNKLAR</button>
+      <button type="button" data-inhstatus="collected">GESAMMELT</button>
+    </div>
+    <a class="yt-find" id="inhibitorDetailYoutube" target="_blank" rel="noopener">▶ FUNDORT AUF YOUTUBE</a>
+  </div>
+</div>
 
 <div class="modal" id="changelogModal" aria-hidden="true"><div class="modalbox"><div class="modalhead"><div><div class="eyebrow">VERSION HISTORY</div><h2>CHANGELOG</h2></div><button id="closeChangelog">×</button></div><div id="changelogList"></div></div></div>
 <div class="toast" id="toast"></div>

@@ -1,11 +1,11 @@
 
-const VERSION="0.9.0";
+const VERSION="0.10.0";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
-const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
+const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},inhibitorStatus:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function normalizeState(s={}){
- const n={...freshState(),...s,found:s.found||{},areaDone:s.areaDone||{},safeDone:s.safeDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:s.collectDone||{},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})}};
+ const n={...freshState(),...s,found:s.found||{},inhibitorStatus:s.inhibitorStatus||{},areaDone:s.areaDone||{},safeDone:s.safeDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:s.collectDone||{},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})}};
  Object.keys(n.areaDone).filter(k=>k.startsWith("safe:")&&n.areaDone[k]).forEach(k=>n.safeDone[k.slice(5)]=true);
  return n
 } function loadState(){try{state=normalizeState(JSON.parse(localStorage.getItem(KEY)||"{}"))}catch{state=freshState()}}
@@ -41,6 +41,9 @@ $$("[data-sunkenfilter]").forEach(b=>b.onclick=()=>{sunkenFilter=b.dataset.sunke
  $("#syncInput").oninput=e=>{let v=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,8);e.target.value=v.length>4?v.slice(0,4)+"-"+v.slice(4):v};
  $("#collectClose").onclick=closeCollectDetail;
  $("#collectModal").onclick=e=>{if(e.target.id==="collectModal")closeCollectDetail()};
+ $("#inhibitorClose").onclick=closeInhibitorDetail;
+ $("#inhibitorModal").onclick=e=>{if(e.target.id==="inhibitorModal")closeInhibitorDetail()};
+ $$('[data-inhstatus]').forEach(b=>b.onclick=()=>{const id=$("#inhibitorModal").dataset.id;if(id)setInhibitorStatus(id,b.dataset.inhstatus)});
  $("#resetBtn").onclick=()=>{if(confirm("Wirklich alle lokalen DL2-Companion-Daten löschen?")){localStorage.removeItem(KEY);state=freshState();saveState();renderAll();toast("Lokale Daten gelöscht")}};
 }
 
@@ -48,6 +51,7 @@ const SAFE_INHIBITOR_LINKS={"safe-02":"inh-005","safe-09":"inh-028","safe-12":"i
 const AIR_INHIBITOR_LINKS={"THB-04B":"inh-008","THB-1L0":"inh-029","THB-UT0":"inh-042","THB-NW4":"inh-043","THB-4UL":"inh-066"};
 const QUARANTINE_INHIBITOR_LINKS={"q1":"inh-002","q2":"inh-016","q3":"inh-026","q4":"inh-049","q5":"inh-056","q6":"inh-063"};
 function setFlag(obj,key,val){if(val)obj[key]=true;else delete obj[key]}
+function markInhibitorFromSource(id,val){setFlag(state.found,id,val);if(state.inhibitorStatus)delete state.inhibitorStatus[id]}
 function linkedByInhibitor(id){
  const safe=Object.entries(SAFE_INHIBITOR_LINKS).find(([,v])=>v===id)?.[0];
  const air=Object.entries(AIR_INHIBITOR_LINKS).find(([,v])=>v===id)?.[0];
@@ -62,27 +66,65 @@ function syncFromInhibitor(id,val){
  if(l.anomaly)setFlag(state.greDone,l.anomaly,val);
  if(l.q){const q=quarantine.find(x=>x.id===l.q);if(q)q.crates.forEach((_,i)=>setFlag(state.quarantineDone,l.q+"-"+i,val))}
 }
-function syncFromSafe(id,val){const inh=SAFE_INHIBITOR_LINKS[id];if(inh)setFlag(state.found,inh,val)}
-function syncFromAir(id,val){const inh=AIR_INHIBITOR_LINKS[id];if(inh)setFlag(state.found,inh,val)}
-function syncFromGRE(id,val){const x=gre.find(a=>a.id===id);if(x?.inhibitorId)setFlag(state.found,x.inhibitorId,val)}
+function syncFromSafe(id,val){const inh=SAFE_INHIBITOR_LINKS[id];if(inh)markInhibitorFromSource(inh,val)}
+function syncFromAir(id,val){const inh=AIR_INHIBITOR_LINKS[id];if(inh)markInhibitorFromSource(inh,val)}
+function syncFromGRE(id,val){const x=gre.find(a=>a.id===id);if(x?.inhibitorId)markInhibitorFromSource(x.inhibitorId,val)}
 function syncFromQuarantine(id){
  const q=quarantine.find(x=>x.id===id),inh=QUARANTINE_INHIBITOR_LINKS[id];if(!q||!inh)return;
- setFlag(state.found,inh,q.crates.every((_,i)=>state.quarantineDone[id+"-"+i]));
+ markInhibitorFromSource(inh,q.crates.every((_,i)=>state.quarantineDone[id+"-"+i]));
 }
 function reconcileLinkedState(){
- Object.entries(SAFE_INHIBITOR_LINKS).forEach(([a,i])=>{const v=!!state.safeDone[a]||!!state.found[i];setFlag(state.safeDone,a,v);setFlag(state.found,i,v)});
- Object.entries(AIR_INHIBITOR_LINKS).forEach(([a,i])=>{const v=!!state.airDone[a]||!!state.found[i];setFlag(state.airDone,a,v);setFlag(state.found,i,v)});
- gre.forEach(x=>{if(!x.inhibitorId)return;const v=!!state.greDone[x.id]||!!state.found[x.inhibitorId];setFlag(state.greDone,x.id,v);setFlag(state.found,x.inhibitorId,v)});
+ Object.entries(SAFE_INHIBITOR_LINKS).forEach(([a,i])=>{const v=!!state.safeDone[a]||!!state.found[i];setFlag(state.safeDone,a,v);if(v)markInhibitorFromSource(i,true)});
+ Object.entries(AIR_INHIBITOR_LINKS).forEach(([a,i])=>{const v=!!state.airDone[a]||!!state.found[i];setFlag(state.airDone,a,v);if(v)markInhibitorFromSource(i,true)});
+ gre.forEach(x=>{if(!x.inhibitorId)return;const v=!!state.greDone[x.id]||!!state.found[x.inhibitorId];setFlag(state.greDone,x.id,v);if(v)markInhibitorFromSource(x.inhibitorId,true)});
  Object.entries(QUARANTINE_INHIBITOR_LINKS).forEach(([qid,iid])=>{const q=quarantine.find(x=>x.id===qid);if(!q)return;
-   if(state.found[iid])q.crates.forEach((_,i)=>setFlag(state.quarantineDone,qid+"-"+i,true));
-   else if(q.crates.every((_,i)=>state.quarantineDone[qid+"-"+i]))setFlag(state.found,iid,true);
+   if(state.found[iid]){q.crates.forEach((_,i)=>setFlag(state.quarantineDone,qid+"-"+i,true));delete state.inhibitorStatus[iid]}
+   else if(q.crates.every((_,i)=>state.quarantineDone[qid+"-"+i]))markInhibitorFromSource(iid,true);
  });
 }
 
-function foundCount(){return inhibitors.reduce((a,x)=>a+(state.found[x.id]?x.count:0),0)}
+function baseInhibitors(){return inhibitors.filter(x=>!x.ngPlus)}
+function ngPlusInhibitors(){return inhibitors.filter(x=>x.ngPlus)}
+function foundCount(){return baseInhibitors().reduce((a,x)=>a+(state.found[x.id]?x.count:0),0)}
+function ngPlusFoundCount(){return ngPlusInhibitors().reduce((a,x)=>a+(state.found[x.id]?x.count:0),0)}
+function inhibitorStatus(id){return state.found[id]?"collected":state.inhibitorStatus?.[id]==="unclear"?"unclear":"open"}
+function inhibitorStatusText(status){
+ if(state.language==="en")return status==="collected"?"COLLECTED":status==="unclear"?"UNCLEAR":"OPEN";
+ return status==="collected"?"GESAMMELT":status==="unclear"?"UNKLAR":"OFFEN"
+}
+function inhibitorGuideUrl(x,dname=""){return x.guideUrl||ytLink(`Dying Light 2 ${dname} ${x.name} ${x.searchAlias||""} ${x.description||""} Inhibitor location`)}
+function openInhibitorDetail(id){
+ const x=inhibitors.find(v=>v.id===id);if(!x)return;
+ const d=x.ngPlus?null:districts.find(v=>v.id===x.district);
+ const status=inhibitorStatus(id);
+ $("#inhibitorModal").dataset.id=id;
+ $("#inhibitorDetailType").textContent=x.ngPlus?"HEMMSTOFF · NEUES SPIEL+":"HEMMSTOFF · "+(d?.name||"VILLEDOR").toUpperCase();
+ $("#inhibitorDetailName").textContent=x.name;
+ $("#inhibitorDetailMeta").textContent=x.ngPlus?"NG+ EXKLUSIV · Nur in Neues Spiel+ verfügbar":`${d?.name||"Villedor"} · ${x.count||1} Hemmstoff${(x.count||1)>1?"e":""}`;
+ $("#inhibitorDetailDescription").textContent=x.description||"";
+ $("#inhibitorDetailYoutube").href=inhibitorGuideUrl(x,d?.name||"");
+ $("#inhibitorDetailYoutube").textContent=state.language==="en"?"▶ FIND LOCATION ON YOUTUBE":"▶ FUNDORT AUF YOUTUBE";
+ $$('[data-inhstatus]').forEach(b=>{b.classList.toggle("active",b.dataset.inhstatus===status);b.textContent=inhibitorStatusText(b.dataset.inhstatus)});
+ $("#inhibitorModal").classList.add("open");$("#inhibitorModal").setAttribute("aria-hidden","false");
+}
+function closeInhibitorDetail(){$("#inhibitorModal").classList.remove("open");$("#inhibitorModal").setAttribute("aria-hidden","true")}
+function setInhibitorStatus(id,status){
+ if(status==="collected"){setFlag(state.found,id,true);delete state.inhibitorStatus[id];syncFromInhibitor(id,true)}
+ else if(status==="unclear"){setFlag(state.found,id,false);state.inhibitorStatus[id]="unclear"}
+ else {setFlag(state.found,id,false);delete state.inhibitorStatus[id];syncFromInhibitor(id,false)}
+ saveState();closeInhibitorDetail();renderAll();
+}
+function makeInhibitorRow(x,dname){
+ const status=inhibitorStatus(x.id),row=document.createElement("div");
+ row.className="inhitem "+(status==="collected"?"done":status==="unclear"?"unclear":"open");row.tabIndex=0;row.setAttribute("role","button");
+ row.innerHTML=`<span class="inh-state-dot" aria-hidden="true"></span><span><b>${x.name}</b><p>${x.description}</p>${x.ngPlus?'<span class="ngplus-badge">NG+ EXKLUSIV</span>':""}<a class="yt-find" target="_blank" rel="noopener" href="${inhibitorGuideUrl(x,dname)}">▶ FUNDORT AUF YOUTUBE</a></span><span class="inh-right"><span class="countbadge">×${x.count}</span><span class="inh-status-label">${inhibitorStatusText(status)}</span></span>`;
+ row.onclick=e=>{if(e.target.closest("a"))return;openInhibitorDetail(x.id)};
+ row.onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&!e.target.closest("a")){e.preventDefault();openInhibitorDetail(x.id)}};
+ return row
+}
 function updateDashboard(){const op=overallProgress();if($("#overallPct")){$("#overallPct").textContent=op.pct+" % COMPANION-FORTSCHRITT";$("#overallBar").style.width=op.pct+"%";if($("#overallCount"))$("#overallCount").textContent=op.done+" von "+op.total+" Einträgen abgeschlossen";const ap=districtProgress(state.currentArea);$("#currentAreaName").textContent=state.currentArea;$("#currentAreaMissing").textContent=(ap.total-ap.done)+" von "+ap.total+" Einträgen noch offen";}
- const n=foundCount(), pct=Math.round(n/126*100);
- $("#dashFound").textContent=`${n} / 126`;$("#dashBar").style.width=pct+"%";$("#dashPercent").textContent=pct+" % dokumentiert";if($("#inhDash"))$("#inhDash").textContent=`${n} / 126`;
+ const n=foundCount(), pct=Math.round(n/126*100),ng=ngPlusFoundCount();
+ $("#dashFound").textContent=`${n} / 126`;$("#dashBar").style.width=pct+"%";$("#dashPercent").textContent=pct+" % dokumentiert";if($("#inhDash"))$("#inhDash").textContent=`${n} / 126`;if($("#ngDash"))$("#ngDash").textContent=`${ng} / 30`;
  $("#dashHealth").textContent=state.health;$("#dashStamina").textContent=state.stamina;
  if($("#inhTotal")){$("#inhTotal").textContent=`${n} / 126`;$("#inhBar").style.width=pct+"%"}
 }
@@ -93,25 +135,23 @@ function renderDistricts(){
  const openDistricts=new Set([...wrap.querySelectorAll(".district.open")].map(x=>x.dataset.district).filter(Boolean));
  wrap.innerHTML="";
  districts.filter(d=>region==="all"||d.region===region).forEach(d=>{
-   const rows=inhibitors.filter(x=>x.district===d.id && (!q || (x.name+" "+x.description+" "+d.name).toLowerCase().includes(q)));
+   const rows=baseInhibitors().filter(x=>x.district===d.id && (!q || (x.name+" "+x.description+" "+d.name).toLowerCase().includes(q)));
    if(!rows.length)return;
-   const done=inhibitors.filter(x=>x.district===d.id&&state.found[x.id]).reduce((a,x)=>a+x.count,0);
+   const done=baseInhibitors().filter(x=>x.district===d.id&&state.found[x.id]).reduce((a,x)=>a+x.count,0);
    const box=document.createElement("div");
    box.dataset.district=d.id;
    box.className="district"+((q||openDistricts.has(d.id))?" open":"");
    box.innerHTML=`<button><span class="dname"><b>${d.name}</b><small>${d.region}</small></span><span class="dcount">${done} / ${d.count}</span></button><div class="items"></div>`;
    box.querySelector("button").onclick=()=>box.classList.toggle("open");
-   const items=box.querySelector(".items");
-   rows.forEach(x=>{
-      const row=document.createElement("label");row.className="inhitem"+(state.found[x.id]?" done":"");
-      row.innerHTML=`<input type="checkbox" ${state.found[x.id]?"checked":""}><span><b>${x.name}</b><p>${x.description}</p><a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 ${d.name} ${x.name} ${x.searchAlias||""} ${x.description} Inhibitor location`)}">▶ FUNDORT AUF YOUTUBE</a></span><span class="countbadge">×${x.count}</span>`;
-      row.querySelector("input").onchange=e=>{setFlag(state.found,x.id,e.target.checked);syncFromInhibitor(x.id,e.target.checked);saveState();renderAll()};
-      items.appendChild(row)
-   });
-   wrap.appendChild(box)
+   const items=box.querySelector(".items");rows.forEach(x=>items.appendChild(makeInhibitorRow(x,d.name)));wrap.appendChild(box)
  });
+ if(region==="all"){
+   const rows=ngPlusInhibitors().filter(x=>!q||(x.name+" "+x.description+" NG+ Neues Spiel+").toLowerCase().includes(q));
+   if(rows.length){const done=rows.filter(x=>state.found[x.id]).length,box=document.createElement("div");box.dataset.district="ng-plus";box.className="district ngplus-district"+((q||openDistricts.has("ng-plus"))?" open":"");box.innerHTML=`<button><span class="dname"><b>Neues Spiel+</b><small>30 exklusive Hemmstoffe</small></span><span class="dcount">${done} / 30</span></button><div class="items"></div>`;box.querySelector("button").onclick=()=>box.classList.toggle("open");const items=box.querySelector(".items");rows.forEach(x=>items.appendChild(makeInhibitorRow(x,"Neues Spiel+")));wrap.appendChild(box)}
+ }
  updateDashboard()
 }
+
 function renderSafes(){
  if(!safes.length)return;
  const q=$("#safeSearch").value.toLowerCase().trim(), only=$("#onlyInhibitor").checked, missing=$("#onlyMissingSafes").checked;
@@ -186,8 +226,16 @@ function renderCollectibles(){
  $$("[data-collecttile]").forEach(b=>b.onclick=()=>openCollectDetail(b.dataset.collecttile));
  $("#collectDetailDone").onchange=e=>{const id=e.target.dataset.id;if(!id)return;state.collectDone[id]=e.target.checked;if(!e.target.checked)delete state.collectDone[id];saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
 }
+function renderNGPlus(){
+ if(!inhibitors.length||!$("#ngPlusList"))return;
+ const rows=ngPlusInhibitors(),done=ngPlusFoundCount();
+ $("#ngCount").textContent=done+"/30";$("#ngCollected").textContent=done+"/30";$("#ngOpen").textContent=30-done;if($("#ngDash"))$("#ngDash").textContent=done+" / 30";
+ $("#ngPlusList").innerHTML=rows.map((x,i)=>{const st=inhibitorStatus(x.id);return `<button type="button" class="ngplus-tile ${st}" data-nginh="${x.id}"><span class="tile-num">#${String(i+1).padStart(2,"0")}</span><span class="tile-name">${x.name}</span><span class="tile-state">${inhibitorStatusText(st)}</span></button>`}).join("");
+ $$('[data-nginh]').forEach(b=>b.onclick=()=>openInhibitorDetail(b.dataset.nginh));
+}
 function renderAll(){
   renderDistricts();
+  renderNGPlus();
   renderCharacter();
   renderSafes();
   renderFAQ();
@@ -204,11 +252,11 @@ function renderAll(){
   applyLanguage();
 }
 function ytLink(q){return "https://www.youtube.com/results?search_query="+encodeURIComponent(q)}
-function renderQuarantine(){if(!quarantine.length)return;let total=0,b=0;quarantine.forEach(q=>{let c=0;q.crates.forEach((n,i)=>{if(state.quarantineDone[q.id+"-"+i])c+=n});total+=c;if(c===4)b++});$("#qCount").textContent=b+"/6";$("#qBuildings").textContent=b+"/6";$("#qInhib").textContent=total+"/24";$("#qOpen").textContent=24-total;if($("#qDash"))$("#qDash").textContent=b+" / 6";$("#quarantineList").innerHTML=quarantine.map(q=>`<div class="qcard"><h3>${q.name}</h3><div class="qmeta">${q.district} · Stufe ${q.rank} · 4 Hemmstoffe</div><div class="qcrates">${q.crates.map((n,i)=>`<label><input type="checkbox" data-q="${q.id}-${i}" ${state.quarantineDone[q.id+"-"+i]?"checked":""}> Kiste ${i+1}: ${n}</label>`).join("")}</div><a class="yt-find" target="_blank" rel="noopener" href="${ytLink(q.youtube)}">▶ FUNDORT AUF YOUTUBE</a></div>`).join("");$$("[data-q]").forEach(c=>c.onchange=()=>{state.quarantineDone[c.dataset.q]=c.checked;saveState();renderQuarantine()})}
+function renderQuarantine(){if(!quarantine.length)return;let total=0,b=0;quarantine.forEach(q=>{let c=0;q.crates.forEach((n,i)=>{if(state.quarantineDone[q.id+"-"+i])c+=n});total+=c;if(c===4)b++});$("#qCount").textContent=b+"/6";$("#qBuildings").textContent=b+"/6";$("#qInhib").textContent=total+"/24";$("#qOpen").textContent=24-total;if($("#qDash"))$("#qDash").textContent=b+" / 6";$("#quarantineList").innerHTML=quarantine.map(q=>`<div class="qcard"><h3>${q.name}</h3><div class="qmeta">${q.district} · Stufe ${q.rank} · 4 Hemmstoffe</div><div class="qcrates">${q.crates.map((n,i)=>`<label><input type="checkbox" data-q="${q.id}-${i}" ${state.quarantineDone[q.id+"-"+i]?"checked":""}> Kiste ${i+1}: ${n}</label>`).join("")}</div><a class="yt-find" target="_blank" rel="noopener" href="${ytLink(q.youtube)}">▶ FUNDORT AUF YOUTUBE</a></div>`).join("");$$('[data-q]').forEach(c=>c.onchange=()=>{const [qid]=c.dataset.q.split("-");setFlag(state.quarantineDone,c.dataset.q,c.checked);syncFromQuarantine(qid);saveState();renderQuarantine();renderDistricts();renderNGPlus();renderAreas();updateDashboard()})}
 function renderDucks(){if(!ducks.length)return;const d=ducks.filter(x=>state.duckDone[x.id]).length;$("#duckCount").textContent=d+"/12";if($("#duckDash"))$("#duckDash").textContent=d+" / 12";$("#duckList").innerHTML=["black","red"].map(t=>`<div class="airdistrict"><h3>${t==="black"?"SCHWARZE ENTEN · DOOM":"ROTE ENTEN · FAHRRAD"}</h3>${ducks.filter(x=>x.type===t).map(x=>`<div class="duckcard"><div class="duckrow"><input type="checkbox" data-duck="${x.id}" ${state.duckDone[x.id]?"checked":""}><div><h3>${x.label}</h3><div class="duckmeta">${x.district} · ${x.purpose}</div><a class="yt-find" target="_blank" rel="noopener" href="${ytLink(x.youtube)}">▶ FUNDORT AUF YOUTUBE</a></div></div></div>`).join("")}</div>`).join("");$$("[data-duck]").forEach(c=>c.onchange=()=>{state.duckDone[c.dataset.duck]=c.checked;saveState();renderDucks()})}
 function renderGRE(){if(!gre.length)return;const done=gre.filter(x=>state.greDone[x.id]).length;$("#greCount").textContent=done+"/12";$("#greOpen").textContent=12-done;$("#greInhib").textContent=(done*2)+"/24";$("#greTrophy").textContent=Math.round(done/12*100)+"%";if($("#greDash"))$("#greDash").textContent=done+" / 12";const a=gre.filter(x=>greFilter==="all"||(greFilter==="open"&&!state.greDone[x.id])||(greFilter==="done"&&state.greDone[x.id])),g={};a.forEach(x=>(g[x.district]??=[]).push(x));$("#greList").innerHTML=Object.entries(g).map(([d,l])=>`<div class="airdistrict"><h3>${d.toUpperCase()}</h3>${l.map(x=>`<label class="grecard ${state.greDone[x.id]?"done":""}"><input type="checkbox" data-gre="${x.id}" ${state.greDone[x.id]?"checked":""}><div class="greinfo"><b>${x.id}</b><p>${x.note}</p><div class="gre-meta"><span class="gre-tag hot">2 HEMMSTOFFE</span><span class="gre-tag">NUR NACHTS</span></div><a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 GRE Anomaly ${x.id} ${x.district} location`)}">▶ FUNDORT AUF YOUTUBE</a></div></label>`).join("")}</div>`).join("")||'<div class="area-empty">Keine GRE-Anomalien in diesem Filter.</div>';$$("[data-gre]").forEach(c=>c.onchange=()=>{const x=gre.find(a=>a.id===c.dataset.gre);setFlag(state.greDone,x.id,c.checked);syncFromGRE(x.id,c.checked);saveState();renderGRE();renderDistricts();renderAreas();updateDashboard()})}
 function renderSunken(){if(!sunken.length)return;const done=sunken.filter(x=>state.sunkenDone[x.id]).length;$("#sunkenCount").textContent=done+"/12";const a=sunken.filter(x=>sunkenFilter==="all"||(sunkenFilter==="open"&&!state.sunkenDone[x.id])||(sunkenFilter==="done"&&state.sunkenDone[x.id]));$("#sunkenList").innerHTML=a.map(x=>`<label class="sunken-card ${state.sunkenDone[x.id]?"done":""}"><input type="checkbox" data-sunken="${x.id}" ${state.sunkenDone[x.id]?"checked":""}><div class="sunken-info"><b>${x.label}</b><p>${x.note}</p><span class="no-tech">KEIN MILITARY TECH</span></div></label>`).join("")||'<div class="area-empty">Keine versunkenen Airdrops in diesem Filter.</div>';$$("[data-sunken]").forEach(c=>c.onchange=()=>{state.sunkenDone[c.dataset.sunken]=c.checked;saveState();renderSunken()})}
-function renderAirdrops(){if(!airdrops.length)return;const done=airdrops.filter(x=>state.airDone[x.id]).length,inh=airdrops.filter(x=>x.inhibitor&&state.airDone[x.id]).length;$("#airCount").textContent=done+"/14";$("#airOpen").textContent=14-done;$("#airTech").textContent=done;$("#airInhib").textContent=inh+"/5";if($("#airDash"))$("#airDash").textContent=done+" / 14";const a=airdrops.filter(x=>airFilter==="all"||(airFilter==="open"&&!state.airDone[x.id])||(airFilter==="done"&&state.airDone[x.id])),g={};a.forEach(x=>(g[x.district]??=[]).push(x));$("#airdropList").innerHTML=Object.entries(g).map(([d,l])=>`<div class="airdistrict"><h3>${d.toUpperCase()}</h3>${l.map(x=>`<label class="aircard ${state.airDone[x.id]?"done":""}"><input type="checkbox" data-air="${x.id}" ${state.airDone[x.id]?"checked":""}><div class="airinfo"><b>${x.id}</b><p>${x.note}</p><span class="airtag">MILITARY TECH</span>${x.inhibitor?'<span class="airtag">HEMMSTOFF</span>':""}<a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 Military Airdrop ${x.id} ${x.district} location`)}">▶ FUNDORT AUF YOUTUBE</a></div></label>`).join("")}</div>`).join("");$$("[data-air]").forEach(c=>c.onchange=()=>{state.airDone[c.dataset.air]=c.checked;syncFromAir(x.id,c.checked);saveState();renderAirdrops();updateDashboard()})}
+function renderAirdrops(){if(!airdrops.length)return;const done=airdrops.filter(x=>state.airDone[x.id]).length,inh=airdrops.filter(x=>x.inhibitor&&state.airDone[x.id]).length;$("#airCount").textContent=done+"/14";$("#airOpen").textContent=14-done;$("#airTech").textContent=done;$("#airInhib").textContent=inh+"/5";if($("#airDash"))$("#airDash").textContent=done+" / 14";const a=airdrops.filter(x=>airFilter==="all"||(airFilter==="open"&&!state.airDone[x.id])||(airFilter==="done"&&state.airDone[x.id])),g={};a.forEach(x=>(g[x.district]??=[]).push(x));$("#airdropList").innerHTML=Object.entries(g).map(([d,l])=>`<div class="airdistrict"><h3>${d.toUpperCase()}</h3>${l.map(x=>`<label class="aircard ${state.airDone[x.id]?"done":""}"><input type="checkbox" data-air="${x.id}" ${state.airDone[x.id]?"checked":""}><div class="airinfo"><b>${x.id}</b><p>${x.note}</p><span class="airtag">MILITARY TECH</span>${x.inhibitor?'<span class="airtag">HEMMSTOFF</span>':""}<a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 Military Airdrop ${x.id} ${x.district} location`)}">▶ FUNDORT AUF YOUTUBE</a></div></label>`).join("")}</div>`).join("");$$("[data-air]").forEach(c=>c.onchange=()=>{state.airDone[c.dataset.air]=c.checked;syncFromAir(c.dataset.air,c.checked);saveState();renderAirdrops();renderDistricts();renderNGPlus();renderAreas();updateDashboard()})}
 function districtMatches(value,d){
  if(!value)return false;
  const district=districts.find(x=>x.name===d);
@@ -242,7 +290,7 @@ function itemDone(x){
 }
 function setItemDone(x,val){
  const set=(obj,key)=>{obj[key]=val;if(!val)delete obj[key]};
- if(x.kind==="inhibitor"){set(state.found,x.ref.id);syncFromInhibitor(x.ref.id,val)}
+ if(x.kind==="inhibitor"){markInhibitorFromSource(x.ref.id,val);syncFromInhibitor(x.ref.id,val)}
  else if(x.kind==="safe"){set(state.safeDone,x.ref.id);syncFromSafe(x.ref.id,val)}
  else if(x.kind==="air"){set(state.airDone,x.ref.id);syncFromAir(x.ref.id,val)}
  else if(x.kind==="sunken")set(state.sunkenDone,x.ref.id);
@@ -253,7 +301,7 @@ function setItemDone(x,val){
 }
 function districtProgress(d){const a=areaItems(d),done=a.filter(itemDone).length;return {done,total:a.length,pct:a.length?Math.round(done/a.length*100):0}}
 function overallProgress(){
- const inhibitorTotal=inhibitors.reduce((s,x)=>s+(x.count||1),0), inhibitorDone=inhibitors.reduce((s,x)=>s+(state.found[x.id]?(x.count||1):0),0);
+ const inhibitorTotal=baseInhibitors().reduce((s,x)=>s+(x.count||1),0), inhibitorDone=baseInhibitors().reduce((s,x)=>s+(state.found[x.id]?(x.count||1):0),0);
  const safeTotal=safes.length, safeDone=safes.filter(x=>state.safeDone[x.id]).length;
  const airTotal=airdrops.length, airDone=airdrops.filter(x=>state.airDone[x.id]).length;
  const sunkenTotal=sunken.length, sunkenDone=sunken.filter(x=>state.sunkenDone[x.id]).length;
