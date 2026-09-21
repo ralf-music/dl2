@@ -642,392 +642,489 @@
   },
   {
     "id": "ngp-inh-001",
-    "district": null,
+    "district": "trinity",
     "count": 1,
     "name": "NG+ Hemmstoff #01",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #01 im vollständigen 30er-NG+-Guide.",
+    "description": "Südlicher Teil von Trinity, knapp nördlich der Grenze zu Quarry End. Hemmstoffkiste im dicht bebauten Stadtgebiet.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=9s",
-    "searchAlias": "New Game Plus Inhibitor #1"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #1 Trinity",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Trinity",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-002",
-    "district": null,
+    "district": "quarry-end",
     "count": 1,
     "name": "NG+ Hemmstoff #02",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #02 im vollständigen 30er-NG+-Guide.",
+    "description": "Nördliches Quarry End, im Gebäudeblock nahe einem Unterschlupf.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=55s",
-    "searchAlias": "New Game Plus Inhibitor #2"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #2 Quarry End",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Quarry End",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-003",
-    "district": null,
+    "district": "quarry-end",
     "count": 1,
     "name": "NG+ Hemmstoff #03",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #03 im vollständigen 30er-NG+-Guide.",
+    "description": "Nordöstliches Quarry End, nahe der Bezirksgrenze. Hemmstoffkiste zwischen den Gebäuden.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=110s",
-    "searchAlias": "New Game Plus Inhibitor #3"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #3 Quarry End",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Quarry End",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-004",
-    "district": null,
+    "district": "quarry-end",
     "count": 1,
     "name": "NG+ Hemmstoff #04",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #04 im vollständigen 30er-NG+-Guide.",
+    "description": "Südspitze von Quarry End, direkt am äußeren Rand des Bezirks.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=134s",
-    "searchAlias": "New Game Plus Inhibitor #4"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #4 Quarry End",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Quarry End",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-005",
-    "district": null,
+    "district": "horseshoe",
     "count": 1,
     "name": "NG+ Hemmstoff #05",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #05 im vollständigen 30er-NG+-Guide.",
+    "description": "Östlicher Rand von Horseshoe, im bebauten Gebiet nahe der äußeren Bezirksgrenze.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=156s",
-    "searchAlias": "New Game Plus Inhibitor #5"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #5 Horseshoe",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Horseshoe",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-006",
-    "district": null,
+    "district": "houndfield",
     "count": 1,
     "name": "NG+ Hemmstoff #06",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #06 im vollständigen 30er-NG+-Guide.",
+    "description": "Westlicher Teil von Houndfield, in einem größeren Häuserblock.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=193s",
-    "searchAlias": "New Game Plus Inhibitor #6"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #6 Houndfield",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Houndfield",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-007",
-    "district": null,
+    "district": "houndfield",
     "count": 1,
     "name": "NG+ Hemmstoff #07",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #07 im vollständigen 30er-NG+-Guide.",
+    "description": "Nördlicher Teil von Houndfield, nahe dem oberen Bezirksrand.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=228s",
-    "searchAlias": "New Game Plus Inhibitor #7"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #7 Houndfield",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Houndfield",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-008",
-    "district": null,
+    "district": "houndfield",
     "count": 1,
     "name": "NG+ Hemmstoff #08",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #08 im vollständigen 30er-NG+-Guide.",
+    "description": "Nordöstliches Houndfield, nahe der Grenze zu Trinity.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=253s",
-    "searchAlias": "New Game Plus Inhibitor #8"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #8 Houndfield",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Houndfield",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-009",
-    "district": null,
+    "district": "houndfield",
     "count": 1,
     "name": "NG+ Hemmstoff #09",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #09 im vollständigen 30er-NG+-Guide.",
+    "description": "Südlicher Rand von Houndfield, westlich von Quarry End.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=305s",
-    "searchAlias": "New Game Plus Inhibitor #9"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #9 Houndfield",
+    "regionLabel": "Old Villedor",
+    "districtLabel": "Houndfield",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-010",
-    "district": null,
+    "district": "downtown",
     "count": 1,
     "name": "NG+ Hemmstoff #10",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #10 im vollständigen 30er-NG+-Guide.",
+    "description": "Südlicher Teil von Downtown, nahe der Grenze zu Garrison und zwischen den Hochhäusern.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=339s",
-    "searchAlias": "New Game Plus Inhibitor #10"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #10 Downtown",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Downtown",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-011",
-    "district": null,
+    "district": "downtown",
     "count": 1,
     "name": "NG+ Hemmstoff #11",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #11 im vollständigen 30er-NG+-Guide.",
+    "description": "Nördlicher bis zentraler Hochhausbereich von Downtown.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=357s",
-    "searchAlias": "New Game Plus Inhibitor #11"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #11 Downtown",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Downtown",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-012",
-    "district": null,
+    "district": "downtown",
     "count": 1,
     "name": "NG+ Hemmstoff #12",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #12 im vollständigen 30er-NG+-Guide.",
+    "description": "Nordwestliches Downtown, nahe dem äußeren Bezirksrand.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=388s",
-    "searchAlias": "New Game Plus Inhibitor #12"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #12 Downtown",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Downtown",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-013",
-    "district": null,
+    "district": "downtown",
     "count": 1,
     "name": "NG+ Hemmstoff #13",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #13 im vollständigen 30er-NG+-Guide.",
+    "description": "Nordöstliches Downtown, im Hochhausbereich nahe dem Bezirksrand.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=415s",
-    "searchAlias": "New Game Plus Inhibitor #13"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #13 Downtown",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Downtown",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-014",
-    "district": null,
+    "district": "new-dawn-park",
     "count": 1,
     "name": "NG+ Hemmstoff #14",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #14 im vollständigen 30er-NG+-Guide.",
+    "description": "Am östlichen Rand von New Dawn Park, unmittelbar an der Grenze zu Muddy Grounds.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=435s",
-    "searchAlias": "New Game Plus Inhibitor #14"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #14 New Dawn Park",
+    "regionLabel": "Zentralring",
+    "districtLabel": "New Dawn Park",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-015",
-    "district": null,
+    "district": "muddy-grounds",
     "count": 1,
     "name": "NG+ Hemmstoff #15",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #15 im vollständigen 30er-NG+-Guide.",
+    "description": "Am westlichen Rand von Muddy Grounds, direkt an der Grenze zu New Dawn Park.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=460s",
-    "searchAlias": "New Game Plus Inhibitor #15"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #15 Muddy Grounds",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Muddy Grounds",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-016",
-    "district": null,
+    "district": "garrison",
     "count": 1,
     "name": "NG+ Hemmstoff #16",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #16 im vollständigen 30er-NG+-Guide.",
+    "description": "Südöstlicher Teil von Garrison, zwischen den Hochhäusern.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=490s",
-    "searchAlias": "New Game Plus Inhibitor #16"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #16 Garrison",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Garrison",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-017",
-    "district": null,
+    "district": "garrison",
     "count": 1,
     "name": "NG+ Hemmstoff #17",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #17 im vollständigen 30er-NG+-Guide.",
+    "description": "Im VNC-Turm auf einer oberen Etage. Falls während „Übertragung“ verpasst, vom Dach wieder in die oberen Stockwerke zurückgehen.",
     "tags": [
-      "ngplus"
+      "ngplus",
+      "vnc-tower"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=510s",
-    "searchAlias": "New Game Plus Inhibitor #17"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #17 Garrison",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Garrison",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-018",
-    "district": null,
+    "district": "garrison",
     "count": 1,
     "name": "NG+ Hemmstoff #18",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #18 im vollständigen 30er-NG+-Guide.",
+    "description": "Südlicher Bereich von Garrison, südwestlich des VNC-Turms.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=539s",
-    "searchAlias": "New Game Plus Inhibitor #18"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #18 Garrison",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Garrison",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-019",
-    "district": null,
+    "district": "garrison",
     "count": 1,
     "name": "NG+ Hemmstoff #19",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #19 im vollständigen 30er-NG+-Guide.",
+    "description": "Westlicher bis nordwestlicher Teil von Garrison, nahe dem Bezirksrand.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=559s",
-    "searchAlias": "New Game Plus Inhibitor #19"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #19 Garrison",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Garrison",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-020",
-    "district": null,
+    "district": "garrison",
     "count": 1,
     "name": "NG+ Hemmstoff #20",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #20 im vollständigen 30er-NG+-Guide.",
+    "description": "Südwestlicher Teil von Garrison, am äußeren Rand des Bezirks.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=588s",
-    "searchAlias": "New Game Plus Inhibitor #20"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #20 Garrison",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Garrison",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-021",
-    "district": null,
+    "district": "saint-paul",
     "count": 1,
     "name": "NG+ Hemmstoff #21",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #21 im vollständigen 30er-NG+-Guide.",
+    "description": "Südöstlicher Teil von Saint Paul Island, im bebauten Gebiet nahe dem Ostrand.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=633s",
-    "searchAlias": "New Game Plus Inhibitor #21"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #21 Saint Paul Island",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Saint Paul Island",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-022",
-    "district": null,
+    "district": "saint-paul",
     "count": 1,
     "name": "NG+ Hemmstoff #22",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #22 im vollständigen 30er-NG+-Guide.",
+    "description": "Nördlicher Teil von Saint Paul Island, nahe dem äußeren Bezirksrand.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=655s",
-    "searchAlias": "New Game Plus Inhibitor #22"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #22 Saint Paul Island",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Saint Paul Island",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-023",
-    "district": null,
+    "district": "lower-dam-ayre",
     "count": 1,
     "name": "NG+ Hemmstoff #23",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #23 im vollständigen 30er-NG+-Guide.",
+    "description": "Nordwestlicher Teil von Lower Dam Ayre, nahe dem Übergang in die angrenzenden Bezirke.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=681s",
-    "searchAlias": "New Game Plus Inhibitor #23"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #23 Lower Dam Ayre",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Lower Dam Ayre",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-024",
-    "district": null,
+    "district": "lower-dam-ayre",
     "count": 1,
     "name": "NG+ Hemmstoff #24",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #24 im vollständigen 30er-NG+-Guide.",
+    "description": "Zentraler bis östlicher Teil von Lower Dam Ayre.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=760s",
-    "searchAlias": "New Game Plus Inhibitor #24"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #24 Lower Dam Ayre",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Lower Dam Ayre",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-025",
-    "district": null,
+    "district": "lower-dam-ayre",
     "count": 1,
     "name": "NG+ Hemmstoff #25",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #25 im vollständigen 30er-NG+-Guide.",
+    "description": "Südöstlicher Zipfel von Lower Dam Ayre, direkt am äußeren Kartenrand.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=833s",
-    "searchAlias": "New Game Plus Inhibitor #25"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #25 Lower Dam Ayre",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Lower Dam Ayre",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-026",
-    "district": null,
+    "district": "newfound-lost-lands",
     "count": 1,
     "name": "NG+ Hemmstoff #26",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #26 im vollständigen 30er-NG+-Guide.",
+    "description": "Nördlicher Teil der Newfound Lost Lands, nahe der Grenze zu Lower Dam Ayre.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=891s",
-    "searchAlias": "New Game Plus Inhibitor #26"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #26 Newfound Lost Lands",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Newfound Lost Lands",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-027",
-    "district": null,
+    "district": "newfound-lost-lands",
     "count": 1,
     "name": "NG+ Hemmstoff #27",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #27 im vollständigen 30er-NG+-Guide.",
+    "description": "Südlicher Teil der Newfound Lost Lands. Dieser Fundort wird erst erreichbar, wenn die Story bis „Jetzt oder nie“ fortgeschritten ist.",
     "tags": [
       "ngplus"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=934s",
-    "searchAlias": "New Game Plus Inhibitor #27"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #27 Newfound Lost Lands",
+    "regionLabel": "Zentralring",
+    "districtLabel": "Newfound Lost Lands",
+    "mapMarker": true
   },
   {
     "id": "ngp-inh-028",
     "district": null,
     "count": 1,
     "name": "NG+ Hemmstoff #28",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #28 im vollständigen 30er-NG+-Guide.",
+    "description": "Auf einer Brücke in einem Militärcontainer. Von Quarry End aus ist der Zugang günstiger. Außerhalb der Funkturm-Abdeckung.",
     "tags": [
-      "ngplus"
+      "ngplus",
+      "no-radio-marker",
+      "military-container"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=986s",
-    "searchAlias": "New Game Plus Inhibitor #28"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #28 Westlich von Garrison",
+    "regionLabel": "Außenbereich",
+    "districtLabel": "Westlich von Garrison",
+    "mapMarker": false
   },
   {
     "id": "ngp-inh-029",
     "district": null,
     "count": 1,
     "name": "NG+ Hemmstoff #29",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #29 im vollständigen 30er-NG+-Guide.",
+    "description": "Unter Wasser im Gebiet, das während der Hauptquest „Veronika“ betreten wird. Außerhalb der Funkturm-Abdeckung.",
     "tags": [
-      "ngplus"
+      "ngplus",
+      "no-radio-marker",
+      "underwater"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=1053s",
-    "searchAlias": "New Game Plus Inhibitor #29"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #29 Observatorium / Veronika-Gebiet",
+    "regionLabel": "Außenbereich",
+    "districtLabel": "Observatorium / Veronika-Gebiet",
+    "mapMarker": false
   },
   {
     "id": "ngp-inh-030",
     "district": null,
     "count": 1,
     "name": "NG+ Hemmstoff #30",
-    "description": "Nur in Neues Spiel+ verfügbar. Referenz: Fundort #30 im vollständigen 30er-NG+-Guide.",
+    "description": "Im Wasser nördlich der schwimmenden PK-Festung (Missy). Vom Schnellreisepunkt nach draußen und ins Wasser. Außerhalb der Funkturm-Abdeckung.",
     "tags": [
-      "ngplus"
+      "ngplus",
+      "no-radio-marker",
+      "underwater"
     ],
     "ngPlus": true,
     "guideUrl": "https://www.youtube.com/watch?v=0kDb9dods-c&t=1089s",
-    "searchAlias": "New Game Plus Inhibitor #30"
+    "searchAlias": "Dying Light 2 NG+ Inhibitor #30 Nördlich der schwimmenden PK-Festung",
+    "regionLabel": "Außenbereich",
+    "districtLabel": "Nördlich der schwimmenden PK-Festung",
+    "mapMarker": false
   }
 ]

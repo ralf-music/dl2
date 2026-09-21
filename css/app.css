@@ -196,7 +196,9 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 .inh-status-label{font-size:7px;font-weight:900;letter-spacing:.08em;color:#7f878b}
 .inhitem.done .inh-status-label{color:var(--orange2)}
 .inhitem.unclear .inh-status-label{color:#d18a49}
-.ngplus-badge{display:inline-block;margin-top:5px;padding:3px 5px;border:1px solid var(--orange);color:var(--orange);font-size:7px;font-weight:900;letter-spacing:.08em}
+.ngplus-badge{display:inline-block;margin-top:5px;margin-right:4px;padding:3px 5px;border:1px solid var(--orange);color:var(--orange);font-size:7px;font-weight:900;letter-spacing:.08em}
+.ngplus-badge.ngplus-mapwarn{border-color:#d18a49;color:#d18a49;border-style:dashed}
+.ngplus-location{margin-top:3px;color:var(--orange2);font-size:9px;font-weight:800;letter-spacing:.025em}
 .ngplus-district{border-color:#5b4432}
 .inhibitor-detail-copy{color:#c4c8ca;font-size:11px;line-height:1.5;margin:10px 0 14px}
 .inh-status-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0 14px}
@@ -209,13 +211,23 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 .ngplus-facts>div{border:1px solid var(--line);background:var(--panel);padding:10px}
 .ngplus-facts b{display:block;color:var(--orange);font-size:9px;letter-spacing:.06em;margin-bottom:4px}
 .ngplus-facts span{display:block;color:var(--muted);font-size:9px;line-height:1.35}
-.ngplus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.ngplus-tile{min-height:76px;border:1px solid #353a3e;background:#171a1c;color:var(--text);padding:8px;border-radius:8px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;gap:5px}
-.ngplus-tile .tile-num{font-size:16px;font-weight:900;color:var(--orange)}
-.ngplus-tile .tile-name{font-size:9px;color:#c7cbcd;line-height:1.15}
+.ngplus-region{margin:0 0 16px}
+.ngplus-region-head{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid #ffffff16;padding:2px 1px 7px;margin-bottom:7px}
+.ngplus-region-head b{font-size:11px;color:var(--orange);letter-spacing:.08em}
+.ngplus-region-head small{font-size:8px;color:var(--muted);font-weight:800;letter-spacing:.05em}
+.ngplus-grid{display:grid;grid-template-columns:1fr;gap:7px}
+.ngplus-tile{min-height:118px;border:1px solid #353a3e;background:#171a1c;color:var(--text);padding:10px;border-radius:8px;text-align:left;display:flex;flex-direction:column;gap:5px}
+.ngplus-tile-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ngplus-tile .tile-num{font-size:17px;font-weight:900;color:var(--orange)}
 .ngplus-tile .tile-state{font-size:8px;color:#7f878b;font-weight:800;letter-spacing:.08em}
+.ngplus-tile .tile-district{font-size:11px;font-weight:900;color:#d6d9da;line-height:1.2}
+.ngplus-tile .tile-hint{font-size:9px;color:var(--muted);line-height:1.35;flex:1}
+.ngplus-tile .tile-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
+.ngplus-tile .tile-tags span{font-size:7px;border:1px solid #5b4432;color:var(--orange2);padding:2px 4px;font-weight:900;letter-spacing:.05em}
+.ngplus-tile .tile-tags .warn{border-style:dashed;border-color:#a9652d;color:#d18a49}
 .ngplus-tile.collected{border-color:#ff7a0088;background:#ff7a000d}
 .ngplus-tile.collected .tile-state{color:var(--orange2)}
 .ngplus-tile.unclear{border-style:dashed;border-color:#a9652d;background:#ff7a0008}
 .ngplus-tile.unclear .tile-state{color:#d18a49}
-@media(min-width:650px){.ngplus-grid{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:480px){.ngplus-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:800px){.ngplus-grid{grid-template-columns:repeat(3,1fr)}}

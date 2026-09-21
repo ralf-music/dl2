@@ -1,7 +1,16 @@
-# DL2 Companion v0.10.0
+# DL2 Companion v0.10.1
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
+
+## v0.10.1
+- Alle 30 NG+-Hemmstoffe um Region, Bezirk/Außenbereich und kurze Fundortbeschreibung erweitert
+- NG+-Ansicht nach Old Villedor, Zentralring und Außenbereich gruppiert
+- Drei Fundorte ohne Funkturm-Abdeckung klar als „Kein Funkturm-Marker“ markiert
+- Besondere Zugänge bei VNC-Turm, Newfound Lost Lands, Brücken-Militärcontainer und Unterwasser-Fundorten ergänzt
+- NG+-Hemmstoffe werden im normalen Hemmstoff-Tracker passend zum Regionsfilter einsortiert
+- Grundspiel-Gebietsfortschritt bleibt auf die 126 Grundspiel-Hemmstoffe beschränkt
+- localStorage-Key und alle bestehenden NG+-IDs bleiben unverändert
 
 ## v0.10.0
 - Eigener NG+-Bereich mit 30 exklusiven Hemmstoffen und direktem 30er-Fundortguide

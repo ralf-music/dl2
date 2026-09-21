@@ -1,5 +1,18 @@
 [
   {
+    "version": "0.10.1",
+    "date": "21.09.2026",
+    "changes": [
+      "Alle 30 NG+-Hemmstoffe besitzen jetzt Region, Bezirk bzw. Außenbereich und eine kurze Fundort-Orientierung",
+      "NG+-Tracker nach Old Villedor, Zentralring und Außenbereich gruppiert; Fundortkarten zeigen Bezirk und Kurzbeschreibung direkt an",
+      "Die drei Fundorte außerhalb der Funkturm-Abdeckung sind ausdrücklich mit „Kein Funkturm-Marker“ gekennzeichnet",
+      "Besondere Zugänge ergänzt: VNC-Turm, Story-Fortschritt in Newfound Lost Lands, Militärcontainer auf der Brücke sowie zwei Unterwasser-Fundorte",
+      "NG+-Einträge erscheinen auch im normalen Hemmstoff-Tracker passend zum Regionsfilter",
+      "Bezirksfortschritt bleibt weiterhin auf die 126 Grundspiel-Hemmstoffe beschränkt; NG+ verändert bestehende Gebietsprozente nicht",
+      "Keine Änderung am localStorage-Schlüssel oder an bestehenden NG+-Status-IDs"
+    ]
+  },
+  {
     "version": "0.10.0",
     "date": "20.09.2026",
     "changes": [

@@ -1,5 +1,5 @@
 
-const VERSION="0.10.0";
+const VERSION="0.10.1";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},inhibitorStatus:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
@@ -95,14 +95,15 @@ function inhibitorStatusText(status){
 function inhibitorGuideUrl(x,dname=""){return x.guideUrl||ytLink(`Dying Light 2 ${dname} ${x.name} ${x.searchAlias||""} ${x.description||""} Inhibitor location`)}
 function openInhibitorDetail(id){
  const x=inhibitors.find(v=>v.id===id);if(!x)return;
- const d=x.ngPlus?null:districts.find(v=>v.id===x.district);
+ const d=x.ngPlus?(x.district?districts.find(v=>v.id===x.district):null):districts.find(v=>v.id===x.district);
  const status=inhibitorStatus(id);
  $("#inhibitorModal").dataset.id=id;
  $("#inhibitorDetailType").textContent=x.ngPlus?"HEMMSTOFF · NEUES SPIEL+":"HEMMSTOFF · "+(d?.name||"VILLEDOR").toUpperCase();
  $("#inhibitorDetailName").textContent=x.name;
- $("#inhibitorDetailMeta").textContent=x.ngPlus?"NG+ EXKLUSIV · Nur in Neues Spiel+ verfügbar":`${d?.name||"Villedor"} · ${x.count||1} Hemmstoff${(x.count||1)>1?"e":""}`;
+ const ngMeta=x.ngPlus?`NG+ EXKLUSIV · ${x.regionLabel||"Villedor"} · ${x.districtLabel||d?.name||"Fundort"}${x.mapMarker===false?" · KEIN FUNKTURM-MARKER":""}`:"";
+ $("#inhibitorDetailMeta").textContent=x.ngPlus?ngMeta:`${d?.name||"Villedor"} · ${x.count||1} Hemmstoff${(x.count||1)>1?"e":""}`;
  $("#inhibitorDetailDescription").textContent=x.description||"";
- $("#inhibitorDetailYoutube").href=inhibitorGuideUrl(x,d?.name||"");
+ $("#inhibitorDetailYoutube").href=inhibitorGuideUrl(x,x.districtLabel||d?.name||"");
  $("#inhibitorDetailYoutube").textContent=state.language==="en"?"▶ FIND LOCATION ON YOUTUBE":"▶ FUNDORT AUF YOUTUBE";
  $$('[data-inhstatus]').forEach(b=>{b.classList.toggle("active",b.dataset.inhstatus===status);b.textContent=inhibitorStatusText(b.dataset.inhstatus)});
  $("#inhibitorModal").classList.add("open");$("#inhibitorModal").setAttribute("aria-hidden","false");
@@ -117,7 +118,9 @@ function setInhibitorStatus(id,status){
 function makeInhibitorRow(x,dname){
  const status=inhibitorStatus(x.id),row=document.createElement("div");
  row.className="inhitem "+(status==="collected"?"done":status==="unclear"?"unclear":"open");row.tabIndex=0;row.setAttribute("role","button");
- row.innerHTML=`<span class="inh-state-dot" aria-hidden="true"></span><span><b>${x.name}</b><p>${x.description}</p>${x.ngPlus?'<span class="ngplus-badge">NG+ EXKLUSIV</span>':""}<a class="yt-find" target="_blank" rel="noopener" href="${inhibitorGuideUrl(x,dname)}">▶ FUNDORT AUF YOUTUBE</a></span><span class="inh-right"><span class="countbadge">×${x.count}</span><span class="inh-status-label">${inhibitorStatusText(status)}</span></span>`;
+ const ngLoc=x.ngPlus?`<div class="ngplus-location">${x.regionLabel||"Villedor"} · ${x.districtLabel||dname||"Fundort"}</div>`:"";
+ const ngBadges=x.ngPlus?`<span class="ngplus-badge">NG+ EXKLUSIV</span>${x.mapMarker===false?'<span class="ngplus-badge ngplus-mapwarn">KEIN FUNKTURM-MARKER</span>':""}`:"";
+ row.innerHTML=`<span class="inh-state-dot" aria-hidden="true"></span><span><b>${x.name}</b>${ngLoc}<p>${x.description}</p>${ngBadges}<a class="yt-find" target="_blank" rel="noopener" href="${inhibitorGuideUrl(x,x.districtLabel||dname)}">▶ FUNDORT AUF YOUTUBE</a></span><span class="inh-right"><span class="countbadge">×${x.count}</span><span class="inh-status-label">${inhibitorStatusText(status)}</span></span>`;
  row.onclick=e=>{if(e.target.closest("a"))return;openInhibitorDetail(x.id)};
  row.onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&!e.target.closest("a")){e.preventDefault();openInhibitorDetail(x.id)}};
  return row
@@ -145,10 +148,16 @@ function renderDistricts(){
    box.querySelector("button").onclick=()=>box.classList.toggle("open");
    const items=box.querySelector(".items");rows.forEach(x=>items.appendChild(makeInhibitorRow(x,d.name)));wrap.appendChild(box)
  });
- if(region==="all"){
-   const rows=ngPlusInhibitors().filter(x=>!q||(x.name+" "+x.description+" NG+ Neues Spiel+").toLowerCase().includes(q));
-   if(rows.length){const done=rows.filter(x=>state.found[x.id]).length,box=document.createElement("div");box.dataset.district="ng-plus";box.className="district ngplus-district"+((q||openDistricts.has("ng-plus"))?" open":"");box.innerHTML=`<button><span class="dname"><b>Neues Spiel+</b><small>30 exklusive Hemmstoffe</small></span><span class="dcount">${done} / 30</span></button><div class="items"></div>`;box.querySelector("button").onclick=()=>box.classList.toggle("open");const items=box.querySelector(".items");rows.forEach(x=>items.appendChild(makeInhibitorRow(x,"Neues Spiel+")));wrap.appendChild(box)}
- }
+ const ngRegions=region==="all"?["Old Villedor","Zentralring","Außenbereich"]:[region];
+ ngRegions.forEach(ngRegion=>{
+   const rows=ngPlusInhibitors().filter(x=>x.regionLabel===ngRegion).filter(x=>!q||(x.name+" "+x.description+" "+(x.regionLabel||"")+" "+(x.districtLabel||"")+" NG+ Neues Spiel+").toLowerCase().includes(q));
+   if(!rows.length)return;
+   const key="ng-plus-"+ngRegion.toLowerCase().replace(/[^a-z0-9]+/g,"-");
+   const done=rows.filter(x=>state.found[x.id]).length,box=document.createElement("div");
+   box.dataset.district=key;box.className="district ngplus-district"+((q||openDistricts.has(key))?" open":"");
+   box.innerHTML=`<button><span class="dname"><b>Neues Spiel+ · ${ngRegion}</b><small>${rows.length} exklusive Hemmstoffe</small></span><span class="dcount">${done} / ${rows.length}</span></button><div class="items"></div>`;
+   box.querySelector("button").onclick=()=>box.classList.toggle("open");const items=box.querySelector(".items");rows.forEach(x=>items.appendChild(makeInhibitorRow(x,x.districtLabel||"Neues Spiel+")));wrap.appendChild(box)
+ });
  updateDashboard()
 }
 
@@ -230,7 +239,8 @@ function renderNGPlus(){
  if(!inhibitors.length||!$("#ngPlusList"))return;
  const rows=ngPlusInhibitors(),done=ngPlusFoundCount();
  $("#ngCount").textContent=done+"/30";$("#ngCollected").textContent=done+"/30";$("#ngOpen").textContent=30-done;if($("#ngDash"))$("#ngDash").textContent=done+" / 30";
- $("#ngPlusList").innerHTML=rows.map((x,i)=>{const st=inhibitorStatus(x.id);return `<button type="button" class="ngplus-tile ${st}" data-nginh="${x.id}"><span class="tile-num">#${String(i+1).padStart(2,"0")}</span><span class="tile-name">${x.name}</span><span class="tile-state">${inhibitorStatusText(st)}</span></button>`}).join("");
+ const groups=[["Old Villedor",rows.filter(x=>x.regionLabel==="Old Villedor")],["Zentralring",rows.filter(x=>x.regionLabel==="Zentralring")],["Außenbereich",rows.filter(x=>x.regionLabel==="Außenbereich")]];
+ $("#ngPlusList").innerHTML=groups.filter(([,list])=>list.length).map(([label,list])=>`<section class="ngplus-region"><div class="ngplus-region-head"><b>${label.toUpperCase()}</b><small>${list.filter(x=>state.found[x.id]).length} / ${list.length} gesammelt</small></div><div class="ngplus-grid">${list.map(x=>{const st=inhibitorStatus(x.id),num=Number(x.id.slice(-3));return `<button type="button" class="ngplus-tile ${st}" data-nginh="${x.id}"><span class="ngplus-tile-top"><span class="tile-num">#${String(num).padStart(2,"0")}</span><span class="tile-state">${inhibitorStatusText(st)}</span></span><span class="tile-district">${x.districtLabel||label}</span><span class="tile-hint">${x.description||""}</span><span class="tile-tags"><span>NG+ EXKLUSIV</span>${x.mapMarker===false?'<span class="warn">KEIN FUNKTURM-MARKER</span>':""}</span></button>`}).join("")}</div></section>`).join("");
  $$('[data-nginh]').forEach(b=>b.onclick=()=>openInhibitorDetail(b.dataset.nginh));
 }
 function renderAll(){
@@ -267,7 +277,7 @@ function districtMatches(value,d){
 }
 function areaItems(d){
  const out=[],district=districts.find(x=>x.name===d);
- inhibitors.filter(x=>x.district===district?.id).forEach(x=>out.push({id:"inh:"+x.id,type:"Hemmstoffe",name:x.name+" ("+(x.count||1)+")",kind:"inhibitor",ref:x}));
+ baseInhibitors().filter(x=>x.district===district?.id).forEach(x=>out.push({id:"inh:"+x.id,type:"Hemmstoffe",name:x.name+" ("+(x.count||1)+")",kind:"inhibitor",ref:x}));
  safes.filter(x=>districtMatches(x.district,d)).forEach(x=>out.push({id:"safe:"+x.id,type:"Safe-Codes",name:x.place+" · "+x.code,kind:"safe",ref:x}));
  airdrops.filter(x=>districtMatches(x.district,d)).forEach(x=>out.push({id:"air:"+x.id,type:"Military Airdrops",name:x.id,kind:"air",ref:x}));
  sunken.filter(x=>districtMatches(x.district,d)).forEach(x=>out.push({id:"sunken:"+x.id,type:"Versunkene Airdrops",name:x.label,kind:"sunken",ref:x}));
