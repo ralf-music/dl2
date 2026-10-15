@@ -1,12 +1,18 @@
 
-const VERSION="0.10.1";
+const VERSION="0.10.2";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
-const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},inhibitorStatus:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
+const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},inhibitorStatus:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectionGameCounts:{memento:0,tape:0,graffiti:0},migrations:{}}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function normalizeState(s={}){
- const n={...freshState(),...s,found:s.found||{},inhibitorStatus:s.inhibitorStatus||{},areaDone:s.areaDone||{},safeDone:s.safeDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:s.collectDone||{},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})}};
+ const n={...freshState(),...s,found:s.found||{},inhibitorStatus:s.inhibitorStatus||{},areaDone:s.areaDone||{},safeDone:s.safeDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:s.collectDone||{},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})},migrations:{...(s.migrations||{})}};
  Object.keys(n.areaDone).filter(k=>k.startsWith("safe:")&&n.areaDone[k]).forEach(k=>n.safeDone[k.slice(5)]=true);
+ // v0.10.2: X13 slots 112–116 were semantically shifted in older data. Move checkbox states once so existing progress follows the correct collectible.
+ if(!n.migrations.x13OrderV0102){
+  const oldDone={...n.collectDone},map={"memento-112":"memento-116","memento-113":"memento-112","memento-114":"memento-113","memento-115":"memento-114","memento-116":"memento-115"};
+  Object.entries(map).forEach(([newId,oldId])=>{if(oldDone[oldId])n.collectDone[newId]=true;else delete n.collectDone[newId]});
+  n.migrations.x13OrderV0102=true;
+ }
  return n
 } function loadState(){try{state=normalizeState(JSON.parse(localStorage.getItem(KEY)||"{}"))}catch{state=freshState()}}
 function saveState(){localStorage.setItem(KEY,JSON.stringify(state)); updateDashboard()}
@@ -23,6 +29,7 @@ function bind(){
  $("#languageSelect").onchange=e=>{state.language=e.target.value;saveState();applyLanguage();renderAll();applyLanguage()};
  $("#collectSearch").oninput=renderCollectibles;
  $("#collectMissing").onchange=renderCollectibles;
+ if($("#collectBloodyTies"))$("#collectBloodyTies").onchange=renderCollectibles;
  $$("[data-collecttype]").forEach(b=>b.onclick=()=>{collectType=b.dataset.collecttype;$$("[data-collecttype]").forEach(x=>x.classList.toggle("active",x===b));renderCollectibles()});
  [["gameMemento","memento",209],["gameTape","tape",68],["gameGraffiti","graffiti",71]].forEach(([id,key,max])=>{$("#"+id).onchange=e=>{state.collectionGameCounts[key]=Math.max(0,Math.min(max,+e.target.value||0));saveState();renderCollectibles()}});
 
@@ -192,7 +199,7 @@ function applyLanguage(){
  set("gameMementoLabel","gameCount");set("gameTapeLabel","gameCount");set("gameGraffitiLabel","gameCount");
  set("collectTrackerNote","trackerNote");set("collectSlotNotice","slotNotice");
  if($("#collectSearch"))$("#collectSearch").placeholder=L("searchCollectibles");
- if($("#collectMissingLabel"))$("#collectMissingLabel").textContent=state.language==="en"?"Show missing only":"Nur fehlende anzeigen";  if($("#mementoVerifyNote"))$("#mementoVerifyNote").textContent=state.language==="en"?"* In-game designation not verified":"* Ingame-Bezeichnung nicht verifiziert";
+ if($("#collectMissingLabel"))$("#collectMissingLabel").textContent=state.language==="en"?"Show missing only":"Nur fehlende anzeigen"; if($("#collectBloodyTiesLabel"))$("#collectBloodyTiesLabel").textContent=L("bloodyTiesOnly");  if($("#mementoVerifyNote"))$("#mementoVerifyNote").textContent=state.language==="en"?"* In-game designation not verified":"* Ingame-Bezeichnung nicht verifiziert";
  if($("#collectCollectedLabel"))$("#collectCollectedLabel").textContent=L("collected").toUpperCase();
  const staticMap=state.language==="en"?{
   "GESUNDHEIT":"HEALTH","AUSDAUER":"STAMINA","Stufe":"Level","HEMMSTOFFE":"INHIBITORS","SAFE-CODES":"SAFE CODES",
@@ -205,12 +212,32 @@ function applyLanguage(){
   let n;while(n=walker.nextNode()){const t=n.nodeValue.trim();if(staticMap[t])n.nodeValue=n.nodeValue.replace(t,staticMap[t])}
  }
 }
+function collectBadgeData(x){
+ const out=[];
+ if(x.dlc==="Bloody Ties")out.push(["BLOODY TIES · DLC","dlc"]);
+ if(x.epilogue)out.push([state.language==="en"?"EPILOGUE":"EPILOG","epilogue"]);
+ if(x.x13)out.push(["X13","x13"]);
+ if(x.pre_x13)out.push([state.language==="en"?"BEFORE X13":"VOR X13","warn"]);
+ if(x.missable)out.push([state.language==="en"?"MISSABLE":"VERPASSBAR","warn"]);
+ if(x.auto_story_end)out.push([state.language==="en"?"AUTO AT STORY END":"AUTOMATISCH BEI STORYENDE","auto"]);
+ return out
+}
+function collectBadgeHTML(x){return collectBadgeData(x).map(([t,k])=>`<span class="collect-badge ${k}">${t}</span>`).join("")}
+function collectSearchText(x){
+ const extra=[...(x.aliases||[]),x.hint_de,x.hint_en,x.note_de,x.note_en,x.quest_de,x.quest_en,x.dlc].filter(Boolean).join(" ");
+ return `${x.name_de||""} ${x.name_en||""} ${x.index||""} ${x.district||""} ${extra}`.toLowerCase()
+}
 function openCollectDetail(id){
  const x=collectibles.find(v=>v.id===id);if(!x)return;
  const labels={memento:L("mementos"),tape:L("tapes"),graffiti:L("graffiti")};
  $("#collectDetailType").textContent=labels[x.type].toUpperCase()+" · #"+String(x.index).padStart(x.type==="memento"?3:2,"0");
  $("#collectDetailName").textContent=state.language==="en"?x.name_en:x.name_de;
- $("#collectDetailMeta").textContent=(x.district||"Villedor")+(x.missable?" · MISSABLE":"");
+ const source=x.dlc==="Bloody Ties"?" · "+L("sourceDlc"):"";
+ $("#collectDetailMeta").textContent=(x.district||"Villedor")+source;
+ $("#collectDetailBadges").innerHTML=collectBadgeHTML(x);
+ const hint=state.language==="en"?x.hint_en:x.hint_de, note=state.language==="en"?x.note_en:x.note_de, quest=state.language==="en"?x.quest_en:x.quest_de;
+ $("#collectDetailNote").innerHTML=[hint?`<div><b>${L("hintTask")}:</b> ${hint}</div>`:"",quest?`<div><b>${state.language==="en"?"Quest":"Quest"}:</b> ${quest}</div>`:"",note?`<div>${note}</div>`:""].filter(Boolean).join("");
+ $("#collectDetailNote").hidden=!$("#collectDetailNote").innerHTML;
  $("#collectDetailDone").checked=!!state.collectDone[x.id];
  $("#collectDetailDone").dataset.id=x.id;
  $("#collectDetailDoneLabel").textContent=L("collected");
@@ -221,17 +248,17 @@ function openCollectDetail(id){
 function closeCollectDetail(){$("#collectModal").classList.remove("open");$("#collectModal").setAttribute("aria-hidden","true")}
 function renderCollectibles(){
  if(!collectibles.length)return;
- const q=($("#collectSearch")?.value||"").toLowerCase().trim(), missing=$("#collectMissing")?.checked;
+ const q=($("#collectSearch")?.value||"").toLowerCase().trim(), missing=$("#collectMissing")?.checked, bloodyOnly=$("#collectBloodyTies")?.checked;
  const doneAll=collectibles.filter(x=>state.collectDone[x.id]).length;
  const counts={memento:[0,209],tape:[0,68],graffiti:[0,71]};
  Object.keys(counts).forEach(k=>counts[k][0]=collectibles.filter(x=>x.type===k&&state.collectDone[x.id]).length);
  $("#collectTotal").textContent=doneAll+"/348";
  $("#mementoCount").textContent=counts.memento[0]+"/209";$("#tapeCount").textContent=counts.tape[0]+"/68";$("#graffitiCount").textContent=counts.graffiti[0]+"/71";
  $("#gameMemento").value=state.collectionGameCounts.memento||0;$("#gameTape").value=state.collectionGameCounts.tape||0;$("#gameGraffiti").value=state.collectionGameCounts.graffiti||0;
- const rows=collectibles.filter(x=>(collectType==="all"||x.type===collectType)&&(!missing||!state.collectDone[x.id])&&(!q||((state.language==="en"?x.name_en:x.name_de)+" "+x.index+" "+(x.district||"")).toLowerCase().includes(q)));
+ const rows=collectibles.filter(x=>(collectType==="all"||x.type===collectType)&&(!missing||!state.collectDone[x.id])&&(!bloodyOnly||x.dlc==="Bloody Ties")&&(!q||collectSearchText(x).includes(q)));
  const groups={memento:[],tape:[],graffiti:[]};rows.forEach(x=>groups[x.type].push(x));
  const labels={memento:L("mementos"),tape:L("tapes"),graffiti:L("graffiti")};
- $("#collectibleList").innerHTML=Object.entries(groups).filter(([,a])=>a.length).map(([type,a])=>`<div class="airdistrict"><h3>${labels[type].toUpperCase()} · ${a.length}</h3><div class="collect-grid">${a.map(x=>{const name=state.language==="en"?x.name_en:x.name_de;return `<button type="button" class="collect-tile ${state.collectDone[x.id]?"done":""}" data-collecttile="${x.id}"><span class="tile-num">#${String(x.index).padStart(type==="memento"?3:2,"0")}</span><span class="tile-name">${name}</span><span class="tile-state">${state.collectDone[x.id]?L("collected").toUpperCase():L("open").toUpperCase()}</span></button>`}).join("")}</div></div>`).join("")||'<div class="area-empty">'+(state.language==="en"?"No entries in this filter.":"Keine Einträge in diesem Filter.")+'</div>';
+ $("#collectibleList").innerHTML=Object.entries(groups).filter(([,a])=>a.length).map(([type,a])=>`<div class="airdistrict"><h3>${labels[type].toUpperCase()} · ${a.length}</h3><div class="collect-grid">${a.map(x=>{const name=state.language==="en"?x.name_en:x.name_de,hint=state.language==="en"?x.hint_en:x.hint_de,badges=collectBadgeHTML(x);return `<button type="button" class="collect-tile ${state.collectDone[x.id]?"done":""}" data-collecttile="${x.id}"><span class="tile-num">#${String(x.index).padStart(type==="memento"?3:2,"0")}</span><span class="tile-name">${name}</span>${hint?`<span class="tile-hint">${hint}</span>`:""}${badges?`<span class="tile-badges">${badges}</span>`:""}<span class="tile-state">${state.collectDone[x.id]?L("collected").toUpperCase():L("open").toUpperCase()}</span></button>`}).join("")}</div></div>`).join("")||'<div class="area-empty">'+(state.language==="en"?"No entries in this filter.":"Keine Einträge in diesem Filter.")+'</div>';
  $$("[data-collecttile]").forEach(b=>b.onclick=()=>openCollectDetail(b.dataset.collecttile));
  $("#collectDetailDone").onchange=e=>{const id=e.target.dataset.id;if(!id)return;state.collectDone[id]=e.target.checked;if(!e.target.checked)delete state.collectDone[id];saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
 }

@@ -24,7 +24,7 @@
         <option value="de">🇩🇪 Deutsch</option><option value="en">🇬🇧 English</option>
       </select>
     </label>
-    <button id="globalVersion" class="header-version" type="button">v0.10.1</button>
+    <button id="globalVersion" class="header-version" type="button">v0.10.2</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -123,7 +123,10 @@
     <button data-collecttype="graffiti">GRAFFITI</button>
   </div>
   <input class="search" id="collectSearch" placeholder="Name, Nummer oder Bezirk suchen …">
-  <label class="toggleline"><input type="checkbox" id="collectMissing"><span id="collectMissingLabel">Nur fehlende anzeigen</span></label>
+  <div class="collect-toggle-row">
+    <label class="toggleline"><input type="checkbox" id="collectMissing"><span id="collectMissingLabel">Nur fehlende anzeigen</span></label>
+    <label class="toggleline"><input type="checkbox" id="collectBloodyTies"><span id="collectBloodyTiesLabel">DLC: Bloody Ties</span></label>
+  </div>
   <div class="notice"><b>2026</b><span id="collectSlotNotice">Die 209 Andenken sind mit Namen erfasst. Nicht sicher bestätigte deutsche Ingame-Bezeichnungen sind mit * markiert.</span></div>
   <div id="collectibleList"></div>
   <div id="mementoVerifyNote" class="memento-verify-note">* Ingame-Bezeichnung nicht verifiziert</div>
@@ -133,6 +136,8 @@
       <div class="eyebrow" id="collectDetailType">SAMMLERSTÜCK</div>
       <h3 id="collectDetailName"></h3>
       <div class="collect-detail-meta" id="collectDetailMeta"></div>
+      <div class="collect-detail-badges" id="collectDetailBadges"></div>
+      <div class="collect-detail-note" id="collectDetailNote"></div>
       <label class="collect-detail-check"><input type="checkbox" id="collectDetailDone"><span id="collectDetailDoneLabel">Gesammelt</span></label>
       <a class="yt-find" id="collectDetailYoutube" target="_blank" rel="noopener">▶ FUNDORT AUF YOUTUBE</a>
     </div>
@@ -202,7 +207,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.10.1</b><br><span>Datenstand: 21.09.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.10.2</b><br><span>Datenstand: 15.10.2026 · Changelog öffnen</span></button>
 </section>
 <footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.</span></footer>
 </main>

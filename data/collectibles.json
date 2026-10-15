@@ -528,7 +528,9 @@
     "name_de": "Safekombination (459)",
     "name_en": "Safe Code",
     "district": "Saint Paul Island",
-    "missable": false
+    "missable": false,
+    "hint_de": "Absoluter Nullpunkt [°F]",
+    "hint_en": "Absolute zero [°F]"
   },
   {
     "id": "memento-060",
@@ -546,7 +548,9 @@
     "name_de": "Safekombination (314)",
     "name_en": "Safe Code",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "hint_de": "Ungefähre Größe von Pi.",
+    "hint_en": "Approximate value of Pi."
   },
   {
     "id": "memento-062",
@@ -555,7 +559,9 @@
     "name_de": "Safekombination (510)",
     "name_en": "Safe Code",
     "district": "Trinity",
-    "missable": false
+    "missable": false,
+    "hint_de": "5×100+15−5= ...",
+    "hint_en": "5×100+15−5= ..."
   },
   {
     "id": "memento-063",
@@ -564,7 +570,9 @@
     "name_de": "Safekombination (966)",
     "name_en": "Safe Code",
     "district": "Quarry End",
-    "missable": false
+    "missable": false,
+    "hint_de": "Taufe Polens",
+    "hint_en": "Baptism of Poland"
   },
   {
     "id": "memento-064",
@@ -582,7 +590,9 @@
     "name_de": "Safekombination (85-19-45)",
     "name_en": "Safe Code",
     "district": "Newfound Lost Lands",
-    "missable": false
+    "missable": false,
+    "hint_de": "Ende des 2. Weltkriegs [EU]",
+    "hint_en": "End of World War 2 [EU]"
   },
   {
     "id": "memento-066",
@@ -591,7 +601,9 @@
     "name_de": "Safekombination (666)",
     "name_en": "Safe Code",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "hint_de": "Wenn du 555 bist, dann bin ich ...",
+    "hint_en": "If u 555, then I’m ..."
   },
   {
     "id": "memento-067",
@@ -600,7 +612,9 @@
     "name_de": "Safekombination (22-67-66)",
     "name_en": "Safe Code",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "hint_de": "(1000/10)+(3333×2)+220000= ...",
+    "hint_en": "(1000/10)+(3333×2)+220000= ..."
   },
   {
     "id": "memento-068",
@@ -609,7 +623,9 @@
     "name_de": "Safekombination (74-17-76)",
     "name_en": "Safe Code",
     "district": "Saint Paul Island",
-    "missable": false
+    "missable": false,
+    "hint_de": "Datum der Verkündung der US-Unabhängigkeitserklärung [US]",
+    "hint_en": "Date of the announcement of the US Declaration of Independence [US]"
   },
   {
     "id": "memento-069",
@@ -618,7 +634,9 @@
     "name_de": "Safekombination (10-10-10)",
     "name_en": "Safe Code",
     "district": "Muddy Grounds",
-    "missable": false
+    "missable": false,
+    "hint_de": "Die Antwort auf die ultimative Frage nach dem Leben, dem Universum und allem [binär]",
+    "hint_en": "The Answer to the Ultimate Question of Life, the Universe and Everything [in binary]"
   },
   {
     "id": "memento-070",
@@ -627,7 +645,9 @@
     "name_de": "Safekombination (10-28-64)",
     "name_en": "Safe Code",
     "district": "New Dawn Park",
-    "missable": false
+    "missable": false,
+    "hint_de": "Little Boy – Länge [Fuß] – Durchmesser [Zoll] – Füllgewicht [kg]",
+    "hint_en": "Little Boy – Length [feet] – Diameter [inches] – Filling weight [kg]"
   },
   {
     "id": "memento-071",
@@ -660,7 +680,7 @@
     "id": "memento-074",
     "type": "memento",
     "index": 74,
-    "name_de": "Bierdeckel mit PK-Lager-Motiv",
+    "name_de": "Bierdeckel mit PK-Lagerbier-Motiv",
     "name_en": "PK Lager-themed Beer Coaster",
     "district": "Quarry End",
     "missable": false
@@ -714,118 +734,149 @@
     "id": "memento-080",
     "type": "memento",
     "index": 80,
-    "name_de": "Hundemarke: Rowe",
+    "name_de": "Rowes Erkennungsmarke",
     "name_en": "Rowe's Dog Tag",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "quest_de": "Übertragung",
+    "quest_en": "Broadcast"
   },
   {
     "id": "memento-081",
     "type": "memento",
     "index": 81,
-    "name_de": "Hundemarke: Wierzbowski",
+    "name_de": "Wierzbowskis Erkennungsmarke",
     "name_en": "Wierzbowski's Dog Tag",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "quest_de": "Übertragung",
+    "quest_en": "Broadcast"
   },
   {
     "id": "memento-082",
     "type": "memento",
     "index": 82,
-    "name_de": "Hundemarke: Leon",
+    "name_de": "Leons Erkennungsmarke",
     "name_en": "Leon's Dog Tag",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "quest_de": "Mauer der Tapferkeit",
+    "quest_en": "Wall of Valor"
   },
   {
     "id": "memento-083",
     "type": "memento",
     "index": 83,
-    "name_de": "Hundemarke: Chris",
+    "name_de": "Chris' Erkennungsmarke",
     "name_en": "Chris's Dog Tag",
     "district": "Garrison",
-    "missable": false
+    "missable": true,
+    "quest_de": "Übertragung",
+    "quest_en": "Broadcast",
+    "note_de": "Chris' Erkennungsmarke am besten direkt während „Übertragung“ einsammeln; der ursprüngliche Fundort kann danach nicht mehr zuverlässig verfügbar sein.",
+    "note_en": "Best collected directly during “Broadcast”; the original pickup location may no longer be reliably accessible afterwards."
   },
   {
     "id": "memento-084",
     "type": "memento",
     "index": 84,
-    "name_de": "Hundemarke: Hicks",
+    "name_de": "Heecks Erkennungsmarke",
     "name_en": "Hicks's Dog Tag",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "quest_de": "Übertragung",
+    "quest_en": "Broadcast"
   },
   {
     "id": "memento-085",
     "type": "memento",
     "index": 85,
-    "name_de": "Hundemarke: Hudson",
+    "name_de": "Hudsons Erkennungsmarke",
     "name_en": "Hudson's Dog Tag",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "quest_de": "Übertragung",
+    "quest_en": "Broadcast"
   },
   {
     "id": "memento-086",
     "type": "memento",
     "index": 86,
-    "name_de": "Hundemarke: Brasco",
+    "name_de": "Brascos Erkennungsmarke",
     "name_en": "Brasco's Dog Tag",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "quest_de": "Mauer der Tapferkeit",
+    "quest_en": "Wall of Valor"
   },
   {
     "id": "memento-087",
     "type": "memento",
     "index": 87,
-    "name_de": "Hundemarke: Atom",
+    "name_de": "Atoms Erkennungsmarke",
     "name_en": "Atom's Dog Tag",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "quest_de": "Mauer der Tapferkeit",
+    "quest_en": "Wall of Valor"
   },
   {
     "id": "memento-088",
     "type": "memento",
     "index": 88,
-    "name_de": "Hundemarke: Kleiner Ron",
+    "name_de": "Erkennungsmarke des kleinen Ron",
     "name_en": "Little Ron's Dog Tag",
     "district": "Downtown",
-    "missable": false
+    "missable": false,
+    "quest_de": "Mauer der Tapferkeit",
+    "quest_en": "Wall of Valor"
   },
   {
     "id": "memento-089",
     "type": "memento",
     "index": 89,
-    "name_de": "Hundemarke: Sierra",
+    "name_de": "Sierras Erkennungsmarke",
     "name_en": "Sierra's Dog Tag",
     "district": "Downtown",
-    "missable": false
+    "missable": false,
+    "quest_de": "Mauer der Tapferkeit",
+    "quest_en": "Wall of Valor"
   },
   {
     "id": "memento-090",
     "type": "memento",
     "index": 90,
-    "name_de": "Hundemarke: Kiddie",
+    "name_de": "Kiddies Erkennungsmarke",
     "name_en": "Kiddie's Dog Tag",
     "district": "Downtown",
-    "missable": false
+    "missable": false,
+    "quest_de": "Mauer der Tapferkeit",
+    "quest_en": "Wall of Valor"
   },
   {
     "id": "memento-091",
     "type": "memento",
     "index": 91,
-    "name_de": "Hundemarke: Bartez",
+    "name_de": "Bartez' Erkennungsmarke",
     "name_en": "Bartez's Dog Tag",
     "district": "Houndfield",
-    "missable": false
+    "missable": false,
+    "quest_de": "Mauer der Tapferkeit",
+    "quest_en": "Wall of Valor"
   },
   {
     "id": "memento-092",
     "type": "memento",
     "index": 92,
-    "name_de": "Rezept: Polnische Pierogi *",
+    "name_de": "Rezept #1 – Polnische Piroggen (Pierogi)",
     "name_en": "Recipe: Polish Pierogi",
     "district": "The Wharf",
-    "missable": false
+    "missable": false,
+    "aliases": [
+      "Pierogi",
+      "Piroggen",
+      "Polnische Pierogi"
+    ]
   },
   {
     "id": "memento-093",
@@ -948,7 +999,7 @@
     "id": "memento-106",
     "type": "memento",
     "index": 106,
-    "name_de": "Der Todeslauf",
+    "name_de": "Der Todesbefehl",
     "name_en": "The Kill Order",
     "district": "Newfound Lost Lands",
     "missable": false
@@ -987,7 +1038,14 @@
     "name_de": "X13-Krankenblatt: Gabriel",
     "name_en": "X13 Medical Chart: Gabriel",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-111",
@@ -996,67 +1054,116 @@
     "name_de": "X13-Krankenblatt: Wayne",
     "name_en": "X13 Medical Chart: Wayne",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-112",
     "type": "memento",
     "index": 112,
-    "name_de": "X13-Krankenblatt: Oskar",
-    "name_en": "X13 Medical Chart: Oskar",
+    "name_de": "Brief eines Kinds in X13 an seine Mutter",
+    "name_en": "X13 child's letter to his mom",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-113",
     "type": "memento",
     "index": 113,
-    "name_de": "X13-Krankenblatt: Charles",
-    "name_en": "X13 Medical Chart: Charles",
+    "name_de": "X13-Krankenblatt: Oskar",
+    "name_en": "X13 Medical Chart: Oskar",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-114",
     "type": "memento",
     "index": 114,
-    "name_de": "X13-Krankenblatt: Wendy",
-    "name_en": "X13 Medical Chart: Wendy",
+    "name_de": "X13-Krankenblatt: Charles",
+    "name_en": "X13 Medical Chart: Charles",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-115",
     "type": "memento",
     "index": 115,
-    "name_de": "X13-Krankenblatt: Petra",
-    "name_en": "X13 Medical Chart: Petra",
+    "name_de": "X13-Krankenblatt: Wendy",
+    "name_en": "X13 Medical Chart: Wendy",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-116",
     "type": "memento",
     "index": 116,
-    "name_de": "Brief eines Kindes an seine Mutter",
-    "name_en": "X13 child's letter to his mom",
+    "name_de": "X13-Krankenblatt: Petra",
+    "name_en": "X13 Medical Chart: Petra",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-117",
     "type": "memento",
     "index": 117,
-    "name_de": "X13-Krankenblatt: Waltz",
+    "name_de": "Gedicht eines Kinds in X13 an Dr. Waltz",
     "name_en": "X13 child's poem addressed to Dr. Waltz",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "epilogue": true,
+    "x13": true,
+    "auto_story_end": true,
+    "quest_de": "X13",
+    "quest_en": "X13",
+    "note_de": "Während „X13“ sammelbar. Falls übersehen, wird dieses X13-Andenken beim Storyabschluss automatisch gutgeschrieben.",
+    "note_en": "Collectible during “X13”. If missed, this X13 memento is granted automatically when the story is completed."
   },
   {
     "id": "memento-118",
     "type": "memento",
     "index": 118,
-    "name_de": "Hunting Grounds *",
+    "name_de": "Revier",
     "name_en": "Hunting Grounds",
     "district": "Outlands",
     "missable": false
@@ -1065,7 +1172,7 @@
     "id": "memento-119",
     "type": "memento",
     "index": 119,
-    "name_de": "Note to Aiden *",
+    "name_de": "Nachricht an Aiden",
     "name_en": "Note to Aiden",
     "district": "Outlands",
     "missable": false
@@ -1074,7 +1181,7 @@
     "id": "memento-120",
     "type": "memento",
     "index": 120,
-    "name_de": "Hunter’s Commandment *",
+    "name_de": "Gesetze der Jäger",
     "name_en": "Hunter’s Commandment",
     "district": "Newfound Lost Lands",
     "missable": false
@@ -1092,7 +1199,7 @@
     "id": "memento-122",
     "type": "memento",
     "index": 122,
-    "name_de": "Shen Xiu diary 1 *",
+    "name_de": "Shen Xius Tagebuch 1 *",
     "name_en": "Shen Xiu diary 1",
     "district": "Saint Paul Island",
     "missable": false
@@ -1101,7 +1208,7 @@
     "id": "memento-123",
     "type": "memento",
     "index": 123,
-    "name_de": "Shen Xiu diary 2 *",
+    "name_de": "Shen Xius Tagebuch 2",
     "name_en": "Shen Xiu diary 2",
     "district": "Saint Paul Island",
     "missable": false
@@ -1110,7 +1217,7 @@
     "id": "memento-124",
     "type": "memento",
     "index": 124,
-    "name_de": "Shen Xiu diary 3 *",
+    "name_de": "Shen Xius Tagebuch 3",
     "name_en": "Shen Xiu diary 3",
     "district": "Saint Paul Island",
     "missable": false
@@ -1119,7 +1226,7 @@
     "id": "memento-125",
     "type": "memento",
     "index": 125,
-    "name_de": "Shen Xiu diary 4 *",
+    "name_de": "Shen Xius Tagebuch 4 *",
     "name_en": "Shen Xiu diary 4",
     "district": "Muddy Grounds",
     "missable": false
@@ -1128,7 +1235,7 @@
     "id": "memento-126",
     "type": "memento",
     "index": 126,
-    "name_de": "Shen Xiu diary 5 *",
+    "name_de": "Shen Xius Tagebuch 5",
     "name_en": "Shen Xiu diary 5",
     "district": "The Wharf",
     "missable": false
@@ -1137,7 +1244,7 @@
     "id": "memento-127",
     "type": "memento",
     "index": 127,
-    "name_de": "Shen Xiu diary 6 *",
+    "name_de": "Shen Xius Tagebuch 6",
     "name_en": "Shen Xiu diary 6",
     "district": "Trinity",
     "missable": false
@@ -1146,7 +1253,7 @@
     "id": "memento-128",
     "type": "memento",
     "index": 128,
-    "name_de": "Shen Xiu diary 7 *",
+    "name_de": "Shen Xius Tagebuch 7 *",
     "name_en": "Shen Xiu diary 7",
     "district": "Houndfield",
     "missable": false
@@ -1155,7 +1262,7 @@
     "id": "memento-129",
     "type": "memento",
     "index": 129,
-    "name_de": "Shen Xiu diary 8 *",
+    "name_de": "Shen Xius Tagebuch 8",
     "name_en": "Shen Xiu diary 8",
     "district": "Quarry End",
     "missable": false
@@ -1164,7 +1271,7 @@
     "id": "memento-130",
     "type": "memento",
     "index": 130,
-    "name_de": "Shen Xiu diary 9 *",
+    "name_de": "Shen Xius Tagebuch 9 *",
     "name_en": "Shen Xiu diary 9",
     "district": "Outlands",
     "missable": false
@@ -1173,7 +1280,7 @@
     "id": "memento-131",
     "type": "memento",
     "index": 131,
-    "name_de": "Shen Xiu diary 10 *",
+    "name_de": "Shen Xius Tagebuch 10 *",
     "name_en": "Shen Xiu diary 10",
     "district": "Downtown",
     "missable": false
@@ -1185,7 +1292,8 @@
     "name_de": "Portrait of a Hangover *",
     "name_en": "Portrait of a Hangover",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-133",
@@ -1194,7 +1302,8 @@
     "name_de": "Fighter Card — Skullface *",
     "name_en": "Fighter Card — Skullface",
     "district": "New Dawn Park",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-134",
@@ -1203,7 +1312,8 @@
     "name_de": "Fighter Card — Ogar *",
     "name_en": "Fighter Card — Ogar",
     "district": "Houndfield",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-135",
@@ -1212,7 +1322,8 @@
     "name_de": "Fighter Card — Aiden *",
     "name_en": "Fighter Card — Aiden",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-136",
@@ -1221,7 +1332,8 @@
     "name_de": "Fighter Card — Night Crow *",
     "name_en": "Fighter Card — Night Crow",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-137",
@@ -1230,7 +1342,8 @@
     "name_de": "Fighter Card — Kaiju *",
     "name_en": "Fighter Card — Kaiju",
     "district": "Quarry End",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-138",
@@ -1239,7 +1352,8 @@
     "name_de": "Fighter Card — Snake Eyes *",
     "name_en": "Fighter Card — Snake Eyes",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-139",
@@ -1248,88 +1362,102 @@
     "name_de": "Fighter Card — Anubis *",
     "name_en": "Fighter Card — Anubis",
     "district": "Garrison",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-140",
     "type": "memento",
     "index": 140,
-    "name_de": "Arena Combat Rules *",
+    "name_de": "Arena-Kampfregeln",
     "name_en": "Arena Combat Rules",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-141",
     "type": "memento",
     "index": 141,
-    "name_de": "Astrid Cancelled — Newspaper Article *",
+    "name_de": "Astrid gecancelt – Zeitungsartikel",
     "name_en": "Astrid Cancelled — Newspaper Article",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-142",
     "type": "memento",
     "index": 142,
-    "name_de": "Meet Astrid — Magazine Cover *",
+    "name_de": "Astrid intim – Magazin-Cover",
     "name_en": "Meet Astrid — Magazine Cover",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-143",
     "type": "memento",
     "index": 143,
-    "name_de": "Carnage Hall Poster *",
+    "name_de": "Poster der Massaker-Halle",
     "name_en": "Carnage Hall Poster",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-144",
     "type": "memento",
     "index": 144,
-    "name_de": "Humanity's Demons — Jack Matt's letter to Astrid #1 *",
+    "name_de": "Dämonen der Menschheit – Jack Matts Brief an Astrid #1",
     "name_en": "Humanity's Demons — Jack Matt's letter to Astrid #1",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-145",
     "type": "memento",
     "index": 145,
-    "name_de": "Principles of Humanity — Jack Matt's letter to Astrid #2 *",
+    "name_de": "Prinzipien der Menschlichkeit – Jack Matts Brief an Astrid #2 *",
     "name_en": "Principles of Humanity — Jack Matt's letter to Astrid #2",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": true,
+    "dlc": "Bloody Ties",
+    "quest_de": "Ein goldener Käfig",
+    "quest_en": "A Gilded Cage",
+    "note_de": "Nur während der Bloody-Ties-Nebenquest „Ein goldener Käfig“ regulär sammelbar. Vor Abschluss der Quest mitnehmen.",
+    "note_en": "Normally collectible only during the Bloody Ties side quest “A Gilded Cage”. Pick it up before completing the quest."
   },
   {
     "id": "memento-146",
     "type": "memento",
     "index": 146,
-    "name_de": "A Choir — Astrid's note to the stage director #1 *",
+    "name_de": "Ein Chor – Astrids Notiz an den Regisseur #1",
     "name_en": "A Choir — Astrid's note to the stage director #1",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-147",
     "type": "memento",
     "index": 147,
-    "name_de": "The Minotaur and the Infected Princess — Astrid's note to the stage director #2 *",
+    "name_de": "Der Minotaurus und die infizierte Prinzessin – Astrids Notiz an den Regisseur #2 *",
     "name_en": "The Minotaur and the Infected Princess — Astrid's note to the stage director #2",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-148",
     "type": "memento",
     "index": 148,
-    "name_de": "Thank You and Farewell — Astrid's note to the stage director #3 *",
+    "name_de": "Danke und Lebewohl – Astrids Notiz an den Regisseur #3",
     "name_en": "Thank You and Farewell — Astrid's note to the stage director #3",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-149",
@@ -1338,7 +1466,12 @@
     "name_de": "Scumbuckets On Parade! — Skullface's debt list *",
     "name_en": "Scumbuckets On Parade! — Skullface's debt list",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": true,
+    "dlc": "Bloody Ties",
+    "quest_de": "Ein goldener Käfig",
+    "quest_en": "A Gilded Cage",
+    "note_de": "Nur während der Bloody-Ties-Nebenquest „Ein goldener Käfig“ regulär sammelbar. Vor Abschluss der Quest mitnehmen.",
+    "note_en": "Normally collectible only during the Bloody Ties side quest “A Gilded Cage”. Pick it up before completing the quest."
   },
   {
     "id": "memento-150",
@@ -1347,7 +1480,12 @@
     "name_de": "Skullface's Rest Day *",
     "name_en": "Skullface's Rest Day",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": true,
+    "dlc": "Bloody Ties",
+    "quest_de": "Ein goldener Käfig",
+    "quest_en": "A Gilded Cage",
+    "note_de": "Nur während der Bloody-Ties-Nebenquest „Ein goldener Käfig“ regulär sammelbar. Vor Abschluss der Quest mitnehmen.",
+    "note_en": "Normally collectible only during the Bloody Ties side quest “A Gilded Cage”. Pick it up before completing the quest."
   },
   {
     "id": "memento-151",
@@ -1356,25 +1494,40 @@
     "name_de": "Hospital Patient Card *",
     "name_en": "Hospital Patient Card",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-152",
     "type": "memento",
     "index": 152,
-    "name_de": "GUARD REPORT 12/09/2035 *",
+    "name_de": "Wachbericht 12/09/2035",
     "name_en": "GUARD REPORT 12/09/2035",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties",
+    "aliases": [
+      "Wachbericht",
+      "Wachbricht",
+      "Guard Report"
+    ]
   },
   {
     "id": "memento-153",
     "type": "memento",
     "index": 153,
-    "name_de": "GUARD REPORT 23/09/2036 *",
+    "name_de": "Wachbricht 23/09/2036",
     "name_en": "GUARD REPORT 23/09/2036",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties",
+    "aliases": [
+      "Wachbericht",
+      "Wachbricht",
+      "Guard Report"
+    ],
+    "note_de": "Ingame-Schreibweise „Wachbricht“ – so wird der Titel in der deutschen Spielversion angezeigt.",
+    "note_en": "German in-game spelling is “Wachbricht”."
   },
   {
     "id": "memento-154",
@@ -1383,70 +1536,97 @@
     "name_de": "GUARD REPORT 25/09/2036 *",
     "name_en": "GUARD REPORT 25/09/2036",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties",
+    "aliases": [
+      "Wachbericht 25/09/2036",
+      "Wachbricht 25/09/2036",
+      "Guard Report 25/09/2036"
+    ]
   },
   {
     "id": "memento-155",
     "type": "memento",
     "index": 155,
-    "name_de": "GUARD REPORT 10/2036 *",
+    "name_de": "Wachbricht 10/2036",
     "name_en": "GUARD REPORT 10/2036",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties",
+    "aliases": [
+      "Wachbericht",
+      "Wachbricht",
+      "Guard Report"
+    ],
+    "note_de": "Ingame-Schreibweise „Wachbricht“ – so wird der Titel in der deutschen Spielversion angezeigt.",
+    "note_en": "German in-game spelling is “Wachbricht”."
   },
   {
     "id": "memento-156",
     "type": "memento",
     "index": 156,
-    "name_de": "GUARD REPORT 20/10/2036 *",
+    "name_de": "Wachbricht 20/10/2036",
     "name_en": "GUARD REPORT 20/10/2036",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties",
+    "aliases": [
+      "Wachbericht",
+      "Wachbricht",
+      "Guard Report"
+    ],
+    "note_de": "Ingame-Schreibweise „Wachbricht“ – so wird der Titel in der deutschen Spielversion angezeigt.",
+    "note_en": "German in-game spelling is “Wachbricht”."
   },
   {
     "id": "memento-157",
     "type": "memento",
     "index": 157,
-    "name_de": "CARNAGE HALL IS HIRING! *",
+    "name_de": "Massaker-Halle heuert an!",
     "name_en": "CARNAGE HALL IS HIRING!",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-158",
     "type": "memento",
     "index": 158,
-    "name_de": "DEMOLISHER HUNTERS NEEDED *",
+    "name_de": "Rammer-Jäger gesucht",
     "name_en": "DEMOLISHER HUNTERS NEEDED",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-159",
     "type": "memento",
     "index": 159,
-    "name_de": "VIRAL HUNTERS WANTED *",
+    "name_de": "Befallenen-Jäger gesucht",
     "name_en": "VIRAL HUNTERS WANTED",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-160",
     "type": "memento",
     "index": 160,
-    "name_de": "Report #1 *",
+    "name_de": "Bericht 1 *",
     "name_en": "Report #1",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-161",
     "type": "memento",
     "index": 161,
-    "name_de": "Report #2 *",
+    "name_de": "Bericht 2",
     "name_en": "Report #2",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-162",
@@ -1455,7 +1635,8 @@
     "name_de": "The Nightworld *",
     "name_en": "The Nightworld",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-163",
@@ -1464,49 +1645,74 @@
     "name_de": "Kings of the Arena *",
     "name_en": "Kings of the Arena",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "memento-164",
     "type": "memento",
     "index": 164,
-    "name_de": "Report re. Standing Orders *",
+    "name_de": "Bericht zum Dauerbefehl",
     "name_en": "Report re. Standing Orders",
     "district": "Muddy Grounds",
-    "missable": false
+    "missable": false,
+    "hint_de": "22.02.2024",
+    "hint_en": "22.02.2024",
+    "aliases": [
+      "Bericht zum Dauerbefehl",
+      "22.02.2024"
+    ]
   },
   {
     "id": "memento-165",
     "type": "memento",
     "index": 165,
-    "name_de": "Report: Delivery *",
+    "name_de": "Bericht: Lieferung",
     "name_en": "Report: Delivery",
     "district": "Trinity",
-    "missable": false
+    "missable": false,
+    "hint_de": "12.03.2024",
+    "hint_en": "12.03.2024",
+    "aliases": [
+      "Bericht: Lieferung",
+      "12.03.2024"
+    ]
   },
   {
     "id": "memento-166",
     "type": "memento",
     "index": 166,
-    "name_de": "Report: re. standing orders *",
+    "name_de": "Bericht zum Dauerbefehl",
     "name_en": "Report: re. standing orders",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "hint_de": "28.03.2024",
+    "hint_en": "28.03.2024",
+    "aliases": [
+      "Bericht zum Dauerbefehl",
+      "28.03.2024"
+    ]
   },
   {
     "id": "memento-167",
     "type": "memento",
     "index": 167,
-    "name_de": "Report: Toolkit *",
+    "name_de": "Bericht: Kit",
     "name_en": "Report: Toolkit",
     "district": "Outlands",
-    "missable": false
+    "missable": false,
+    "hint_de": "26.05.2024",
+    "hint_en": "26.05.2024",
+    "aliases": [
+      "Bericht: Kit",
+      "26.05.2024"
+    ]
   },
   {
     "id": "memento-168",
     "type": "memento",
     "index": 168,
-    "name_de": "See You In... *",
+    "name_de": "Wir sehen uns",
     "name_en": "See You In...",
     "district": "Villedor",
     "missable": false
@@ -1515,7 +1721,7 @@
     "id": "memento-169",
     "type": "memento",
     "index": 169,
-    "name_de": "Blast from the Past *",
+    "name_de": "Reise in die Vergangenheit",
     "name_en": "Blast from the Past",
     "district": "Villedor",
     "missable": false
@@ -2121,7 +2327,10 @@
     "name_de": "Tagebuch eines Nightrunners #6",
     "name_en": "Journal of a Nightrunner #6",
     "district": "The Wharf",
-    "missable": false
+    "missable": true,
+    "pre_x13": true,
+    "note_de": "Vor Beginn von „X13“ einsammeln. Danach ist der Fundort im eigenen Durchlauf nicht mehr regulär erreichbar.",
+    "note_en": "Collect before starting “X13”. Afterwards the location is no longer normally accessible in your own playthrough."
   },
   {
     "id": "tape-028",
@@ -2235,7 +2444,7 @@
     "id": "tape-040",
     "type": "tape",
     "index": 40,
-    "name_de": "Anzeigen der Stadt – Eiersuche",
+    "name_de": "Kleinanzeigen der Stadt – Eiersuche",
     "name_en": "The City Classifieds - Egg Hunting",
     "district": "Trinity",
     "missable": false
@@ -2379,28 +2588,43 @@
     "id": "tape-056",
     "type": "tape",
     "index": 56,
-    "name_de": "Waltz's Chamber Recording #1",
+    "name_de": "Waltz’ Kammer – Aufzeichnung #1",
     "name_en": "Waltz's Chamber Recording #1",
     "district": "Newfound Lost Lands",
-    "missable": false
+    "missable": true,
+    "epilogue": true,
+    "quest_de": "Jetzt oder nie",
+    "quest_en": "Now or Never",
+    "note_de": "Nur während der Hauptquest „Jetzt oder nie“ in Waltz’ Gemächern regulär erreichbar. Vor dem Verlassen des Bereichs einsammeln; später nur noch über Koop oder NG+ erreichbar.",
+    "note_en": "Normally accessible only during the main quest “Now or Never” inside Waltz’s chamber. Collect before leaving the area; afterwards it requires co-op or NG+."
   },
   {
     "id": "tape-057",
     "type": "tape",
     "index": 57,
-    "name_de": "Waltz's Chamber Recording #2",
+    "name_de": "Waltz’ Kammer – Aufzeichnung #2",
     "name_en": "Waltz's Chamber Recording #2",
     "district": "Newfound Lost Lands",
-    "missable": false
+    "missable": true,
+    "epilogue": true,
+    "quest_de": "Jetzt oder nie",
+    "quest_en": "Now or Never",
+    "note_de": "Nur während der Hauptquest „Jetzt oder nie“ in Waltz’ Gemächern regulär erreichbar. Vor dem Verlassen des Bereichs einsammeln; später nur noch über Koop oder NG+ erreichbar.",
+    "note_en": "Normally accessible only during the main quest “Now or Never” inside Waltz’s chamber. Collect before leaving the area; afterwards it requires co-op or NG+."
   },
   {
     "id": "tape-058",
     "type": "tape",
     "index": 58,
-    "name_de": "Waltz's Chamber Recording #3",
+    "name_de": "Waltz’ Kammer – Aufzeichnung #3",
     "name_en": "Waltz's Chamber Recording #3",
     "district": "Newfound Lost Lands",
-    "missable": false
+    "missable": true,
+    "epilogue": true,
+    "quest_de": "Jetzt oder nie",
+    "quest_en": "Now or Never",
+    "note_de": "Nur während der Hauptquest „Jetzt oder nie“ in Waltz’ Gemächern regulär erreichbar. Vor dem Verlassen des Bereichs einsammeln; später nur noch über Koop oder NG+ erreichbar.",
+    "note_en": "Normally accessible only during the main quest “Now or Never” inside Waltz’s chamber. Collect before leaving the area; afterwards it requires co-op or NG+."
   },
   {
     "id": "tape-059",
@@ -2454,7 +2678,8 @@
     "name_de": "The Fights #1 — Skullface vs. The Rookie",
     "name_en": "The Fights #1 — Skullface vs. The Rookie",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "tape-065",
@@ -2463,7 +2688,8 @@
     "name_de": "The Fights #2 — Ogar vs. Stamma",
     "name_en": "The Fights #2 — Ogar vs. Stamma",
     "district": "Houndfield",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "tape-066",
@@ -2472,7 +2698,8 @@
     "name_de": "The Fights #3 — Ogar vs. Skullface",
     "name_en": "The Fights #3 — Ogar vs. Skullface",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "tape-067",
@@ -2481,7 +2708,8 @@
     "name_de": "The Fights #4 — Abel vs. Skullface",
     "name_en": "The Fights #4 — Abel vs. Skullface",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "tape-068",
@@ -2490,7 +2718,8 @@
     "name_de": "Confession of the truth.",
     "name_en": "Confession of the truth.",
     "district": "Carnage Hall",
-    "missable": false
+    "missable": false,
+    "dlc": "Bloody Ties"
   },
   {
     "id": "graffiti-001",

@@ -22,5 +22,8 @@
   "companionModules": "COMPANION MODULE",
   "navCollectibles": "Sammlung",
   "backupWarningTitle": "SICHERHEITSHINWEIS",
-  "backupWarning": "Der DL2 Companion speichert deinen Companion-Fortschritt lokal auf diesem Gerät. Obwohl Updates so entwickelt werden, dass vorhandene Daten erhalten bleiben, kann ein Datenverlust technisch nie zu 100 % ausgeschlossen werden. Wir empfehlen deshalb, regelmäßig über „Daten exportieren“ eine Sicherung deines Companion-Fortschritts zu erstellen und lokal aufzubewahren."
+  "backupWarning": "Der DL2 Companion speichert deinen Companion-Fortschritt lokal auf diesem Gerät. Obwohl Updates so entwickelt werden, dass vorhandene Daten erhalten bleiben, kann ein Datenverlust technisch nie zu 100 % ausgeschlossen werden. Wir empfehlen deshalb, regelmäßig über „Daten exportieren“ eine Sicherung deines Companion-Fortschritts zu erstellen und lokal aufzubewahren.",
+  "bloodyTiesOnly": "DLC: Bloody Ties",
+  "sourceDlc": "Quelle: DLC – Bloody Ties",
+  "hintTask": "Hinweis / Aufgabe"
 }
