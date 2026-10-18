@@ -244,3 +244,10 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 .collect-tags span.risk{border-color:#9b5b34;color:#e7a26b}
 .collect-tags span.missable{border-color:#a54c35;color:#f0a17d}
 .collect-detail-clue{white-space:pre-line}
+
+.collect-detail-statuses{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.collect-detail-unclear{color:#d59a61}
+.collect-tile.unclear{border-color:#7d5b39;background:#1c1915}
+.collect-tile.unclear .tile-state{color:#d59a61}
+.collect-tile.unclear .tile-num{color:#d59a61}
+.collect-tile.unclear .tile-name{text-decoration:none}

@@ -703,7 +703,12 @@
     "name_de": "Lawans Todesliste",
     "name_en": "Lawan's death list",
     "district": "New Dawn Park",
-    "missable": false
+    "missable": false,
+    "location_de": "Je nach Hakon-/Storyverlauf: Kirche St. John of God während des entsprechenden Storyabschnitts oder später in Lawans Zimmer am Fischauge.",
+    "location_en": "Depending on Hakon/story outcome: St. John of God Church during the relevant story section or later in Lawan’s room at the Fish Eye.",
+    "warning_de": "BUGHINWEIS: Ist die Todesliste am Fundort sichtbar, aber nicht interaktiv und fehlt zugleich in der Ingame-Sammlung, kann der Eintrag als „Unklar / verbuggt“ markiert werden.",
+    "warning_en": "BUG NOTE: If the death list is visible at the location but cannot be interacted with and is also missing from the in-game collection, mark it as “Unclear / bugged”.",
+    "searchAlias": "Lawan Todesliste Fish Eye Fischauge Kirche St. John of God Hakon bug verbuggt"
   },
   {
     "id": "memento-077",

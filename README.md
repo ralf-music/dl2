@@ -1,8 +1,15 @@
-# DL2 Companion v0.11.0
+# DL2 Companion v0.11.1
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
 
+
+## v0.11.1
+
+- Neuer Sammlerstück-Status „Unklar / verbuggt“
+- Neuer Filter für unklare/verbuggte Einträge
+- Gesammelt und Unklar schließen sich gegenseitig aus
+- Neuer Status wird rückwärtskompatibel in `dl2-companion-state-v1` ergänzt
 
 ## v0.11.0
 

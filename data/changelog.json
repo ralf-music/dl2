@@ -1,5 +1,17 @@
 [
   {
+    "version": "0.11.1",
+    "date": "18.10.2026",
+    "changes": [
+      "Sammlerstücke erhalten den zusätzlichen lokalen Status „Unklar / verbuggt“",
+      "Neuer Filter „Nur unklar / verbuggt anzeigen“ zeigt ausschließlich entsprechend markierte Andenken, Bänder und Graffiti",
+      "Gesammelt und Unklar sind gegenseitig ausschließend: Wird ein Status gesetzt, wird der andere automatisch entfernt",
+      "Der Filter „Nur fehlende anzeigen“ behandelt unklare/verbuggte Einträge weiterhin als nicht gesammelt",
+      "Bestehende Sammelhäkchen und localStorage-Schlüssel bleiben unverändert; der neue Status wird rückwärtskompatibel ergänzt",
+      "Lawans Todesliste (#076) erhält einen Hinweis zu beiden möglichen Fundorten und zum sichtbaren, aber nicht interaktiven Bugfall"
+    ]
+  },
+  {
     "version": "0.11.0",
     "date": "18.10.2026",
     "changes": [
