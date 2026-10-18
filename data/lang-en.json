@@ -22,8 +22,5 @@
   "companionModules": "COMPANION MODULES",
   "navCollectibles": "Collection",
   "backupWarningTitle": "SAFETY NOTICE",
-  "backupWarning": "DL2 Companion stores your Companion progress locally on this device. Although updates are designed to preserve existing data, data loss can never be ruled out with 100% certainty. We therefore recommend regularly using “Export data” to create and keep a local backup of your Companion progress.",
-  "bloodyTiesOnly": "DLC: Bloody Ties",
-  "sourceDlc": "Source: DLC – Bloody Ties",
-  "hintTask": "Hint / task"
+  "backupWarning": "DL2 Companion stores your Companion progress locally on this device. Although updates are designed to preserve existing data, data loss can never be ruled out with 100% certainty. We therefore recommend regularly using “Export data” to create and keep a local backup of your Companion progress."
 }

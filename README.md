@@ -1,17 +1,32 @@
-# DL2 Companion v0.10.2
+# DL2 Companion v0.11.0
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
 
+
+## v0.11.0
+
+- Große Lokalisierungsrunde anhand deutscher PS5-Ingame-Screenshots
+- Bloody-Ties-DLC-Filter und Risiko-Kennzeichnungen
+- X13-/Epilog-Korrekturen inklusive einmaliger Häkchen-Migration für #112–#116
+- Zeitungsartikel #018–#025 vereinheitlicht
+- Präziser Fundorthinweis für #151 Krankenhaus-Patientenkarte
+- Desktop-PWA-Metadaten für zuverlässigere App-Icon-Erkennung ergänzt
+- Speicher-Key bleibt `dl2-companion-state-v1`
+
+## v0.10.3
+
+- Verifizierungsstern bei den Andenken #122, #125, #128, #130 und #131 entfernt.
+- Namen, IDs und bestehende Sammelstände bleiben unverändert.
+- Keine Änderung am localStorage-Key oder an der Speicherstruktur.
+
 ## v0.10.2
-- Sammlungssuche auf deutsche + englische Namen, Aliase, Aufgaben/Hinweise und Questdaten erweitert
-- Kombinierbarer Filter `DLC: Bloody Ties` für 32 Andenken + 5 Bänder; DLC-Kennzeichnung direkt in Kacheln und Details
-- Umfangreiche deutsche Ingame-Korrekturen aus direkten PS5-Abgleichen
-- Waltz-Aufzeichnungen #1–3 als `EPILOG · VERPASSBAR`; Nightrunner-Tagebuch #6 mit Warnung vor X13
-- X13-Reihenfolge korrigiert; einmalige Migration schützt bestehende Sammel-Häkchen
-- Safekombinations-Andenken zeigen zusätzlich die Aufgabe bzw. den Hinweis
-- Tolga-&-Fatin-Nachttipp im FAQ ergänzt: 5 Rüstungsteile nutzen, Brille wegen Unschärfefilter weglassen
-- localStorage-Key bleibt `dl2-companion-state-v1`
+
+- Safe-Andenken mit Rätseln/Hinweisen zeigen die Aufgabe direkt auf der Karte und im Detail.
+- 11 Hinweise ergänzt; direkte Code-Notizen 101, 313, 444 und 987 bleiben kompakt.
+- Suche berücksichtigt deutsche/englische Namen und Safe-Hinweise.
+- Keine Änderung an IDs, localStorage-Key oder bestehenden Sammelständen.
+
 
 ## v0.10.1
 - Alle 30 NG+-Hemmstoffe um Region, Bezirk/Außenbereich und kurze Fundortbeschreibung erweitert

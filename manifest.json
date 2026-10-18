@@ -31,5 +31,13 @@
       "purpose": "maskable"
     }
   ],
-  "lang": "de"
+  "lang": "de",
+  "id": "./",
+  "scope": "./",
+  "description": "Inoffizieller Dying Light 2 Companion für Fortschritt, Hemmstoffe, Safe-Codes und Sammlerstücke.",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "prefer_related_applications": false
 }

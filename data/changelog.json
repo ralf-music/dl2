@@ -1,17 +1,38 @@
 [
   {
-    "version": "0.10.2",
-    "date": "15.10.2026",
+    "version": "0.11.0",
+    "date": "18.10.2026",
     "changes": [
-      "Sammlungssuche durchsucht jetzt gleichzeitig deutsche und englische Namen sowie Aliase, Hinweise, Aufgaben und Questangaben",
-      "Neuer kombinierbarer Filter „DLC: Bloody Ties“; alle 32 Andenken und 5 Bänder des DLC sind sichtbar gekennzeichnet",
-      "Zahlreiche deutsche Ingame-Namen anhand direkter PS5-Screenshots korrigiert, darunter Erkennungsmarken, X13, Shen Xiu, Bloody Ties und Firearms-Update-Andenken",
-      "Waltz’ Kammer-Aufzeichnungen #1–3 als Epilog und verpassbar markiert; Nightrunner-Tagebuch #6 warnt vor X13",
-      "X13-Reihenfolge #112–116 korrigiert; einmalige Statusmigration hält bestehende Häkchen am richtigen Sammelstück",
-      "Safekombinations-Andenken zeigen zusätzlich die zugehörige Aufgabe bzw. den Hinweis und sind danach durchsuchbar",
-      "Bloody-Ties- und Epilog-Hinweise werden als kompakte Badges direkt in den Kacheln und Details angezeigt",
-      "FAQ-Tipp ergänzt: Tolga-&-Fatin-Ausrüstung früh holen; fünf Teile für Nacht/Darkzones nutzen, Brille wegen Unschärfefilter weglassen",
-      "localStorage-Schlüssel bleibt unverändert"
+      "Großes Sammlerstück-Update mit zahlreichen direkt auf deutscher PS5 verifizierten Ingame-Bezeichnungen",
+      "Bloody-Ties-DLC vollständig als eigener Sammlerstück-Filter markiert: 32 Andenken + 5 Bänder = 37 Einträge",
+      "Neue Filter für Bloody Ties sowie verpassbare/questgebundene Sammlerstücke; DLC-Fortschritt zeigt Kenner ab 36/37 und 37/37 für komplett",
+      "Bloody-Ties-Risiken differenziert: A Gilded Cage als verpassbar, Backstory / The Only Hope / Portrait of a Hangover als questgebunden",
+      "X13-Andenken #110–#117 korrigiert; bestehende Häkchen werden einmalig auf die korrigierte Reihenfolge migriert",
+      "Epilog-/X13-Hinweise ergänzt; Waltz-Kammer-Aufzeichnungen #1–#3 als verpassbar gekennzeichnet",
+      "Zeitungsartikel #018–#025 einheitlich auf „Zeitungsartikel – Datum“ umgestellt",
+      "Fundorthinweis für #151 Krankenhaus-Patientenkarte auf Generatorraum / Trainingshalle präzisiert",
+      "Desktop-PWA-Metadaten erweitert (Manifest-ID, Scope und App-Metadaten), damit Chrome/Windows das Companion-Icon zuverlässiger als App-Icon übernimmt",
+      "localStorage-Schlüssel bleibt unverändert; nur die X13-Sammelhäkchen werden bei alten Ständen kontrolliert migriert"
+    ]
+  },
+  {
+    "version": "0.10.3",
+    "date": "17.10.2026",
+    "changes": [
+      "Verifizierungsstern bei den Andenken #122, #125, #128, #130 und #131 entfernt",
+      "Bezeichnungen, IDs und bestehende Sammelstände bleiben unverändert",
+      "Keine Änderung am localStorage-Schlüssel oder an der Speicherstruktur"
+    ]
+  },
+  {
+    "version": "0.10.2",
+    "date": "16.10.2026",
+    "changes": [
+      "Safekombinations-Andenken mit echten Rätseln/Hinweisen zeigen die Aufgabe jetzt direkt in der Sammlung und im Detailfenster",
+      "11 Safe-Hinweise ergänzt: Dr.-Katsumi-Rätsel, absoluter Nullpunkt, Pi, Rechenaufgaben, historische Hinweise und Easter-Egg-Rätsel",
+      "Direkt notierte Codes 101, 313, 444 und 987 bleiben bewusst kompakt, da dort keine zusätzliche Aufgabe existiert",
+      "Sammlungssuche durchsucht jetzt zusätzlich deutsche und englische Namen sowie Safe-Hinweise, unabhängig von der eingestellten Sprache",
+      "Bestehende IDs und Sammelstände bleiben unverändert"
     ]
   },
   {

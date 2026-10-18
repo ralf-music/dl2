@@ -5,10 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#111315">
 <meta name="description" content="Dying Light 2 Companion – Hemmstoffe, Safe-Codes und Charakterfortschritt.">
+<meta name="application-name" content="DL2 Companion">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DL2 Companion">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="css/app.css">
 <title>DL2 Companion</title>
-  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="shortcut icon" type="image/png" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
@@ -24,7 +28,7 @@
         <option value="de">🇩🇪 Deutsch</option><option value="en">🇬🇧 English</option>
       </select>
     </label>
-    <button id="globalVersion" class="header-version" type="button">v0.10.2</button>
+    <button id="globalVersion" class="header-version" type="button">v0.11.0</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -123,10 +127,12 @@
     <button data-collecttype="graffiti">GRAFFITI</button>
   </div>
   <input class="search" id="collectSearch" placeholder="Name, Nummer oder Bezirk suchen …">
-  <div class="collect-toggle-row">
+  <div class="collect-filter-row">
     <label class="toggleline"><input type="checkbox" id="collectMissing"><span id="collectMissingLabel">Nur fehlende anzeigen</span></label>
-    <label class="toggleline"><input type="checkbox" id="collectBloodyTies"><span id="collectBloodyTiesLabel">DLC: Bloody Ties</span></label>
+    <label class="toggleline"><input type="checkbox" id="collectDlc"><span id="collectDlcLabel">Nur Bloody-Ties-DLC</span></label>
+    <label class="toggleline"><input type="checkbox" id="collectRisk"><span id="collectRiskLabel">Verpassbar / questgebunden</span></label>
   </div>
+  <div class="collect-dlc-note" id="collectDlcNote" hidden></div>
   <div class="notice"><b>2026</b><span id="collectSlotNotice">Die 209 Andenken sind mit Namen erfasst. Nicht sicher bestätigte deutsche Ingame-Bezeichnungen sind mit * markiert.</span></div>
   <div id="collectibleList"></div>
   <div id="mementoVerifyNote" class="memento-verify-note">* Ingame-Bezeichnung nicht verifiziert</div>
@@ -136,8 +142,7 @@
       <div class="eyebrow" id="collectDetailType">SAMMLERSTÜCK</div>
       <h3 id="collectDetailName"></h3>
       <div class="collect-detail-meta" id="collectDetailMeta"></div>
-      <div class="collect-detail-badges" id="collectDetailBadges"></div>
-      <div class="collect-detail-note" id="collectDetailNote"></div>
+      <div class="collect-detail-clue" id="collectDetailClue" hidden></div>
       <label class="collect-detail-check"><input type="checkbox" id="collectDetailDone"><span id="collectDetailDoneLabel">Gesammelt</span></label>
       <a class="yt-find" id="collectDetailYoutube" target="_blank" rel="noopener">▶ FUNDORT AUF YOUTUBE</a>
     </div>
@@ -207,7 +212,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.10.2</b><br><span>Datenstand: 15.10.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.11.0</b><br><span>Datenstand: 18.10.2026 · Changelog öffnen</span></button>
 </section>
 <footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.</span></footer>
 </main>
