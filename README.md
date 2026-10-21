@@ -1,8 +1,19 @@
-# DL2 Companion v0.11.1
+# DL2 Companion v0.11.2
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
 
+
+## v0.11.2
+
+- Graffiti #71 als „Der Garten der Fantasie“ in Houndfield eingetragen und Fundort ergänzt
+- Graffiti #35 „Roter-Ratten-Lauf“ als potenziell verpassbar markiert (verschlossene Luke; Koop/NG+)
+- Andenken #103 und Band #42: Carriers-/Kuriergilden-Quest vor Hauptquest 9 erforderlich, als verpassbar und questgebunden markiert
+- Neue PWA-Update-Logik: neue App-Dateien online priorisiert, alte Companion-Caches gelöscht und expliziter Update-Knopf
+- Sammlerstücke: „Zuletzt abgehakt“ protokolliert ab jetzt bis zu 20 Änderungen lokal (auch über Gebietscheckliste)
+- FAQ: Feuerwaffen, Jai, Überlebensmissionen und Munition ausführlicher erklärt
+- FAQ/Wissen: Abhakbare Begegnungen-Checkliste zur Trophäe „Auf Mission“ (Juliet, Vinnie, Maya)
+- Keine automatische THB-1N4-Hemmstoffverknüpfung; alle Sammlerstück-IDs und Speicher-Key unverändert
 
 ## v0.11.1
 

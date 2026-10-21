@@ -251,3 +251,26 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 .collect-tile.unclear .tile-state{color:#d59a61}
 .collect-tile.unclear .tile-num{color:#d59a61}
 .collect-tile.unclear .tile-name{text-decoration:none}
+
+/* v0.11.2: recent collectible history, trophy checklist and update availability */
+.collect-history{border:1px solid var(--line);background:var(--panel);margin:8px 0 12px;border-radius:8px}
+.collect-history summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:10px 12px;color:var(--orange);font-size:10px;letter-spacing:.09em}
+.collect-history summary::-webkit-details-marker{display:none}
+.collect-history summary span{font-weight:800;color:var(--text)}
+.collect-history-list{max-height:300px;overflow:auto;border-top:1px solid var(--line);padding:7px 12px;color:var(--muted);font-size:10px}
+.history-row{padding:8px 0;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #292d30}
+.history-row:last-child{border-bottom:0}
+.history-row span{color:#ddd;min-width:0;overflow-wrap:anywhere}
+.history-row small{flex-shrink:0;color:var(--orange2);text-align:right;font-size:9px}
+.trophy-tracker{background:var(--panel);border:1px solid var(--line);padding:13px;margin-bottom:17px;border-radius:9px}
+.trophy-tracker h3{margin:5px 0 8px;font-size:16px}
+.trophy-tracker p{color:#b4bbbe;font-size:11px;line-height:1.5;margin:8px 0 12px}
+.trophy-progress{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 0 9px;color:var(--orange)}
+.trophy-progress small{font-size:9px;color:var(--muted)}
+.trophy-items label{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #292d30}
+.trophy-items input{width:19px;height:19px;accent-color:var(--orange);flex:none}
+.trophy-items span{display:flex;flex-direction:column;gap:3px}
+.trophy-items b{font-size:12px}.trophy-items small{font-size:10px;color:var(--muted)}
+.trophy-tracker .trophy-note{margin-bottom:0;color:#d5a078;font-size:10px}
+.update-available{border-color:var(--orange);color:var(--orange);cursor:pointer}
+@media(max-width:520px){.history-row{flex-direction:column;gap:3px}.history-row small{text-align:left}.update-available{font-size:8px}}

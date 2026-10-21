@@ -1,13 +1,13 @@
 
-const VERSION="0.11.1";
+const VERSION="0.11.2";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const STATE_MIGRATION=110;
-const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},inhibitorStatus:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectUnclear:{},collectionGameCounts:{memento:0,tape:0,graffiti:0},migrationVersion:STATE_MIGRATION}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
+const freshState=()=>({health:1,stamina:1,pilgrimRank:1,language:"de",found:{},inhibitorStatus:{},areaDone:{},safeDone:{},currentArea:"Houndfield",airDone:{},greDone:{},sunkenDone:{},quarantineDone:{},duckDone:{},collectDone:{},collectUnclear:{},collectHistory:[],trophyChecklist:{},collectionGameCounts:{memento:0,tape:0,graffiti:0},migrationVersion:STATE_MIGRATION}); let state=freshState(), inhibitors=[], districts=[], safes=[], faq=[], builds=[], changelog=[], activities={}, airdrops=[], gre=[], sunken=[], quarantine=[], ducks=[], airFilter="all", greFilter="all", sunkenFilter="all", region="all", collectibles=[], langDE={}, langEN={}, collectType="all";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function normalizeState(s={}){
  const previousMigration=Number(s.migrationVersion||0);
- const n={...freshState(),...s,found:s.found||{},inhibitorStatus:s.inhibitorStatus||{},areaDone:s.areaDone||{},safeDone:s.safeDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:{...(s.collectDone||{})},collectUnclear:{...(s.collectUnclear||{})},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})}};
+ const n={...freshState(),...s,found:s.found||{},inhibitorStatus:s.inhibitorStatus||{},areaDone:s.areaDone||{},safeDone:s.safeDone||{},airDone:s.airDone||{},greDone:s.greDone||{},sunkenDone:s.sunkenDone||{},quarantineDone:s.quarantineDone||{},duckDone:s.duckDone||{},collectDone:{...(s.collectDone||{})},collectUnclear:{...(s.collectUnclear||{})},collectHistory:Array.isArray(s.collectHistory)?s.collectHistory.slice(0,20):[],trophyChecklist:{...(s.trophyChecklist||{})},collectionGameCounts:{...freshState().collectionGameCounts,...(s.collectionGameCounts||{})}};
  if(previousMigration<110){
    const oldDone={...n.collectDone}, map={"memento-112":"memento-113","memento-113":"memento-114","memento-114":"memento-115","memento-115":"memento-116","memento-116":"memento-112"};
    Object.keys(map).forEach(k=>delete n.collectDone[k]);
@@ -31,6 +31,7 @@ function bind(){
  $("#languageSelect").onchange=e=>{state.language=e.target.value;saveState();applyLanguage();renderAll();applyLanguage()};
  $("#collectSearch").oninput=renderCollectibles;
  $("#collectMissing").onchange=renderCollectibles; $("#collectDlc").onchange=renderCollectibles; $("#collectRisk").onchange=renderCollectibles; $("#collectUnclear").onchange=renderCollectibles;
+ $$('[data-sparker]').forEach(cb=>cb.onchange=()=>{setFlag(state.trophyChecklist,cb.dataset.sparker,cb.checked);saveState();renderSparkerChecklist()});
  $$("[data-collecttype]").forEach(b=>b.onclick=()=>{collectType=b.dataset.collecttype;$$("[data-collecttype]").forEach(x=>x.classList.toggle("active",x===b));renderCollectibles()});
  [["gameMemento","memento",209],["gameTape","tape",68],["gameGraffiti","graffiti",71]].forEach(([id,key,max])=>{$("#"+id).onchange=e=>{state.collectionGameCounts[key]=Math.max(0,Math.min(max,+e.target.value||0));saveState();renderCollectibles()}});
 
@@ -213,13 +214,49 @@ function applyLanguage(){
   let n;while(n=walker.nextNode()){const t=n.nodeValue.trim();if(staticMap[t])n.nodeValue=n.nodeValue.replace(t,staticMap[t])}
  }
 }
+function trackCollectChange(id,status){
+ if(!collectibles.some(x=>x.id===id))return;
+ state.collectHistory=Array.isArray(state.collectHistory)?state.collectHistory:[];
+ state.collectHistory.unshift({id,status:status||"open",time:Date.now()});
+ state.collectHistory=state.collectHistory.slice(0,20);
+}
+function renderCollectHistory(){
+ const panel=$("#collectHistoryPanel"),list=$("#collectHistoryList");if(!panel||!list)return;
+ const rows=(state.collectHistory||[]).slice(0,20).filter(r=>collectibles.some(x=>x.id===r.id));
+ $("#collectHistoryCount").textContent=String(rows.length);
+ $("#collectHistoryTitle").textContent=state.language==="en"?"RECENT COLLECTIBLE CHANGES":"ZULETZT ABGEHAKT";
+ list.replaceChildren();
+ if(!rows.length){list.textContent=state.language==="en"?"New collectible changes will appear here from this update onward.":"Neue Änderungen werden ab diesem Update hier festgehalten.";return}
+ rows.forEach(r=>{
+  const x=collectibles.find(x=>x.id===r.id);if(!x)return;
+  const row=document.createElement("div");row.className="history-row";
+  const left=document.createElement("span");left.textContent=`#${String(x.index).padStart(x.type==="memento"?3:2,"0")} · ${state.language==="en"?x.name_en:x.name_de}`;
+  const right=document.createElement("small");const dt=new Date(r.time);const time=Number.isFinite(dt.getTime())?dt.toLocaleString(state.language==="en"?"en-GB":"de-DE",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}):"";
+  const status=state.language==="en"?{collected:"Collected",unclear:"Unclear",open:"Open"}:{collected:"Gesammelt",unclear:"Unklar",open:"Offen"};
+  right.textContent=`${status[r.status]||status.open} · ${time}`;row.append(left,right);list.append(row);
+ });
+}
+function renderSparkerChecklist(){
+ const data=state.trophyChecklist||{},done=["juliet","vinnie","maya"].filter(id=>data[id]).length;
+ $("#sparkerCount").textContent=`${done} / 3`;
+ $$('[data-sparker]').forEach(cb=>cb.checked=!!data[cb.dataset.sparker]);
+ const en=state.language==="en";
+ $("#sparkerTitle").textContent=en?"Man on a Mission · Sparker encounters":"Auf Mission · Sparker-Begegnungen";
+ $("#sparkerStatus").textContent=en?"encounters":"Begegnungen";
+ $("#sparkerInfo").textContent=en?"After the Matchmaker quest in Trinity, return to the same bakery after some time to meet three Sparker contacts.":"Nach der Nebenquest „Heiratsvermittler“ (Matchmaker) in Trinity an derselben Bäckerei drei Begegnungen abschließen. Nach Wartezeit erneut vorbeischauen.";
+ $("#sparkerJulietHint").textContent=en?"After Matchmaker and a waiting period.":"Nach Abschluss von „Heiratsvermittler“ und etwas Wartezeit.";
+ $("#sparkerVinnieHint").textContent=en?"After the main quest Welcome on Board.":"Nach Hauptquest „Willkommen an Bord“.";
+ $("#sparkerMayaHint").textContent=en?"Related to Sentimental Value; may be bugged.":"Im Zusammenhang mit „Sentimentaler Wert“; Begegnung kann verbuggt sein.";
+ $("#sparkerNote").textContent=en?"Known bug: Maya sometimes never appears. Trophy progress may trigger late, sometimes after Vinnie. This checklist records encounters, not PSN trophy status.":"Bekannter Bug: Maya erscheint manchmal nicht. Die Trophäe kann verzögert auslösen, teils bereits nach Vinnie. Die Checkliste erfasst deine Begegnungen, nicht den PSN-Trophäenstatus.";
+}
 function collectTagData(x){
  const tags=[];
  if(x.dlc)tags.push({t:"DLC · "+x.dlc,c:""});
  if(x.epilogue)tags.push({t:state.language==="en"?"EPILOGUE":"EPILOG",c:""});
  if(x.x13)tags.push({t:"X13",c:""});
- if(x.missable)tags.push({t:state.language==="en"?"MISSABLE":"VERPASSBAR",c:"missable"});
- else if(x.questRisk)tags.push({t:state.language==="en"?"QUEST-BOUND":"QUESTGEBUNDEN",c:"risk"});
+ if(x.possibleMissable)tags.push({t:state.language==="en"?"POTENTIALLY MISSABLE":"POTENZIELL VERPASSBAR",c:"missable"});
+ else if(x.missable)tags.push({t:state.language==="en"?"MISSABLE":"VERPASSBAR",c:"missable"});
+ if(x.questRisk)tags.push({t:state.language==="en"?"QUEST-BOUND":"QUESTGEBUNDEN",c:"risk"});
  if(x.autoGrant)tags.push({t:state.language==="en"?"AUTO AT STORY END":"AUTO BEI STORYENDE",c:""});
  return tags
 }
@@ -255,13 +292,14 @@ function renderCollectibles(){
  $("#gameMemento").value=state.collectionGameCounts.memento||0;$("#gameTape").value=state.collectionGameCounts.tape||0;$("#gameGraffiti").value=state.collectionGameCounts.graffiti||0;
  const dlcItems=collectibles.filter(x=>x.dlc==="Bloody Ties"),dlcDone=dlcItems.filter(x=>state.collectDone[x.id]).length,dlcNote=$("#collectDlcNote");
  if(dlcNote){dlcNote.hidden=!dlcOnly;dlcNote.textContent=state.language==="en"?`Bloody Ties: ${dlcDone}/37 collected · Connoisseur unlocks at 36/37 · 37/37 = DLC complete`:`Bloody Ties: ${dlcDone}/37 gesammelt · „Kenner“ ab 36/37 · 37/37 = DLC komplett`}
- const rows=collectibles.filter(x=>{const hay=[x.name_de,x.name_en,x.clue_de,x.clue_en,x.location_de,x.location_en,x.warning_de,x.warning_en,x.searchAlias,x.index,x.district,x.dlc,x.quest].filter(Boolean).join(" ").toLowerCase();return (collectType==="all"||x.type===collectType)&&(!missing||!state.collectDone[x.id])&&(!dlcOnly||x.dlc==="Bloody Ties")&&(!riskOnly||x.missable||x.questRisk)&&(!unclearOnly||state.collectUnclear[x.id])&&(!q||hay.includes(q))});
+ const rows=collectibles.filter(x=>{const hay=[x.name_de,x.name_en,x.clue_de,x.clue_en,x.location_de,x.location_en,x.warning_de,x.warning_en,x.searchAlias,x.index,x.district,x.dlc,x.quest].filter(Boolean).join(" ").toLowerCase();return (collectType==="all"||x.type===collectType)&&(!missing||!state.collectDone[x.id])&&(!dlcOnly||x.dlc==="Bloody Ties")&&(!riskOnly||x.missable||x.questRisk||x.possibleMissable)&&(!unclearOnly||state.collectUnclear[x.id])&&(!q||hay.includes(q))});
  const groups={memento:[],tape:[],graffiti:[]};rows.forEach(x=>groups[x.type].push(x));
  const labels={memento:L("mementos"),tape:L("tapes"),graffiti:L("graffiti")};
  $("#collectibleList").innerHTML=Object.entries(groups).filter(([,a])=>a.length).map(([type,a])=>`<div class="airdistrict"><h3>${labels[type].toUpperCase()} · ${a.length}</h3><div class="collect-grid">${a.map(x=>{const name=state.language==="en"?x.name_en:x.name_de,clue=state.language==="en"?x.clue_en:x.clue_de,loc=state.language==="en"?x.location_en:x.location_de,warn=state.language==="en"?x.warning_en:x.warning_de,tags=collectTagData(x),sub=clue||loc||warn||"";const unclear=!!state.collectUnclear[x.id],status=state.collectDone[x.id]?L("collected").toUpperCase():unclear?(state.language==="en"?"UNCLEAR / BUGGED":"UNKLAR / VERBUGGT"):L("open").toUpperCase();return `<button type="button" class="collect-tile ${sub?"hinted ":""}${state.collectDone[x.id]?"done ":""}${unclear?"unclear":""}" data-collecttile="${x.id}"><span class="tile-num">#${String(x.index).padStart(type==="memento"?3:2,"0")}</span><span class="tile-name">${name}</span>${tags.length?`<span class="collect-tags">${tags.map(t=>`<span class="${t.c}">${t.t}</span>`).join("")}</span>`:""}${sub?`<span class="tile-clue">${sub}</span>`:""}<span class="tile-state">${status}</span></button>`}).join("")}</div></div>`).join("")||'<div class="area-empty">'+(state.language==="en"?"No entries in this filter.":"Keine Einträge in diesem Filter.")+'</div>';
+ renderCollectHistory();
  $$("[data-collecttile]").forEach(b=>b.onclick=()=>openCollectDetail(b.dataset.collecttile));
- $("#collectDetailDone").onchange=e=>{const id=e.target.dataset.id;if(!id)return;if(e.target.checked){state.collectDone[id]=true;delete state.collectUnclear[id]}else delete state.collectDone[id];saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
- $("#collectDetailUnclear").onchange=e=>{const id=e.target.dataset.id;if(!id)return;if(e.target.checked){state.collectUnclear[id]=true;delete state.collectDone[id]}else delete state.collectUnclear[id];saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
+ $("#collectDetailDone").onchange=e=>{const id=e.target.dataset.id;if(!id)return;if(e.target.checked){state.collectDone[id]=true;delete state.collectUnclear[id]}else delete state.collectDone[id];trackCollectChange(id,e.target.checked?"collected":"open");saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
+ $("#collectDetailUnclear").onchange=e=>{const id=e.target.dataset.id;if(!id)return;if(e.target.checked){state.collectUnclear[id]=true;delete state.collectDone[id]}else delete state.collectUnclear[id];trackCollectChange(id,e.target.checked?"unclear":"open");saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
 }
 function renderNGPlus(){
  if(!inhibitors.length||!$("#ngPlusList"))return;
@@ -277,6 +315,7 @@ function renderAll(){
   renderCharacter();
   renderSafes();
   renderFAQ();
+  renderSparkerChecklist();
   renderBuilds();
   renderChangelog();
   renderAreas();
@@ -335,7 +374,7 @@ function setItemDone(x,val){
  else if(x.kind==="gre"){set(state.greDone,x.ref.id);syncFromGRE(x.ref.id,val)}
  else if(x.kind==="quarantine"){set(state.quarantineDone,x.ref.id+"-"+x.index);syncFromQuarantine(x.ref.id)}
  else if(x.kind==="duck")set(state.duckDone,x.ref.id);
- else if(x.kind==="collect")set(state.collectDone,x.ref.id)
+ else if(x.kind==="collect"){set(state.collectDone,x.ref.id);if(val)delete state.collectUnclear[x.ref.id];trackCollectChange(x.ref.id,val?"collected":"open")}
 }
 function districtProgress(d){const a=areaItems(d),done=a.filter(itemDone).length;return {done,total:a.length,pct:a.length?Math.round(done/a.length*100):0}}
 function overallProgress(){
@@ -441,7 +480,15 @@ async function redeemSyncCode(){
 }
 let deferredPrompt;
 function setupPWA(){
- if("serviceWorker" in navigator)navigator.serviceWorker.register("service-worker.js");
+ $("#updateBtn").onclick=()=>location.reload();
+ if("serviceWorker" in navigator){
+  const hadController=!!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadController){$("#updateBtn").hidden=false;toast("App-Update bereit. UPDATE LADEN drücken.")}});
+  navigator.serviceWorker.register("service-worker.js",{updateViaCache:"none"}).then(reg=>{
+   reg.update().catch(()=>{});
+   document.addEventListener("visibilitychange",()=>{if(!document.hidden)reg.update().catch(()=>{})});
+  }).catch(e=>console.warn("Service Worker nicht verfügbar",e));
+ }
  window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;$("#installBtn").hidden=false});
  $("#installBtn").onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;$("#installBtn").hidden=true}}
 }

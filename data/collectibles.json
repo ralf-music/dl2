@@ -952,7 +952,13 @@
     "name_de": "Der Angriff auf die Kuriergilde",
     "name_en": "The Carriers Guild Assault",
     "district": "Houndfield",
-    "missable": false
+    "missable": true,
+    "questRisk": true,
+    "quest": "Kuriergilde / Carriers X",
+    "location_de": "Kuriergilden-Gebäude im Verlauf der Nebenquestreihe „Kuriere“ (Carriers X).",
+    "location_en": "Carriers Guild building during the Carriers X side quest chain.",
+    "warning_de": "VERPASSBAR · QUESTGEBUNDEN: Kuriergilden-Questreihe rechtzeitig freischalten. Vor Hauptquest 9 („Revolution“ / „Ins Dunkle“) den ersten Kurier in Quarry End ansprechen. Wird die Reihe nicht rechtzeitig gestartet, kann das Gebäude später verschlossen bleiben. Nachholen ggf. in Koop oder NG+.",
+    "warning_en": "MISSABLE · QUEST-BOUND: Start the Carriers questline in time. Speak with the first Carrier in Quarry End before main quest 9 (Revolution / Into the Dark). Otherwise the guild building may remain inaccessible. Co-op or NG+ may help."
   },
   {
     "id": "memento-104",
@@ -2412,7 +2418,13 @@
     "name_de": "Kleinanzeigen der Stadt - Der Kabelmann",
     "name_en": "The City Classifieds - The Cable Guy",
     "district": "Downtown",
-    "missable": false
+    "missable": true,
+    "questRisk": true,
+    "quest": "Kuriergilde / Carriers",
+    "location_de": "Im Eingangsbereich des Kuriergilden-Gebäudes; im Rahmen der Kurier-Questreihe zugänglich.",
+    "location_en": "Inside the Carriers Guild entrance; accessible via the Carriers questline.",
+    "warning_de": "VERPASSBAR · QUESTGEBUNDEN: Dieselbe Zugangssperre wie bei Andenken #103. Vor Hauptquest 9 den ersten Kurier in Quarry End ansprechen und die Kurier-Questreihe starten. Bei verpasstem Zugang: Koop oder NG+ prüfen.",
+    "warning_en": "MISSABLE · QUEST-BOUND: Same Carriers Guild access risk as Memento #103. Speak with the first Carrier in Quarry End before main quest 9. If locked out, try co-op or NG+."
   },
   {
     "id": "tape-043",
@@ -2979,7 +2991,14 @@
     "name_de": "Roter-Ratten-Lauf",
     "name_en": "Red Rat Run",
     "district": "Quarry End",
-    "missable": false
+    "missable": false,
+    "possibleMissable": true,
+    "questRisk": true,
+    "quest": "Ins Dunkle (Peacekeeper-Route)",
+    "location_de": "U-Bahn-Station unter Quarry End, während „Ins Dunkle“. Alternativ über eine Einstiegsluke südlich von Quarry End nahe der südlichen Bezirksgrenze erreichbar, sofern geöffnet.",
+    "location_en": "Subway station below Quarry End during Into the Dark; otherwise access via a hatch south of Quarry End near the Quarry End boundary, if open.",
+    "warning_de": "POTENZIELL VERPASSBAR: Die alternative Einstiegsluke kann nach Storyfortschritt verschlossen und nicht interaktiv sein (gemeldeter Bug). Sichere Gelegenheit: Wasserturm Horseshoe den Peacekeepern geben und das Graffiti während „Ins Dunkle“ einsammeln. Bei verschlossener Luke: Koop mit offenem Zugang oder NG+.",
+    "warning_en": "POTENTIALLY MISSABLE: The alternative hatch may remain closed and non-interactive (reported bug). Reliable opportunity: assign Horseshoe Water Tower to the Peacekeepers and collect it during Into the Dark. Otherwise try co-op or NG+."
   },
   {
     "id": "graffiti-036",
@@ -3300,9 +3319,11 @@
     "id": "graffiti-071",
     "type": "graffiti",
     "index": 71,
-    "name_de": "The Garden of Imagination",
+    "name_de": "Der Garten der Fantasie",
     "name_en": "The Garden of Imagination",
-    "district": "Unknown",
-    "missable": false
+    "district": "Houndfield",
+    "missable": false,
+    "location_de": "Alt-Villedor, Houndfield. An einem Gebäude nahe der östlichen Bezirksgrenze, südlich der U-Bahn-Station Hayward Square.",
+    "location_en": "Old Villedor, Houndfield. Near the eastern district boundary, south of Hayward Square Metro Station."
   }
 ]

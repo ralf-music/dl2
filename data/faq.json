@@ -86,5 +86,17 @@
   {
     "q": "Kann ich wichtige Missionen oder Belohnungen verpassen?",
     "a": "Ja. Einige Nebenmissionen, besondere Belohnungen und versteckte Inhalte können durch Storyfortschritt oder Entscheidungen später nicht mehr verfügbar sein. Erledige interessante Nebenmissionen deshalb möglichst zeitnah und prüfe vor der Zuweisung von Einrichtungen die Fraktionsbelohnungen. Besonders wichtig: Für die Peacekeeper-Armbrust musst du insgesamt 4 Einrichtungen den Peacekeepern zuweisen. Wer seine Einrichtungen anders verteilt, kann diese Belohnung im aktuellen Durchlauf verpassen. Der Hinweis bleibt bewusst spoilerarm; Easter Eggs und Geheimnisse werden getrennt behandelt."
+  },
+  {
+    "q": "Kann ich Schrotflinten, Gewehre oder Maschinenpistolen ohne Kauf finden?",
+    "a": "Der reguläre Einstieg ist die Nebenquest „Die verschollene Waffenkammer“ im Zentralring: Sie bringt dich zu Jai und führt zur ersten Pistole. Weitere Pistolen, Maschinenpistolen, Gewehre und Schrotflinten werden hauptsächlich über Jai, Wächtermarken und seinen Agenten-Fortschritt freigeschaltet. Wächtermarken verdienst du in Überlebens- und Elitemissionen sowie zugehörigen Kopfgeldern; Echtgeldkäufe sind dafür nicht nötig. Einzelne frei auffindbare oder zeitlich begrenzte Waffen können von Spielversion und Event abhängen. Eine regulär frei herumliegende Schrotflinte ist keine verlässliche Sammelroute."
+  },
+  {
+    "q": "Wo finde ich Munition für Pistole, Schrotflinte, Gewehr und Maschinenpistole?",
+    "a": "Die vier Feuerwaffenklassen verwenden jeweils eigene Munition. Suche besonders Konvois und gepanzerte Gegner nach Patronen ab. Nach „Die verschollene Waffenkammer“ kannst du bei Jai außerdem Munition gegen Wächtermarken erhalten. Munition im Inventar bedeutet nicht, dass die passende Waffe bereits freigeschaltet ist."
+  },
+  {
+    "q": "Kann ich Jais Überlebensmissionen alleine spielen?",
+    "a": "Ja. Überlebensmissionen und Elitemissionen können allein oder im Koop gespielt werden. Über die Missionen und dazugehörigen Kopfgelder sammelst du Wächtermarken und steigst bei Jai im Rang auf. Höhere Ränge schalten weitere Gegenstände und Feuerwaffen frei."
   }
 ]

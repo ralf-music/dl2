@@ -28,7 +28,8 @@
         <option value="de">🇩🇪 Deutsch</option><option value="en">🇬🇧 English</option>
       </select>
     </label>
-    <button id="globalVersion" class="header-version" type="button">v0.11.1</button>
+    <button id="globalVersion" class="header-version" type="button">v0.11.2</button>
+    <button id="updateBtn" class="header-version update-available" type="button" hidden>UPDATE LADEN</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
 </header>
@@ -120,6 +121,7 @@
     <div><span id="graffitiLabel">GRAFFITI</span><strong id="graffitiCount">0/71</strong><label><small id="gameGraffitiLabel">IM SPIEL</small><input id="gameGraffiti" type="number" min="0" max="71" value="0"></label></div>
   </div>
   <p class="introcopy" id="collectTrackerNote">Die aktuellen Spielstände können oben manuell eingetragen werden. Einzelne Fundstücke werden separat abgehakt.</p>
+  <details class="collect-history" id="collectHistoryPanel"><summary><b id="collectHistoryTitle">ZULETZT ABGEHAKT</b><span id="collectHistoryCount">0</span></summary><div id="collectHistoryList" class="collect-history-list"></div></details>
   <div class="segmented" id="collectTypeFilters">
     <button class="active" data-collecttype="all">ALLE</button>
     <button data-collecttype="memento">ANDENKEN</button>
@@ -186,6 +188,18 @@
 
 <section id="view-faq" class="view">
   <div class="sectionhead"><div><div class="eyebrow">FIELD MANUAL</div><h2>FAQ / WISSEN</h2></div></div>
+  <div class="trophy-tracker" id="sparkerTracker">
+    <div class="eyebrow">TROPHÄEN-CHECKLISTE</div>
+    <h3 id="sparkerTitle">Auf Mission · Sparker-Begegnungen</h3>
+    <p id="sparkerInfo">Nach der Nebenquest „Heiratsvermittler“ (Matchmaker) in Trinity an derselben Bäckerei drei Begegnungen abschließen. Nach Wartezeit erneut vorbeischauen.</p>
+    <div class="trophy-progress"><b id="sparkerCount">0 / 3</b><small id="sparkerStatus">Begegnungen</small></div>
+    <div class="trophy-items">
+      <label><input type="checkbox" data-sparker="juliet"><span><b>Juliet</b><small id="sparkerJulietHint">Nach Abschluss von „Heiratsvermittler“ und etwas Wartezeit.</small></span></label>
+      <label><input type="checkbox" data-sparker="vinnie"><span><b>Vinnie</b><small id="sparkerVinnieHint">Nach Hauptquest „Willkommen an Bord“.</small></span></label>
+      <label><input type="checkbox" data-sparker="maya"><span><b>Maya</b><small id="sparkerMayaHint">Im Zusammenhang mit „Sentimentaler Wert“; Begegnung kann verbuggt sein.</small></span></label>
+    </div>
+    <p class="trophy-note" id="sparkerNote">Bekannter Bug: Maya erscheint manchmal nicht. Die Trophäe kann verzögert auslösen, teils bereits nach Vinnie. Die Checkliste erfasst deine Begegnungen, nicht den PSN-Trophäenstatus.</p>
+  </div>
   <input class="search" id="faqSearch" placeholder="NG+, Gleitschirm, Enterhaken, GRE …">
   <div id="faqList" class="faqlist"></div>
 </section>
@@ -216,7 +230,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.11.1</b><br><span>Datenstand: 18.10.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.11.2</b><br><span>Datenstand: 21.10.2026 · Changelog öffnen</span></button>
 </section>
 <footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.</span></footer>
 </main>
