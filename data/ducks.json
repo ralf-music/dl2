@@ -2,97 +2,133 @@
   {
     "id": "black-1",
     "type": "black",
-    "label": "Schwarze Ente – Houndfield",
+    "label": "Schwarze Ente – Verseuchtes Gelände",
     "district": "Houndfield",
     "purpose": "DOOM-Easter-Egg",
-    "youtube": "Dying Light 2 schwarze Ente Houndfield Fundort"
+    "youtube": "Dying Light 2 Houndfield NW unpolluted patch black duck",
+    "description_de": "Nordwestlich von Houndfield, etwas außerhalb der begehbaren Stadtkarte. Inmitten giftiger Chemikalien liegt ein kleiner Fleck unbelasteter Erde. Die Ente liegt offen auf dieser sicheren Insel.",
+    "safe_code": null,
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/black-ducks/"
   },
   {
     "id": "black-2",
     "type": "black",
-    "label": "Schwarze Ente – The Wharf",
+    "label": "Schwarze Ente – Versunkenes Polizeiauto",
     "district": "The Wharf",
     "purpose": "DOOM-Easter-Egg",
-    "youtube": "Dying Light 2 schwarze Ente The Wharf Fundort"
+    "youtube": "Dying Light 2 The Wharf sunken police car GRE C-A-83 black duck",
+    "description_de": "Nördlich der GRE-Anomalie C-A-83 ins Wasser tauchen. Die Ente liegt im Kofferraum eines versunkenen Polizeiautos. Kofferraumschloss knacken; ausreichend Luft einplanen.",
+    "safe_code": null,
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/black-ducks/"
   },
   {
     "id": "black-3",
     "type": "black",
-    "label": "Schwarze Ente – Observatorium",
+    "label": "Schwarze Ente – Wachturm am Observatorium",
     "district": "Observatorium",
     "purpose": "DOOM-Easter-Egg",
-    "youtube": "Dying Light 2 schwarze Ente Observatorium Fundort"
+    "youtube": "Dying Light 2 Mount Lucid Observatory guard tower black duck",
+    "description_de": "Außerhalb des Mount-Lucid-Observatoriums zu einem der nördlichen Wachtürme an der Befestigung gelangen (Enterhaken hilft). Im Turm liegt die Ente auf einem Behälter neben Kerzen.",
+    "safe_code": null,
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/black-ducks/"
   },
   {
     "id": "black-4",
     "type": "black",
-    "label": "Schwarze Ente – Lower Dam Ayre",
+    "label": "Schwarze Ente – Anlegepfosten am Damm",
     "district": "Lower Dam Ayre",
     "purpose": "DOOM-Easter-Egg",
-    "youtube": "Dying Light 2 schwarze Ente Lower Dam Ayre Fundort"
+    "youtube": "Dying Light 2 Lower Dam Ayre mooring hook black duck",
+    "description_de": "An der Grenze Lower Dam Ayre / Newfound Lost Lands, südlich der ersten Brücke Richtung Wasserturm von Saint Paul. Auf einer tieferen Ebene direkt am Wasser sitzt die Ente auf einem grünen Anlegepfosten/Haken.",
+    "safe_code": null,
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/black-ducks/"
   },
   {
     "id": "black-5",
     "type": "black",
-    "label": "Schwarze Ente – VNC-Turm",
-    "district": "VNC-Turm",
+    "label": "Schwarze Ente – Safe im VNC-Turm",
+    "district": "Garrison",
     "purpose": "DOOM-Easter-Egg",
-    "youtube": "Dying Light 2 schwarze Ente VNC-Turm Fundort"
+    "youtube": "Dying Light 2 VNC Tower black duck safe 666",
+    "description_de": "VNC-Turm: bis aufs Dach fahren, dort zu einem Fenster im Geschoss knapp unterhalb des Dachs hinabsteigen. In dem kleinen Raum befindet sich der Safe mit der Ente.",
+    "safe_code": "6-6-6",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/black-ducks/"
   },
   {
     "id": "red-1",
     "type": "red",
-    "label": "Rote Ente – Verlassenes Haus",
-    "district": "Villedor",
+    "label": "Rote Ente – Haus im Süden",
+    "district": "Quarry End",
     "purpose": "Fahrrad-Herausforderung",
-    "youtube": "Dying Light 2 rote Ente Verlassenes Haus Fundort"
+    "youtube": "Dying Light 2 Quarry End red duck house safe 226766",
+    "description_de": "Im Süden von Quarry End in einem einzeln stehenden Wohnhaus. In das Obergeschoss gelangen; dort steht der Safe mit der roten Ente.",
+    "safe_code": "22-67-66",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/red-ducks/"
   },
   {
     "id": "red-2",
     "type": "red",
-    "label": "Rote Ente – Laster",
-    "district": "Villedor",
+    "label": "Rote Ente – Laster auf Hochstraße",
+    "district": "Downtown",
     "purpose": "Fahrrad-Herausforderung",
-    "youtube": "Dying Light 2 rote Ente Laster Fundort"
+    "youtube": "Dying Light 2 Downtown overpass moving truck red duck safe 741776",
+    "description_de": "An der nordöstlichen Ecke von Downtown steht auf einem zerstörten Hochstraßen-Abschnitt ein Laster in einem kleinen Lager. Der Safe mit der Ente liegt im Laderaum.",
+    "safe_code": "74-17-76",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/red-ducks/"
   },
   {
     "id": "red-3",
     "type": "red",
-    "label": "Rote Ente – City-Container",
-    "district": "Villedor",
+    "label": "Rote Ente – GRE-Container",
+    "district": "Muddy Grounds",
     "purpose": "Fahrrad-Herausforderung",
-    "youtube": "Dying Light 2 rote Ente City-Container Fundort"
+    "youtube": "Dying Light 2 Muddy Grounds GRE container red duck safe 101010",
+    "description_de": "Westen von Muddy Grounds, an der Grenze zu The Wharf. GRE-Militärcontainer westlich des Wasserturms, nahe einem Kanal. Im Container rechts auf einem Schrank befindet sich der Safe.",
+    "safe_code": "10-10-10",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/red-ducks/"
   },
   {
     "id": "red-4",
     "type": "red",
-    "label": "Rote Ente – Apartment",
-    "district": "Villedor",
+    "label": "Rote Ente – Büro westlich vom Fischauge",
+    "district": "New Dawn Park",
     "purpose": "Fahrrad-Herausforderung",
-    "youtube": "Dying Light 2 rote Ente Apartment Fundort"
+    "youtube": "Dying Light 2 New Dawn Park office Fisheye red duck safe 102864",
+    "description_de": "Bürogebäude in New Dawn Park, westlich der Fischauge-Kantine. Den Bürobereich betreten, dort den Safe suchen.",
+    "safe_code": "10-28-64",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/red-ducks/"
   },
   {
     "id": "red-5",
     "type": "red",
-    "label": "Rote Ente – Container",
-    "district": "Villedor",
+    "label": "Rote Ente – GRE-Container am Südrand",
+    "district": "Saint Paul Island",
     "purpose": "Fahrrad-Herausforderung",
-    "youtube": "Dying Light 2 rote Ente Container Fundort"
+    "youtube": "Dying Light 2 Saint Paul Island GRE trailer red duck safe 851945",
+    "description_de": "Südöstlicher Rand von Saint Paul Island, nahe der Grenze zu Lower Dam Ayre. Den GRE-Militärcontainer betreten; der Safe steht auf Regalböden im Inneren.",
+    "safe_code": "85-19-45",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/red-ducks/"
   },
   {
     "id": "red-6",
     "type": "red",
-    "label": "Rote Ente – Imbiss",
-    "district": "Villedor",
+    "label": "Rote Ente – Küche im alten Lokal",
+    "district": "Newfound Lost Lands",
     "purpose": "Fahrrad-Herausforderung",
-    "youtube": "Dying Light 2 rote Ente Imbiss Fundort"
+    "youtube": "Dying Light 2 Newfound Lost Lands restaurant red duck safe 459",
+    "description_de": "Im Süden von Newfound Lost Lands ein verlassenes Schnellrestaurant/Café betreten. Hinten im Küchenbereich steht der Safe mit der Ente.",
+    "safe_code": "4-5-9",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/red-ducks/"
   },
   {
     "id": "red-7",
     "type": "red",
-    "label": "Rote Ente – Nightrunner-Versteck",
-    "district": "Villedor",
+    "label": "Rote Ente – Nightrunner-Versteck am Damm",
+    "district": "Damm (westlich von Garrison)",
     "purpose": "Fahrrad-Herausforderung",
-    "youtube": "Dying Light 2 rote Ente Nightrunner-Versteck Fundort"
+    "youtube": "Dying Light 2 Dam nightrunner hideout red duck safe 966",
+    "description_de": "Westlich von Garrison beim großen Damm, im nördlichen Bereich der Staumauer. Ein alter Bus bzw. Blechunterstand dient als Nightrunner-Versteck. Im Inneren steht ein Safe mit der Ente.",
+    "safe_code": "9-6-6",
+    "map_url": "https://guides4gamers.com/dying-light-2/pois/red-ducks/"
   }
 ]

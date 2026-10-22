@@ -28,7 +28,7 @@
         <option value="de">🇩🇪 Deutsch</option><option value="en">🇬🇧 English</option>
       </select>
     </label>
-    <button id="globalVersion" class="header-version" type="button">v0.11.2</button>
+    <button id="globalVersion" class="header-version" type="button">v0.11.3</button>
     <button id="updateBtn" class="header-version update-available" type="button" hidden>UPDATE LADEN</button>
     <button class="iconbtn" id="installBtn" hidden aria-label="App installieren">INSTALL</button>
   </div>
@@ -63,6 +63,10 @@
       <b id="externalMapTitle">INTERAKTIVE KARTE</b>
       <small id="externalMapText">Villedor auf Guides4Gamers<br><span>Externe Karte · Guides4Gamers ↗</span></small>
     </a>
+    <div class="module external-map map-option"><b class="map-heading">INTERAKTIVE KARTE</b><small>Villedor auf Itemaps<br><span>Mit Karte zur Massaker-Halle (Bloody Ties)</span></small>
+      <div class="map-option-links"><a href="https://itemaps.com/maps/dying-light-2" target="_blank" rel="noopener noreferrer external">VILLEDOR ↗</a><a href="https://itemaps.com/maps/dying-light-2/carnage-hall" target="_blank" rel="noopener noreferrer external">MASSAKER-HALLE ↗</a></div>
+    </div>
+    <a class="module external-map" id="wandMapLink" href="https://wand.com/de/maps/dying-light-2-stay-human" target="_blank" rel="noopener noreferrer external"><b class="map-heading">INTERAKTIVE KARTE</b><small>Villedor auf Wand<br><span>Kurze Fundort-Videos bei vielen Markierungen ↗</span></small></a>
   </div>
   <div class="notice"><b>NG+</b><span>30 zusätzliche Hemmstoffe werden separat getrackt und bleiben gleichzeitig mit dem normalen Hemmstoff-Bereich verknüpft.</span></div>
 </section>
@@ -114,13 +118,14 @@
 
 
 <section id="view-collectibles" class="view">
-  <div class="sectionhead"><div><div class="eyebrow">VILLEDOR ARCHIVE</div><h2 id="collectTitle">SAMMLERSTÜCKE</h2></div><div class="aircount"><b id="collectTotal">0/348</b><small id="collectCollectedLabel">GESAMMELT</small></div></div>
+  <div class="sectionhead"><div><div class="eyebrow">VILLEDOR ARCHIVE</div><h2 id="collectTitle">SAMMLERSTÜCKE</h2></div><div class="aircount"><b id="collectTotal">0/308</b><small id="collectCollectedLabel">AKTIVE SAMMLUNG</small></div></div>
   <div class="collect-hero">
-    <div><span id="mementoLabel">ANDENKEN</span><strong id="mementoCount">0/209</strong><label><small id="gameMementoLabel">IM SPIEL</small><input id="gameMemento" type="number" min="0" max="209" value="0"></label></div>
+    <div><span id="mementoLabel">ANDENKEN</span><strong id="mementoCount">0/169</strong><label><small id="gameMementoLabel">IM SPIEL</small><input id="gameMemento" type="number" min="0" max="209" value="0"></label></div>
     <div><span id="tapeLabel">BÄNDER</span><strong id="tapeCount">0/68</strong><label><small id="gameTapeLabel">IM SPIEL</small><input id="gameTape" type="number" min="0" max="68" value="0"></label></div>
     <div><span id="graffitiLabel">GRAFFITI</span><strong id="graffitiCount">0/71</strong><label><small id="gameGraffitiLabel">IM SPIEL</small><input id="gameGraffiti" type="number" min="0" max="71" value="0"></label></div>
   </div>
-  <p class="introcopy" id="collectTrackerNote">Die aktuellen Spielstände können oben manuell eingetragen werden. Einzelne Fundstücke werden separat abgehakt.</p>
+  <p class="introcopy" id="collectTrackerNote">Die Ingame-Zahlen können oben eingetragen werden. Die Sammelliste zeigt die regulären Inhalte; historische Events und Sonderinhalte stehen separat im Archiv.</p>
+  <div class="collect-progress-info"><div><b id="archivistCount">0/117</b><small id="archivistLabel">ARCHIVAR · HAUPTSPIEL</small></div><div><b id="fullMementoCount">0/209</b><small id="fullMementoLabel">ALLE ANDENKEN · INKL. ARCHIV</small></div><div><b id="fullCollectCount">0/348</b><small id="fullCollectLabel">HISTORISCHER GESAMTSTAND</small></div></div>
   <details class="collect-history" id="collectHistoryPanel"><summary><b id="collectHistoryTitle">ZULETZT ABGEHAKT</b><span id="collectHistoryCount">0</span></summary><div id="collectHistoryList" class="collect-history-list"></div></details>
   <div class="segmented" id="collectTypeFilters">
     <button class="active" data-collecttype="all">ALLE</button>
@@ -136,8 +141,9 @@
     <label class="toggleline"><input type="checkbox" id="collectUnclear"><span id="collectUnclearLabel">Nur unklar / verbuggt anzeigen</span></label>
   </div>
   <div class="collect-dlc-note" id="collectDlcNote" hidden></div>
-  <div class="notice"><b>2026</b><span id="collectSlotNotice">Die 209 Andenken sind mit Namen erfasst. Nicht sicher bestätigte deutsche Ingame-Bezeichnungen sind mit * markiert.</span></div>
+  <details class="collect-archive" id="collectArchivePanel"><summary><span><b id="archiveTitle">ABGELAUFENE SAMMELOBJEKTE</b><small id="archiveHint">40 historische Event- und Sonderinhalte · Stand 11/2026</small></span><span class="archive-expand" aria-hidden="true">▾</span></summary><div class="collect-archive-body"><p id="archiveIntro">Andenken #170–209 bleiben erhalten, werden jedoch nicht als normale offene Aufgaben gezählt. Zeitlich begrenzte Events und kostenpflichtige Inhalte sind getrennt gekennzeichnet. Die bisher gespeicherten Häkchen bleiben unverändert.</p><div id="collectArchiveList"></div></div></details>
   <div id="collectibleList"></div>
+
   <div id="mementoVerifyNote" class="memento-verify-note">* Ingame-Bezeichnung nicht verifiziert</div>
   <div class="collect-modal" id="collectModal" aria-hidden="true">
     <div class="collect-modal-card">
@@ -230,7 +236,7 @@
     </div>
     <div id="syncStatus" class="sync-status" aria-live="polite"></div>
   </div>
-  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.11.2</b><br><span>Datenstand: 21.10.2026 · Changelog öffnen</span></button>
+  <button class="version versionbtn" id="versionBtn">DL2 Companion <b>v0.11.3</b><br><span>Datenstand: 21.10.2026 · Changelog öffnen</span></button>
 </section>
 <footer class="legal-footer"><b id="legalFan">INOFFIZIELLES FAN-PROJEKT</b><span id="legalText">Nicht mit Techland verbunden, von Techland unterstützt oder offiziell autorisiert. Dying Light und zugehörige Marken sind Eigentum ihrer jeweiligen Rechteinhaber. Der DL2 Companion soll dich dabei unterstützen, deinen Fortschritt in Dying Light 2 im Blick zu behalten, fehlende Inhalte zu finden und deinem Ziel von möglichst 100 % näherzukommen.</span></footer>
 </main>

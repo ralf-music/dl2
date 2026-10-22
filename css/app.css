@@ -274,3 +274,44 @@ h2{font-size:18px;letter-spacing:.08em;margin:0 0 12px}.modulegrid{display:grid;
 .trophy-tracker .trophy-note{margin-bottom:0;color:#d5a078;font-size:10px}
 .update-available{border-color:var(--orange);color:var(--orange);cursor:pointer}
 @media(max-width:520px){.history-row{flex-direction:column;gap:3px}.history-row small{text-align:left}.update-available{font-size:8px}}
+
+/* v0.11.3 · alternative Karten, präzise Enten und separates Sammlerarchiv */
+.map-option{display:flex!important;flex-direction:column;align-items:stretch;justify-content:space-between;gap:6px}
+.map-option .map-heading,.external-map .map-heading{display:block;color:var(--orange);font-size:12px}
+.map-option-links{display:flex;flex-wrap:wrap;gap:7px;padding-top:6px}
+.map-option-links a{color:var(--orange2);border:1px solid #644324;border-radius:4px;padding:6px 7px;text-decoration:none;font-size:9px;font-weight:800}
+.map-option-links a:hover,.duck-map-help a:hover{background:#ff7a0013}
+.duck-map-help{background:linear-gradient(120deg,#292117,#1b1e20);border:1px solid #69452a;padding:12px;border-radius:8px;margin:8px 0 14px}
+.duck-map-help p{font-size:11px;line-height:1.5;color:#bfc5c8;margin:5px 0 9px}
+.duck-map-help a{display:inline-block;padding:6px 9px;color:var(--orange2);border:1px solid #6d4b28;text-decoration:none;font-weight:800;font-size:10px}
+.duckcard{border-radius:8px}.duckcard.checked{border-color:#715137;background:#211c17}
+.duckrow input[type="checkbox"]{margin:2px 4px 0 0;min-width:20px;width:20px;height:20px}
+.duckrow>div{min-width:0}.duckcard h3{font-size:13px;margin:0 0 5px}
+.duckmeta{font-size:10px;color:#d4aa84;font-weight:700;line-height:1.4}
+.duck-location{font-size:11px;line-height:1.5;color:#c4c9cb;margin:9px 0;max-width:72ch}
+.duck-code{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:8px;padding:7px 10px;border:1px solid #ff7a0069;background:#ff7a0010;border-radius:6px;margin:2px 0 6px}
+.duck-code small{font-size:9px;font-weight:800;letter-spacing:.1em;color:#c2c2c2}.duck-code strong{font-size:18px;color:var(--orange);letter-spacing:.09em;white-space:nowrap}
+.collect-progress-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:8px 0 12px}
+.collect-progress-info>div{display:flex;flex-direction:column;gap:5px;padding:11px;background:#191c1f;border:1px solid var(--line);border-radius:8px}
+.collect-progress-info b{color:var(--orange);font-size:18px;line-height:1.1}
+.collect-progress-info small{color:#aeb3b7;font-size:8px;line-height:1.4;letter-spacing:.06em}
+.collect-archive{border:1px solid #715136;background:#1b1d1e;border-radius:10px;margin:17px 0}
+.collect-archive>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:9px;align-items:center;padding:13px 14px}
+.collect-archive>summary::-webkit-details-marker{display:none}
+.collect-archive>summary b{display:block;color:var(--orange);font-size:12px;letter-spacing:.08em}
+.collect-archive>summary small{display:block;font-size:10px;color:#bbc0c1;font-weight:400;margin-top:5px}
+.collect-archive .archive-expand{color:var(--orange);font-size:18px;transition:transform .2s}
+.collect-archive[open] .archive-expand{transform:rotate(180deg)}
+.collect-archive-body{padding:0 13px 13px;border-top:1px solid #4b3b2d}
+.collect-archive-body>p{color:#aeb5b8;font-size:11px;line-height:1.5}
+.archive-group{margin:13px 0;padding:11px;border:1px solid var(--line);border-radius:7px;background:#171a1c}
+.archive-group h4{font-size:12px;color:var(--orange2);margin:0 0 5px}
+.archive-period{font-size:10px;color:#ccd0d2;font-weight:700;margin-bottom:5px}
+.archive-description{font-size:10px;color:#aab0b4;line-height:1.5;margin:5px 0 10px}
+.archive-entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+.archive-entry{padding:7px 8px;border:1px solid #34393c;border-radius:5px;font-size:10px;color:#cbd0d2;line-height:1.4;overflow-wrap:anywhere}
+.archive-entry span{font-weight:800;color:var(--orange);margin-right:7px}
+.archive-entry.collected{border-color:#746042;background:#36281959}
+.archive-entry em{font-style:normal;color:#b99d82;font-size:9px}
+.archive-paid{border-color:#55546a}.archive-paid h4{color:#d4b4ff}
+@media(max-width:520px){.collect-progress-info{grid-template-columns:1fr 1fr}.collect-progress-info>div:last-child{grid-column:span 2}.archive-entries{grid-template-columns:1fr}}

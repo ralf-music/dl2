@@ -1,5 +1,5 @@
 
-const VERSION="0.11.2";
+const VERSION="0.11.3";
 const KEY="dl2-companion-state-v1";
 const SYNC_API="https://dl2-companion-sync.ralf-music.workers.dev";
 const STATE_MIGRATION=110;
@@ -196,13 +196,23 @@ function applyLanguage(){
  set("villedorAssistant","villedorAssistant");set("companionModules","companionModules");set("navCollectibles","navCollectibles");
   if($("#externalMapTitle"))$("#externalMapTitle").textContent=state.language==="en"?"INTERACTIVE MAP":"INTERAKTIVE KARTE";
   if($("#externalMapText"))$("#externalMapText").innerHTML=state.language==="en"?"Villedor on Guides4Gamers<br><span>External map · Guides4Gamers ↗</span>":"Villedor auf Guides4Gamers<br><span>Externe Karte · Guides4Gamers ↗</span>";
+  const m=$$(".module.external-map");
+  if(state.language==="en"&&m.length>=3){m[1].querySelector("small").innerHTML="Villedor on Itemaps<br><span>Includes Carnage Hall (Bloody Ties)</span>";m[2].querySelector("small").innerHTML="Villedor on Wand<br><span>Short location videos for many pins ↗</span>";}
+  else if(m.length>=3){m[1].querySelector("small").innerHTML="Villedor auf Itemaps<br><span>Mit Karte zur Massaker-Halle (Bloody Ties)</span>";m[2].querySelector("small").innerHTML="Villedor auf Wand<br><span>Kurze Fundort-Videos bei vielen Markierungen ↗</span>";}
  const bw=$("#backupWarning");if(bw)bw.innerHTML=`<b>${L("backupWarningTitle")}</b><span>${L("backupWarning")}</span>`;
  set("collectTitle","collectibles");set("mementoLabel","mementos");set("tapeLabel","tapes");set("graffitiLabel","graffiti");
  set("gameMementoLabel","gameCount");set("gameTapeLabel","gameCount");set("gameGraffitiLabel","gameCount");
- set("collectTrackerNote","trackerNote");set("collectSlotNotice","slotNotice");
+ set("collectTrackerNote","trackerNote");
  if($("#collectSearch"))$("#collectSearch").placeholder=L("searchCollectibles");
  if($("#collectMissingLabel"))$("#collectMissingLabel").textContent=state.language==="en"?"Show missing only":"Nur fehlende anzeigen"; if($("#collectDlcLabel"))$("#collectDlcLabel").textContent=state.language==="en"?"Bloody Ties DLC only":"Nur Bloody-Ties-DLC"; if($("#collectRiskLabel"))$("#collectRiskLabel").textContent=state.language==="en"?"Missable / quest-bound":"Verpassbar / questgebunden"; if($("#collectUnclearLabel"))$("#collectUnclearLabel").textContent=state.language==="en"?"Show unclear / bugged only":"Nur unklar / verbuggt anzeigen";  if($("#mementoVerifyNote"))$("#mementoVerifyNote").textContent=state.language==="en"?"* In-game designation not verified":"* Ingame-Bezeichnung nicht verifiziert";
- if($("#collectCollectedLabel"))$("#collectCollectedLabel").textContent=L("collected").toUpperCase();
+ if($("#collectCollectedLabel"))$("#collectCollectedLabel").textContent=state.language==="en"?"ACTIVE COLLECTION":"AKTIVE SAMMLUNG";
+ const en=state.language==="en";
+ if($("#archivistLabel"))$("#archivistLabel").textContent=en?"ARCHIVIST · BASE GAME":"ARCHIVAR · HAUPTSPIEL";
+ if($("#fullMementoLabel"))$("#fullMementoLabel").textContent=en?"ALL MEMENTOS · WITH ARCHIVE":"ALLE ANDENKEN · INKL. ARCHIV";
+ if($("#fullCollectLabel"))$("#fullCollectLabel").textContent=en?"HISTORICAL TOTAL":"HISTORISCHER GESAMTSTAND";
+ if($("#archiveTitle"))$("#archiveTitle").textContent=en?"EXPIRED COLLECTIBLES":"ABGELAUFENE SAMMELOBJEKTE";
+ if($("#archiveIntro"))$("#archiveIntro").textContent=en?"Mementos #170–209 are kept as historical records and do not count as regular missing items. Limited-time events and paid content are clearly separated. Saved progress remains intact.":"Andenken #170–209 bleiben erhalten, werden jedoch nicht als normale offene Aufgaben gezählt. Zeitlich begrenzte Events und kostenpflichtige Inhalte sind getrennt gekennzeichnet. Die bisher gespeicherten Häkchen bleiben unverändert.";
+ if($("#archiveHint"))$("#archiveHint").textContent=en?"40 historical event/special items · As of 11/2026":"40 historische Event- und Sonderinhalte · Stand 11/2026";
  const staticMap=state.language==="en"?{
   "GESUNDHEIT":"HEALTH","AUSDAUER":"STAMINA","Stufe":"Level","HEMMSTOFFE":"INHIBITORS","SAFE-CODES":"SAFE CODES",
   "CHARAKTER":"CHARACTER","BUILDS":"BUILDS","FAQ / WISSEN":"FAQ / KNOWLEDGE","DATEN":"DATA","GEBIETE":"DISTRICTS",
@@ -281,22 +291,47 @@ function openCollectDetail(id){
  $("#collectModal").classList.add("open");$("#collectModal").setAttribute("aria-hidden","false");
 }
 function closeCollectDetail(){$("#collectModal").classList.remove("open");$("#collectModal").setAttribute("aria-hidden","true")}
+const isArchivedMemento=x=>x.type==="memento"&&x.index>=170&&x.index<=209;
+const isNormalCollectible=x=>!isArchivedMemento(x);
+const ARCHIVE_GROUPS=[
+ {start:170,end:176,de:"The Walking Dead · Event",en:"The Walking Dead · Event",period_de:"26.07.–02.08.2023 · Reguläre Verfügbarkeit bis Juli 2024",period_en:"Jul 26–Aug 2, 2023 · General availability ended July 2024",desc_de:"Sieben Comic-Cover aus dem zeitlich begrenzten Crossover. Später zeitweise über den Pilgrim Outpost erhältlich, anschließend aus dem regulären Angebot entfernt. Aktuell kein normaler Kartenfund.",desc_en:"Seven comic covers from a limited-time crossover. Later temporarily offered through Pilgrim Outpost before being discontinued. Not a normal map pickup."},
+ {start:177,end:186,de:"The Black Hand · Kostenpflichtige Sonderinhalte",en:"The Black Hand · Paid special content",paid:true,period_de:"Seit 12.02.2026 · Bundle (Verfügbarkeit im Shop prüfen)",period_en:"Since Feb 12, 2026 · Bundle (check store availability)",desc_de:"Kein abgelaufenes Event. Die zehn Andenken sind an das kostenpflichtige Black-Hand-Bundle gebunden und können beim Spielen mit dem entsprechenden Outfit als Beute auftauchen. Nicht Teil der regulären Stadtsammlung.",desc_en:"Not an expired event. These ten mementos are tied to the paid Black Hand bundle and can drop as loot while using its outfit. Not part of the regular city collection."},
+ {start:187,end:200,de:"Infected Outbreak · Event",en:"Infected Outbreak · Event",period_de:"12.02.–05.03.2026 · Zusatzphase bis 09.03.2026",period_en:"Feb 12–Mar 5, 2026 · Extension to Mar 9, 2026",desc_de:"Vierzehn Dokumente aus dem zeitlich begrenzten Ausbruchs-Event: Beute aus Event-Gebieten und Community-Belohnungen. Nach dem Event nicht regulär über die Karte sammelbar.",desc_en:"Fourteen notes tied to the limited-time outbreak event: event-area loot and community rewards. Not normally obtainable on the map after the event."},
+ {start:201,end:209,de:"Jahr des Pferdes · Event",en:"Year of the Horse · Event",period_de:"17.02.–24.02.2026",period_en:"Feb 17–24, 2026",desc_de:"Neun Event-Andenken aus roten Umschlägen, die bestimmte Infizierte nur während der Aktion fallen ließen. Seit Eventende nicht regulär verfügbar.",desc_en:"Nine limited-event mementos from red envelopes dropped by certain infected during the event. Not regularly available afterwards."}
+];
+function renderCollectArchive(){
+ const el=$("#collectArchiveList");if(!el)return;
+ const en=state.language==="en";
+ el.innerHTML=ARCHIVE_GROUPS.map(g=>{
+  const items=collectibles.filter(x=>x.type==="memento"&&x.index>=g.start&&x.index<=g.end);
+  return `<section class="archive-group ${g.paid?"archive-paid":""}"><h4>${en?g.en:g.de} · ${items.length}</h4><div class="archive-period">${en?g.period_en:g.period_de}</div><p class="archive-description">${en?g.desc_en:g.desc_de}</p><div class="archive-entries">${items.map(x=>`<div class="archive-entry ${state.collectDone[x.id]?"collected":""}"><span>#${x.index}</span>${en?x.name_en:x.name_de}${state.collectDone[x.id]?` <em>· ${en?"Previously collected":"Bereits gesammelt"}</em>`:""}</div>`).join("")}</div></section>`;
+ }).join("");
+}
 function renderCollectibles(){
  if(!collectibles.length)return;
  const q=($("#collectSearch")?.value||"").toLowerCase().trim(),missing=$("#collectMissing")?.checked,dlcOnly=$("#collectDlc")?.checked,riskOnly=$("#collectRisk")?.checked,unclearOnly=$("#collectUnclear")?.checked;
+ const normal=collectibles.filter(isNormalCollectible);
  const doneAll=collectibles.filter(x=>state.collectDone[x.id]).length;
+ const activeDone=normal.filter(x=>state.collectDone[x.id]).length;
  const counts={memento:[0,209],tape:[0,68],graffiti:[0,71]};
  Object.keys(counts).forEach(k=>counts[k][0]=collectibles.filter(x=>x.type===k&&state.collectDone[x.id]).length);
- $("#collectTotal").textContent=doneAll+"/348";
- $("#mementoCount").textContent=counts.memento[0]+"/209";$("#tapeCount").textContent=counts.tape[0]+"/68";$("#graffitiCount").textContent=counts.graffiti[0]+"/71";
+ const regularMementos=normal.filter(x=>x.type==="memento");
+ const regularDone=regularMementos.filter(x=>state.collectDone[x.id]).length;
+ const archivistDone=regularMementos.filter(x=>x.index<=117&&state.collectDone[x.id]).length;
+ $("#collectTotal").textContent=activeDone+"/308";
+ $("#mementoCount").textContent=regularDone+"/169";$("#tapeCount").textContent=counts.tape[0]+"/68";$("#graffitiCount").textContent=counts.graffiti[0]+"/71";
+ $("#archivistCount").textContent=archivistDone+"/117";
+ $("#fullMementoCount").textContent=counts.memento[0]+"/209";
+ $("#fullCollectCount").textContent=doneAll+"/348";
  $("#gameMemento").value=state.collectionGameCounts.memento||0;$("#gameTape").value=state.collectionGameCounts.tape||0;$("#gameGraffiti").value=state.collectionGameCounts.graffiti||0;
  const dlcItems=collectibles.filter(x=>x.dlc==="Bloody Ties"),dlcDone=dlcItems.filter(x=>state.collectDone[x.id]).length,dlcNote=$("#collectDlcNote");
  if(dlcNote){dlcNote.hidden=!dlcOnly;dlcNote.textContent=state.language==="en"?`Bloody Ties: ${dlcDone}/37 collected · Connoisseur unlocks at 36/37 · 37/37 = DLC complete`:`Bloody Ties: ${dlcDone}/37 gesammelt · „Kenner“ ab 36/37 · 37/37 = DLC komplett`}
- const rows=collectibles.filter(x=>{const hay=[x.name_de,x.name_en,x.clue_de,x.clue_en,x.location_de,x.location_en,x.warning_de,x.warning_en,x.searchAlias,x.index,x.district,x.dlc,x.quest].filter(Boolean).join(" ").toLowerCase();return (collectType==="all"||x.type===collectType)&&(!missing||!state.collectDone[x.id])&&(!dlcOnly||x.dlc==="Bloody Ties")&&(!riskOnly||x.missable||x.questRisk||x.possibleMissable)&&(!unclearOnly||state.collectUnclear[x.id])&&(!q||hay.includes(q))});
+ const rows=normal.filter(x=>{const hay=[x.name_de,x.name_en,x.clue_de,x.clue_en,x.location_de,x.location_en,x.warning_de,x.warning_en,x.searchAlias,x.index,x.district,x.dlc,x.quest].filter(Boolean).join(" ").toLowerCase();return (collectType==="all"||x.type===collectType)&&(!missing||!state.collectDone[x.id])&&(!dlcOnly||x.dlc==="Bloody Ties")&&(!riskOnly||x.missable||x.questRisk||x.possibleMissable)&&(!unclearOnly||state.collectUnclear[x.id])&&(!q||hay.includes(q))});
  const groups={memento:[],tape:[],graffiti:[]};rows.forEach(x=>groups[x.type].push(x));
  const labels={memento:L("mementos"),tape:L("tapes"),graffiti:L("graffiti")};
  $("#collectibleList").innerHTML=Object.entries(groups).filter(([,a])=>a.length).map(([type,a])=>`<div class="airdistrict"><h3>${labels[type].toUpperCase()} · ${a.length}</h3><div class="collect-grid">${a.map(x=>{const name=state.language==="en"?x.name_en:x.name_de,clue=state.language==="en"?x.clue_en:x.clue_de,loc=state.language==="en"?x.location_en:x.location_de,warn=state.language==="en"?x.warning_en:x.warning_de,tags=collectTagData(x),sub=clue||loc||warn||"";const unclear=!!state.collectUnclear[x.id],status=state.collectDone[x.id]?L("collected").toUpperCase():unclear?(state.language==="en"?"UNCLEAR / BUGGED":"UNKLAR / VERBUGGT"):L("open").toUpperCase();return `<button type="button" class="collect-tile ${sub?"hinted ":""}${state.collectDone[x.id]?"done ":""}${unclear?"unclear":""}" data-collecttile="${x.id}"><span class="tile-num">#${String(x.index).padStart(type==="memento"?3:2,"0")}</span><span class="tile-name">${name}</span>${tags.length?`<span class="collect-tags">${tags.map(t=>`<span class="${t.c}">${t.t}</span>`).join("")}</span>`:""}${sub?`<span class="tile-clue">${sub}</span>`:""}<span class="tile-state">${status}</span></button>`}).join("")}</div></div>`).join("")||'<div class="area-empty">'+(state.language==="en"?"No entries in this filter.":"Keine Einträge in diesem Filter.")+'</div>';
  renderCollectHistory();
+ renderCollectArchive();
  $$("[data-collecttile]").forEach(b=>b.onclick=()=>openCollectDetail(b.dataset.collecttile));
  $("#collectDetailDone").onchange=e=>{const id=e.target.dataset.id;if(!id)return;if(e.target.checked){state.collectDone[id]=true;delete state.collectUnclear[id]}else delete state.collectDone[id];trackCollectChange(id,e.target.checked?"collected":"open");saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
  $("#collectDetailUnclear").onchange=e=>{const id=e.target.dataset.id;if(!id)return;if(e.target.checked){state.collectUnclear[id]=true;delete state.collectDone[id]}else delete state.collectUnclear[id];trackCollectChange(id,e.target.checked?"unclear":"open");saveState();renderCollectibles();renderAreas();updateDashboard();openCollectDetail(id)};
@@ -330,7 +365,18 @@ function renderAll(){
 }
 function ytLink(q){return "https://www.youtube.com/results?search_query="+encodeURIComponent(q)}
 function renderQuarantine(){if(!quarantine.length)return;let total=0,b=0;quarantine.forEach(q=>{let c=0;q.crates.forEach((n,i)=>{if(state.quarantineDone[q.id+"-"+i])c+=n});total+=c;if(c===4)b++});$("#qCount").textContent=b+"/6";$("#qBuildings").textContent=b+"/6";$("#qInhib").textContent=total+"/24";$("#qOpen").textContent=24-total;if($("#qDash"))$("#qDash").textContent=b+" / 6";$("#quarantineList").innerHTML=quarantine.map(q=>`<div class="qcard"><h3>${q.name}</h3><div class="qmeta">${q.district} · Stufe ${q.rank} · 4 Hemmstoffe</div><div class="qcrates">${q.crates.map((n,i)=>`<label><input type="checkbox" data-q="${q.id}-${i}" ${state.quarantineDone[q.id+"-"+i]?"checked":""}> Kiste ${i+1}: ${n}</label>`).join("")}</div><a class="yt-find" target="_blank" rel="noopener" href="${ytLink(q.youtube)}">▶ FUNDORT AUF YOUTUBE</a></div>`).join("");$$('[data-q]').forEach(c=>c.onchange=()=>{const [qid]=c.dataset.q.split("-");setFlag(state.quarantineDone,c.dataset.q,c.checked);syncFromQuarantine(qid);saveState();renderQuarantine();renderDistricts();renderNGPlus();renderAreas();updateDashboard()})}
-function renderDucks(){if(!ducks.length)return;const d=ducks.filter(x=>state.duckDone[x.id]).length;$("#duckCount").textContent=d+"/12";if($("#duckDash"))$("#duckDash").textContent=d+" / 12";$("#duckList").innerHTML=["black","red"].map(t=>`<div class="airdistrict"><h3>${t==="black"?"SCHWARZE ENTEN · DOOM":"ROTE ENTEN · FAHRRAD"}</h3>${ducks.filter(x=>x.type===t).map(x=>`<div class="duckcard"><div class="duckrow"><input type="checkbox" data-duck="${x.id}" ${state.duckDone[x.id]?"checked":""}><div><h3>${x.label}</h3><div class="duckmeta">${x.district} · ${x.purpose}</div><a class="yt-find" target="_blank" rel="noopener" href="${ytLink(x.youtube)}">▶ FUNDORT AUF YOUTUBE</a></div></div></div>`).join("")}</div>`).join("");$$("[data-duck]").forEach(c=>c.onchange=()=>{state.duckDone[c.dataset.duck]=c.checked;saveState();renderDucks()})}
+function renderDucks(){
+ if(!ducks.length)return;
+ const en=state.language==="en";
+ const d=ducks.filter(x=>state.duckDone[x.id]).length;
+ $("#duckCount").textContent=d+"/12";if($("#duckDash"))$("#duckDash").textContent=d+" / 12";
+ $("#duckList").innerHTML=["black","red"].map(t=>{
+  const red=t==="red",url=red?"https://guides4gamers.com/dying-light-2/pois/red-ducks/":"https://guides4gamers.com/dying-light-2/pois/black-ducks/";
+  const title=red?"ROTE ENTEN · FAHRRAD":"SCHWARZE ENTEN · DOOM";
+  return `<div class="airdistrict"><h3>${title}</h3><div class="duck-map-help"><b>${en?"INTERACTIVE MAP · FINDING HELP":"FUNDORTHILFE · INTERAKTIVE KARTE"}</b><p>${en?`Guides4Gamers shows all ${red?7:5} locations, including the map and images for identification.`:`Nutze zur Orientierung die interaktive Karte von Guides4Gamers mit allen ${red?"7 roten":"5 schwarzen"} Enten. Bei roten Enten steht der zugehörige Safe-Code direkt am Fundort.`}</p><a href="${url}" target="_blank" rel="noopener noreferrer external">${en?"OPEN GUIDES4GAMERS MAP":"GUIDES4GAMERS-KARTE ÖFFNEN"} ↗</a></div>${ducks.filter(x=>x.type===t).map(x=>`<div class="duckcard ${state.duckDone[x.id]?"checked":""}"><div class="duckrow"><input type="checkbox" data-duck="${x.id}" aria-label="${x.label}" ${state.duckDone[x.id]?"checked":""}><div><h3>${x.label}</h3><div class="duckmeta">${x.district} · ${x.purpose}</div>${x.safe_code?`<div class="duck-code"><small>SAFE-CODE</small><strong>${x.safe_code}</strong></div>`:""}<p class="duck-location">${x.description_de||""}</p><a class="yt-find" target="_blank" rel="noopener noreferrer" href="${ytLink(x.youtube)}">▶ ${en?"FIND ON YOUTUBE":"FUNDORT AUF YOUTUBE"}</a></div></div></div>`).join("")}</div>`;
+ }).join("");
+ $$("[data-duck]").forEach(c=>c.onchange=()=>{setFlag(state.duckDone,c.dataset.duck,c.checked);saveState();renderDucks();renderAreas();updateDashboard()});
+}
 function renderGRE(){if(!gre.length)return;const done=gre.filter(x=>state.greDone[x.id]).length;$("#greCount").textContent=done+"/12";$("#greOpen").textContent=12-done;$("#greInhib").textContent=(done*2)+"/24";$("#greTrophy").textContent=Math.round(done/12*100)+"%";if($("#greDash"))$("#greDash").textContent=done+" / 12";const a=gre.filter(x=>greFilter==="all"||(greFilter==="open"&&!state.greDone[x.id])||(greFilter==="done"&&state.greDone[x.id])),g={};a.forEach(x=>(g[x.district]??=[]).push(x));$("#greList").innerHTML=Object.entries(g).map(([d,l])=>`<div class="airdistrict"><h3>${d.toUpperCase()}</h3>${l.map(x=>`<label class="grecard ${state.greDone[x.id]?"done":""}"><input type="checkbox" data-gre="${x.id}" ${state.greDone[x.id]?"checked":""}><div class="greinfo"><b>${x.id}</b><p>${x.note}</p><div class="gre-meta"><span class="gre-tag hot">2 HEMMSTOFFE</span><span class="gre-tag">NUR NACHTS</span></div><a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 GRE Anomaly ${x.id} ${x.district} location`)}">▶ FUNDORT AUF YOUTUBE</a></div></label>`).join("")}</div>`).join("")||'<div class="area-empty">Keine GRE-Anomalien in diesem Filter.</div>';$$("[data-gre]").forEach(c=>c.onchange=()=>{const x=gre.find(a=>a.id===c.dataset.gre);setFlag(state.greDone,x.id,c.checked);syncFromGRE(x.id,c.checked);saveState();renderGRE();renderDistricts();renderAreas();updateDashboard()})}
 function renderSunken(){if(!sunken.length)return;const done=sunken.filter(x=>state.sunkenDone[x.id]).length;$("#sunkenCount").textContent=done+"/12";const a=sunken.filter(x=>sunkenFilter==="all"||(sunkenFilter==="open"&&!state.sunkenDone[x.id])||(sunkenFilter==="done"&&state.sunkenDone[x.id]));$("#sunkenList").innerHTML=a.map(x=>`<label class="sunken-card ${state.sunkenDone[x.id]?"done":""}"><input type="checkbox" data-sunken="${x.id}" ${state.sunkenDone[x.id]?"checked":""}><div class="sunken-info"><b>${x.label}</b><p>${x.note}</p><span class="no-tech">KEIN MILITARY TECH</span></div></label>`).join("")||'<div class="area-empty">Keine versunkenen Airdrops in diesem Filter.</div>';$$("[data-sunken]").forEach(c=>c.onchange=()=>{state.sunkenDone[c.dataset.sunken]=c.checked;saveState();renderSunken()})}
 function renderAirdrops(){if(!airdrops.length)return;const done=airdrops.filter(x=>state.airDone[x.id]).length,inh=airdrops.filter(x=>x.inhibitor&&state.airDone[x.id]).length;$("#airCount").textContent=done+"/14";$("#airOpen").textContent=14-done;$("#airTech").textContent=done;$("#airInhib").textContent=inh+"/5";if($("#airDash"))$("#airDash").textContent=done+" / 14";const a=airdrops.filter(x=>airFilter==="all"||(airFilter==="open"&&!state.airDone[x.id])||(airFilter==="done"&&state.airDone[x.id])),g={};a.forEach(x=>(g[x.district]??=[]).push(x));$("#airdropList").innerHTML=Object.entries(g).map(([d,l])=>`<div class="airdistrict"><h3>${d.toUpperCase()}</h3>${l.map(x=>`<label class="aircard ${state.airDone[x.id]?"done":""}"><input type="checkbox" data-air="${x.id}" ${state.airDone[x.id]?"checked":""}><div class="airinfo"><b>${x.id}</b><p>${x.note}</p><span class="airtag">MILITARY TECH</span>${x.inhibitor?'<span class="airtag">HEMMSTOFF</span>':""}<a class="yt-find" onclick="event.stopPropagation()" target="_blank" rel="noopener" href="${ytLink(`Dying Light 2 Military Airdrop ${x.id} ${x.district} location`)}">▶ FUNDORT AUF YOUTUBE</a></div></label>`).join("")}</div>`).join("");$$("[data-air]").forEach(c=>c.onchange=()=>{state.airDone[c.dataset.air]=c.checked;syncFromAir(c.dataset.air,c.checked);saveState();renderAirdrops();renderDistricts();renderNGPlus();renderAreas();updateDashboard()})}
@@ -351,7 +397,7 @@ function areaItems(d){
  gre.filter(x=>districtMatches(x.district,d)).forEach(x=>out.push({id:"gre:"+x.id,type:"GRE-Anomalien",name:x.id,kind:"gre",ref:x}));
  quarantine.filter(x=>districtMatches(x.district,d)).forEach(q=>q.crates.forEach((count,i)=>out.push({id:"q:"+q.id+"-"+i,type:"GRE-Quarantäne",name:q.name+" · Kiste "+(i+1)+" (×"+count+")",kind:"quarantine",ref:q,index:i})));
  ducks.filter(x=>districtMatches(x.district,d)).forEach(x=>out.push({id:"duck:"+x.id,type:"Enten",name:x.label,kind:"duck",ref:x}));
- collectibles.filter(x=>x.district&&districtMatches(x.district,d)).forEach(x=>out.push({id:"collect:"+x.id,type:"Sammlerstücke",name:(state.language==="en"?x.name_en:x.name_de),kind:"collect",ref:x}));
+ collectibles.filter(x=>isNormalCollectible(x)&&x.district&&districtMatches(x.district,d)).forEach(x=>out.push({id:"collect:"+x.id,type:"Sammlerstücke",name:(state.language==="en"?x.name_en:x.name_de),kind:"collect",ref:x}));
  return out
 }
 function itemDone(x){
@@ -385,7 +431,8 @@ function overallProgress(){
  const greTotal=gre.length, greDone=gre.filter(x=>state.greDone[x.id]).length;
  const quarantineTotal=quarantine.reduce((s,q)=>s+q.crates.length,0), quarantineDone=quarantine.reduce((s,q)=>s+q.crates.filter((_,i)=>state.quarantineDone[q.id+"-"+i]).length,0);
  const duckTotal=ducks.length, duckDone=ducks.filter(x=>state.duckDone[x.id]).length;
- const collectTotal=collectibles.length, collectDone=collectibles.filter(x=>state.collectDone[x.id]).length;
+ const trackable=collectibles.filter(isNormalCollectible);
+ const collectTotal=trackable.length, collectDone=trackable.filter(x=>state.collectDone[x.id]).length;
  const total=inhibitorTotal+safeTotal+airTotal+sunkenTotal+greTotal+quarantineTotal+duckTotal+collectTotal;
  const done=inhibitorDone+safeDone+airDone+sunkenDone+greDone+quarantineDone+duckDone+collectDone;
  return {done,total,pct:total?Math.round(done/total*100):0};

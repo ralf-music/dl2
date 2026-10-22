@@ -1,8 +1,19 @@
-# DL2 Companion v0.11.2
+# DL2 Companion v0.11.3
 
 Mobile-first PWA-Begleiter für **Dying Light 2 Stay Human** mit lokalem Fortschritt, Geräte-Sync und spielstandbezogenen Trackern.
 
 
+
+## v0.11.3
+
+- #170–209: Archiv „Abgelaufene Sammelobjekte“ mit Stand 11/2026, nach Event/Bundle gruppiert, ohne aktive Checkboxen und ohne Löschung vorhandener Daten
+- Neue Zähler: aktive Sammlung 308 Einträge, Andenken 169, Hauptspiel-Archivar 117; historische Gesamtsummen bleiben sichtbar
+- #121 bleibt Shen-Xiu-Kapitel-2-Andenken, deutscher Vorläufigname und Fundort ergänzt; IDs #118–131 unverändert
+- 5 schwarze und 7 rote Enten genauer beschrieben; alle zugehörigen Safe-Codes direkt angezeigt
+- Guides4Gamers-Fundortkarten pro Entenfarbe verlinkt
+- Zusätzlich zu Guides4Gamers: Kartenkacheln für Itemaps (inkl. Massaker-Halle) und Wand
+- Irreführenden 2026-Hinweis aus der Sammelliste entfernt
+- Datenspeicherung/Cloud-Sync und bestehende IDs unverändert
 
 ## v0.11.2
 

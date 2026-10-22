@@ -1,4 +1,4 @@
-const CACHE="dl2-companion-v0.11.2";
+const CACHE="dl2-companion-v0.11.3";
 const ASSETS=["./","index.html","css/app.css","js/app.js","manifest.json","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","data/districts.json","data/inhibitors.json","data/safes.json","data/faq.json","data/builds.json","data/changelog.json","data/activities.json","data/airdrops.json","data/gre-anomalies.json","data/sunken-airdrops.json","data/gre-quarantine.json","data/ducks.json","data/collectibles.json","data/lang-de.json","data/lang-en.json"];
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("dl2-companion-")&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

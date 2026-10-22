@@ -1157,10 +1157,13 @@
     "id": "memento-121",
     "type": "memento",
     "index": 121,
-    "name_de": "Letter to brother 1 *",
+    "name_de": "Brief an Bruder 1 *",
     "name_en": "Letter to brother 1",
     "district": "Lower Dam Ayre",
-    "missable": false
+    "missable": false,
+    "location_de": "Lower Dam Ayre: Nordöstlich des Wasserturms von Saint Paul, in einem größeren Hof mit ausgetrocknetem Brunnen. Der Brief liegt bei einer Leiche, aus der ein Speer ragt.",
+    "location_en": "Lower Dam Ayre: Courtyard with a dry fountain northeast of Saint Paul Water Tower. The letter is beside a body pierced by a spear.",
+    "clue_de": "Kapitel 2 · Shen Xiu. Gehört zu den 14 Andenken #118–131 und ist kein abgelaufenes Event-Andenken."
   },
   {
     "id": "memento-122",

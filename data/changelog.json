@@ -1,5 +1,19 @@
 [
   {
+    "version": "0.11.3",
+    "date": "22.10.2026",
+    "changes": [
+      "Andenken #170–209 aus regulärer Checkliste in ausklappbares Archiv „Abgelaufene Sammelobjekte · Stand 11/2026“ verschoben; alle 40 Datensätze und Häkchen bleiben erhalten",
+      "Historische Events nach Zeitraum und Herkunft gruppiert; Black Hand ausdrücklich als kostenpflichtiger Sonderinhalt statt abgelaufenes Event gekennzeichnet",
+      "Separater aktiver Sammelfortschritt 169 Andenken / 308 Gesamtobjekte; Originalgesamtstand 209 / 348 sowie Archivar-Hauptspielstand 117 weiterhin sichtbar",
+      "Andenken #121 als Shen-Xiu-Kapitel-2-Brief mit überprüftem Fundort ergänzt; keine Umnummerierung oder Häkchenmigration",
+      "Alle 12 Enten mit präziseren Bezirks- und Zugangsbeschreibungen, sichere Safe-Code-Zuordnung für alle 7 roten und die schwarze VNC-Ente (6-6-6)",
+      "Für rote und schwarze Enten eigene Guides4Gamers-Fundortkarten als direkte Links",
+      "Im Dashboard zusätzliche Kartenkacheln für Itemaps einschließlich Massaker-Halle und Wand mit Fundort-Videos",
+      "Den verwirrenden Entwicklungs-Hinweis mit „2026“ aus der Sammelliste entfernt; Speicher-Key, Cloudflare-Sync und alle Tracker-IDs unverändert"
+    ]
+  },
+  {
     "version": "0.11.2",
     "date": "21.10.2026",
     "changes": [
